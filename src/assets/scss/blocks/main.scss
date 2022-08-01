@@ -31,6 +31,10 @@
         }
         &__text:nth-child(2) {
             color:  $persic;
+            font-family: InterReg;
+            -webkit-text-stroke: 0.01rem $persic;
+            -webkit-text-fill-color: transparent;
+            
             padding-left: 16rem;
             width: 43.7rem;
         }
@@ -66,7 +70,7 @@
 
         &__img {
             height: 23.5rem;
-            width: 25.1rem;
+            width: 100%;
             object-fit: contain;
         }
         &__title {
@@ -163,5 +167,32 @@
                 border-radius: 0rem 0.5rem 0.5rem 0rem;
                 background-color: transparent;
             }
+    }
+    .categories {
+        padding-left: $border;
+        padding-right: $border;
+        &__nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3.7rem;
+
+        }
+        &__item {
+            height: 38.1rem;
+            min-width: 33.5rem;
+            
+            background: #F3F3F3;
+            border-radius: 1rem;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__item:nth-child(1) {
+            min-width: 64.5rem;
+        }
+        &__item:nth-child(7) {
+            min-width: 64.5rem;
+        }
     }
 }
