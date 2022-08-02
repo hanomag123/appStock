@@ -1,7 +1,8 @@
 $primary: #FFFFFF;
 $secondary: #b71a1b;
 $white: #FFFFFF;
-$gray: #503e3f;
+$ligthGrey: #F3F3F3;
+$gray: #8D8D8D;
 $black: #201F1F;
 $persic: #C68457;
 
@@ -25,5 +26,53 @@ $lb-bp: 650px;
 
 
 $border: 8rem;
+
+%button {
+    font-size: 1.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30rem;
+    height: 5.2rem;
+
+    color: $persic;
+
+    border: 0.1rem solid $persic;
+    border-radius: 0.5rem;
+
+    background-color: transparent;
+}
+
+%prevButton {
+    margin-right: 0;
+    height: 4rem;
+    width: 3.5rem;
+    border: 0.1rem solid $persic;
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+    background-color: transparent;
+}
+%nextButton {
+    height: 4rem;
+    width: 3.5rem;
+    border: 0.1rem solid $persic;
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+    background-color: transparent;
+}
+
+%input {
+    height: 5rem;
+    width: 44.5rem;
+    color: $gray;
+    border: 0.1rem solid $gray;
+    border-radius: 0.5rem;
+
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 142%;
+
+    padding: 2rem;
+}
 
 

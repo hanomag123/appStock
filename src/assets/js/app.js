@@ -19,7 +19,21 @@ const swiper = new Swiper(".topSales__catalog", {
     },
 });
 
-
+const newsSwiper = new Swiper(".news__swiper", {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    },
+    navigation: {
+        nextEl: ".news__nextButton",
+        prevEl: ".news__prevButton",
+    },
+    loop: true,
+    centeredSlides: true,
+    reverseDirection: false,
+});
 })
 
 
