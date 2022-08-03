@@ -1,10 +1,10 @@
 
 .main {
     font-family: Inter;
-    overflow: hidden;
+    // overflow: hidden;
 
     .observe {
-        transform: translateX(80%);
+        transform: translateX(100%);
         opacity: 0;
         transition: transform 0.8s ease;
     }
@@ -27,16 +27,23 @@
 
         background-color: $black;
 
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @include breakpoint($cos-bp) {
+            grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+        }
         &__bg {
             height: 100%;
-            width: 50%;
+            width: 100%;
             object-fit: contain;
             align-self: flex-end;
             .blur {
                 filter: blur(1.2rem);
                 min-height: 86.3rem;
                 min-width: 96rem;
+            }
+            @include breakpoint($cos-bp) {
+                width: 25%;
             }
         }
 
@@ -51,6 +58,9 @@
             display: flex;
             flex-direction: column;
             gap: 4.5rem;
+            @include breakpoint($cos-bp) {
+                font-size: clamp(5rem, calc(5rem + 1vmin), 10rem);
+            }
         }
 
         &__text {

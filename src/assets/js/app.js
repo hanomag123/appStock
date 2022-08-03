@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
 //= components/
 
 function mainObserver() {
+    const options = {
+        rootMargin: '0px 1000px 0px 1000px'
+    }
     function vdHandler(els) {
         els.forEach((data) => {
         if (data.isIntersecting === true) {
@@ -14,7 +17,7 @@ function mainObserver() {
         })
     }
     
-    const observer = new IntersectionObserver(vdHandler)
+    const observer = new IntersectionObserver(vdHandler, options)
     const observeTarget = document.querySelectorAll('.observe, .observe-left')
     
     observeTarget.forEach(el => {
@@ -23,17 +26,20 @@ function mainObserver() {
 }
 
 function preLoad() {
+    const options = {
+        rootMargin: '200px'
+    }
     function vdHandler(els) {
         els.forEach((data) => {
         if (data.isIntersecting === true && Boolean(data.target.dataset.src)) {
             data.target.src = data.target.dataset.src
+            observer.unobserve(data.target)
         }
         })
     }
     
-    const observer = new IntersectionObserver(vdHandler)
+    const observer = new IntersectionObserver(vdHandler, options)
     const observeTarget = document.images
-    console.log(document.images)
     for(let el of observeTarget) {
         observer.observe(el)
     }
@@ -53,7 +59,7 @@ function loadMainImg() {
 }
 
 const swiper = new Swiper(".topSales__catalog", {
-    slidesPerView: 5,
+    slidesPerView: 2,
     spaceBetween: 22,
     pagination: {
     el: ".swiper-pagination",
@@ -63,6 +69,13 @@ const swiper = new Swiper(".topSales__catalog", {
         nextEl: ".topSales__nextButton",
         prevEl: ".topSales__prevButton",
     },
+    breakpoints: {
+        // when window width is >= 1024px
+        1024: {
+            slidesPerView: 5,
+            spaceBetween: 20
+        },
+    }
 });
 
 const newsSwiper = new Swiper(".news__swiper", {
