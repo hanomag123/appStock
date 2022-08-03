@@ -1,16 +1,47 @@
 
 .main {
     font-family: Inter;
+    overflow: hidden;
+
+    .observe {
+        transform: translateX(80%);
+        opacity: 0;
+        transition: transform 0.8s ease;
+    }
+
+    .observe-left {
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: transform 0.8s ease;
+    }
+
+    .observe-active {
+        transform: translateX(0);
+        opacity: 1;
+        transition: transform 0.8s ease;
+    }
 
     .home {
-
         height: calc(100vh - 9.7rem);
         min-height: 86.3rem;
 
-        background: no-repeat (left bottom) url('../images/main/mainBg.png') $black;
+        background-color: $black;
+
+        display: flex;
+        &__bg {
+            height: 100%;
+            width: 50%;
+            object-fit: contain;
+            align-self: flex-end;
+            .blur {
+                filter: blur(1.2rem);
+                min-height: 86.3rem;
+                min-width: 96rem;
+            }
+        }
 
         &__container {
-            padding-left: 76.7rem;
+            // padding-left: 76.7rem;
             padding-top: 12.2rem;
 
             font-size: 10rem;
@@ -72,6 +103,8 @@
         }
 
         &__item {
+            margin: 0 auto !important;
+            margin-right: 2.2rem !important;
             margin-bottom: 3rem;
             color: $black;
             border-radius: 1rem;
@@ -85,6 +118,8 @@
             flex-direction: column;
             justify-content: space-between;
             gap: 2rem;
+
+            @extend %easyHover;
         }
         &__name {
             font-family: InterReg;
@@ -121,21 +156,10 @@
                 font-family: InterReg;
             }
             &__busketButton {
-                width: 4.5rem;
-                height: 4.2rem;
-                border: 1px solid $persic;
-                border-radius: 0.5rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 1rem;
-            }
-            &__busketIcon {
-                width: 2.5rem;
-                height: 2.2rem;
-                fill: $persic;
+                @extend %busketButton;
             }
             &__buttonContainer {
+                margin-top: 3rem;
                 width: 100%;
                 display: flex;
             }
@@ -182,6 +206,8 @@
             gap: 1rem;
 
             padding-top: 4rem;
+
+            @extend %easyHover;
         }
         &__name {
             font-size: 3rem;
@@ -343,6 +369,8 @@
             justify-content: center;
             flex-direction: column;
             gap: 2rem;
+
+            @extend %easyHover;
 		}
 
 		&__desc {

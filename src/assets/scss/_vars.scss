@@ -26,6 +26,20 @@ $lb-bp: 650px;
 
 
 $border: 8rem;
+$border-min: 2rem;
+
+$trans: all .4s ease-in-out;
+
+%easyHover {
+    & {
+        will-change: transform;
+        cursor: pointer;
+        transition: $trans;
+    }
+    &:hover {
+        transform: scale(1.08);
+    }
+}
 
 %button {
     font-size: 1.8rem;
@@ -43,6 +57,13 @@ $border: 8rem;
     border-radius: 0.5rem;
 
     background-color: transparent;
+
+    transition: $trans;
+
+    &:hover {
+        background-color: $persic;
+        color: $white;
+    }
 }
 
 %prevButton {
@@ -52,6 +73,22 @@ $border: 8rem;
     border: 0.1rem solid $persic;
     border-radius: 0.5rem 0rem 0rem 0.5rem;
     background-color: transparent;
+    .icon {
+        stroke: $persic;
+        fill: transparent;
+        width: 0.8rem;
+        height: 1.1rem;
+    }
+
+    cursor: pointer;
+
+    transition: all .5s ease-in-out;
+    &:hover {
+        background-color: $persic;
+        .icon {
+            stroke: $white;
+        }
+    }
 }
 %nextButton {
     height: 4rem;
@@ -59,6 +96,24 @@ $border: 8rem;
     border: 0.1rem solid $persic;
     border-radius: 0rem 0.5rem 0.5rem 0rem;
     background-color: transparent;
+
+    cursor: pointer;
+    transition: $trans;
+    .icon {
+        stroke: $persic;
+        fill: transparent;
+        width: 0.8rem;
+        height: 1.1rem;
+
+        transition: $trans;
+    }
+
+    &:hover {
+        background-color: $persic;
+        .icon {
+            stroke: $white;
+        }
+    }
 }
 
 %input {
@@ -73,6 +128,33 @@ $border: 8rem;
     line-height: 142%;
 
     padding: 2rem;
+}
+
+%busketButton {
+    width: 4.5rem;
+    height: 4.2rem;
+    border: 1px solid $persic;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    transition: all .5s ease-in-out;
+
+    svg {
+        width: 2.5rem;
+        height: 2.2rem;
+        stroke: $persic;
+        transition: all .5s ease-in-out;
+    }
+
+    &:hover {
+        background-color: $persic;
+        svg {
+            stroke: $white;
+        }
+    }
 }
 
 

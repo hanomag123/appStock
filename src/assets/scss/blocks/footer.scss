@@ -1,0 +1,219 @@
+.footer {
+
+    &__top {
+        padding-top: 5.5rem;
+
+        min-height: 34.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+        background-color: $black;
+        margin-bottom: 0.1rem;
+    }
+
+    &__mainText {
+        max-width: 94rem;
+        font-family: 'Inter';
+        font-weight: 700;
+        font-size: 6rem;
+        line-height: 7.3rem;
+        text-align: center;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6rem;
+    }
+
+    &__mesItem {
+        @extend %easyHover;
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__mesIcon {
+        height: 4.2rem;
+        width: 4.2rem;
+        background-color: $persic;
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+            width: 2.548rem;
+            height: 2.548rem;
+        }
+    }
+
+    &__mesItem:nth-child(2) svg {
+        width: 2.281rem;
+        height: 1.89rem;
+        margin-right: 0.2rem;
+        fill: $white;
+    }
+
+    &__mesName {
+        font-family: 'InterMed';
+        font-size: 2.4rem;
+        line-height: 2.9rem;        
+    }
+
+    &__bottom {
+        padding-top: 2.7rem;
+        padding-left: $border;
+        padding-right: $border;
+
+        background-color: $black;
+    }
+
+    &__wrapperBot {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding-bottom: 2.7rem;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    &__logo {
+        @extend %easyHover;
+
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 2.4rem;
+        
+        /* серый лайт */
+        
+        color: $ligthGrey;
+    }
+
+    &__categorys {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__categoryItem {
+        @extend %easyHover;
+
+        font-family: 'InterMed';
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 142%;
+
+        color: $white;
+    }
+    &__list {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__listItem {
+        @extend %easyHover;
+        font-family: 'InterMed';
+        font-weight: 500;
+
+        display: grid;
+        grid-template-columns: 2.5rem 1fr;
+        grid-column-gap: 0.9rem;
+        grid-row-gap: 1rem;
+        align-items: center;
+        width: 18.5rem;
+    }
+
+    &__icon {
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+
+    &__listItem:nth-child(2) img {
+        width: 1.4rem;
+        height: 1.1rem;
+    }
+
+    &__listItem:nth-child(3) img {
+        width: 1.169rem;
+        height: 1.488rem;
+    }
+
+    &__desc {
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+    &__wrapperBotNext {
+        padding-top: 2.2rem;
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        padding-bottom: 2rem;
+    }
+    &__politics {
+        color: $gray;
+        font-size: 1.2rem;
+        display: flex;
+        gap: 3rem;
+    }
+
+    &__politicsLink {
+        color: $gray;
+        font-size: 1.2rem;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    &__navItem {
+        @extend %easyHover;
+
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 142%;
+
+        
+        
+        /* белый */
+        
+        color: $white;
+    }
+
+    &__messageContainer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+        svg {
+            width: 1.629rem;
+            height: 1.35rem;
+            fill: $white;
+        }
+    }
+    &__mesIconBot {
+        @extend %easyHover;
+
+        background-color: $persic;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__mesIconBot:nth-child(2) svg{
+        width: 1.82rem;
+        height: 1.82rem;
+        margin-right: 0.2rem;
+    }
+
+}

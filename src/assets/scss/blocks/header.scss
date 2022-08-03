@@ -1,6 +1,6 @@
 .header {
     font-family: InterReg;
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, calc(1vmin + 0.1rem) ,2rem);
     background-color: $black;
     height: 9.7rem;
 
@@ -10,41 +10,84 @@
 
     padding-left: $border;
     padding-right: $border;
+
+    @include breakpoint($cos-bp) {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    @include breakpoint($xl-bp) {
+        padding-left: $border-min;
+        padding-right: $border-min;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
     &__item {
         color: $white;
+
+        @extend %easyHover;
+
+        @include breakpoint($xl-bp) {
+            display: none;
+        }
     }
     &__logo {
         color: $white;
         font-weight: 700;
+        white-space: nowrap;
+        @extend %easyHover;
+        @include breakpoint($xl-bp) {
+            font-size: 2rem;
+        }
     }
     &__list {
         display: flex;
         gap: 3rem;
+        @include breakpoint($cos_bp) {
+            gap: clamp(1.2rem, calc(1vmin + 1rem) , 3rem);
+        }
+        @include breakpoint($xl-bp) {
+            display: none;
+        }
     }
 
     &__contacts {
         display: flex;
         align-items: center;
         gap: 2rem;
+        @include breakpoint($cos_bp) {
+            gap: clamp(1rem, calc(1vmin + 1rem) , 2rem);
+            justify-content: center;
+        }
     }
     &__contactItem {
         fill: $black;
         stroke-width: 0.1rem;
+        @extend %easyHover;
     }
     &__telegramIcon {
         width: 2.8rem;
         height: 2.2rem;
         stroke: $white;
+        @include breakpoint($xl-bp) {
+            display: none;
+        }
     }
     &__whatsUpIcon {
         width: 2.3rem;
         height: 2.5rem;
-        // stroke: $white;
+        @include breakpoint($xl-bp) {
+            display: none;
+        }
     }
     &__phoneIcon {
         stroke: $white;
         width: 2.5rem;
         height: 2.5rem;
+        @include breakpoint($xl-bp) {
+            display: none;
+        }
     }
     &__searchIcon {
         width: 2rem;
@@ -59,5 +102,14 @@
         cursor: pointer;
         width: 5.2rem;
         height: 1.5rem;
+        @include breakpoint($xl-bp) {
+            display: none;
+        }
+    }
+    .left {
+        display: none;
+        @include breakpoint($xl-bp) {
+            display: block;
+        }
     }
 }
