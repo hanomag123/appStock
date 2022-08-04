@@ -45,18 +45,20 @@ function preLoad() {
     }
 }
 
-async function loadMainImg() {
-    function loadImg() {
-        const homeImg = document.querySelector('.home__bg')
-        homeImg.classList.remove('blur')
-        homeImg.src = this.src
+function preloadMainImg(callback) {
+        let img = document.createElement('img');
+        img.onload = img.onerror = callback;
+        img.src = './assets/images/main/mainBg.png';
     }
 
-    const mainImg = document.createElement('img')
-    mainImg.src = './assets/images/main/mainBg.png'
-    
-    mainImg.addEventListener('load', loadImg)
-}
+    function changeBlurImg() {
+    if (Boolean(this.width)) {
+            const homeImg = document.querySelector('.home__bg')
+            homeImg.classList.remove('blur')
+            homeImg.src = this.src
+    }
+    }
+
 
 const swiper = new Swiper(".topSales__catalog", {
     slidesPerView: 2,
@@ -96,7 +98,7 @@ const newsSwiper = new Swiper(".news__swiper", {
 
 mainObserver()
 preLoad()
-loadMainImg()
+preloadMainImg(changeBlurImg);
 })
 
 
