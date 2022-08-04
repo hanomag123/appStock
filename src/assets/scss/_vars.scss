@@ -6,7 +6,7 @@ $gray: #8D8D8D;
 $black: #201F1F;
 $persic: #C68457;
 
-$cos_bp: 1330px;
+$cos_bp: 1460px;
 $xl-bp: 1024px;
 
 $lg-bp: 920px;
@@ -28,16 +28,34 @@ $lb-bp: 650px;
 $border: 8rem;
 $border-min: 2rem;
 
-$trans: all .4s ease-in-out;
+$trans: background-color .4s ease-in-out, color .4s ease-in-out;
 
 %easyHover {
     & {
         will-change: transform;
         cursor: pointer;
-        transition: $trans;
+        transition: transform .4s ease-in-out;
     }
     &:hover {
         transform: scale(1.08);
+    }
+}
+
+%title {
+    font-weight: 700;
+    font-size: 6rem;
+    color: $black;
+    line-height: 7.3rem;
+
+    margin-top: 12rem;
+    margin-bottom: 5rem;
+
+    @media screen and (max-width: $sm-bp) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+
+        margin-top: 8rem;
+        margin-bottom: 5rem;;
     }
 }
 
@@ -82,7 +100,7 @@ $trans: all .4s ease-in-out;
 
     cursor: pointer;
 
-    transition: all .5s ease-in-out;
+    transition: $trans;
     &:hover {
         background-color: $persic;
         .icon {
@@ -140,7 +158,14 @@ $trans: all .4s ease-in-out;
     justify-content: center;
     padding: 1rem;
 
-    transition: all .5s ease-in-out;
+    transition: $trans;
+
+    @media screen and (max-width: $sm-bp) {
+        border: 0;
+        background-color: $ligthGrey;
+        padding: 0.5rem;
+        height: min-content;
+    }
 
     svg {
         width: 2.5rem;
@@ -151,8 +176,14 @@ $trans: all .4s ease-in-out;
 
     &:hover {
         background-color: $persic;
+        @media screen and (max-width: $sm-bp) {
+            background-color: $ligthGrey;
+        }
         svg {
             stroke: $white;
+            @media screen and (max-width: $sm-bp) {
+                stroke: $persic;
+            }
         }
     }
 }

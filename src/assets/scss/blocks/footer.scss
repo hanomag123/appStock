@@ -1,6 +1,10 @@
 .footer {
-
+    overflow: hidden;
     &__top {
+        @include breakpoint($sm-bp) {
+            padding-left: $border-min;
+            padding-right: $border-min;
+        }
         padding-top: 5.5rem;
 
         min-height: 34.8rem;
@@ -19,6 +23,11 @@
         font-size: 6rem;
         line-height: 7.3rem;
         text-align: center;
+        @include breakpoint($xl-bp) {
+            font-size: clamp(3rem, 3rem + 1vmax, 6rem);
+            line-height: 1.2em;
+        }
+
     }
 
     &__wrapper {
@@ -26,6 +35,9 @@
         align-items: center;
         justify-content: center;
         gap: 6rem;
+        @include breakpoint($xl-bp) {
+            gap: 4rem;
+        }
     }
 
     &__mesItem {
@@ -62,10 +74,18 @@
     &__mesName {
         font-family: 'InterMed';
         font-size: 2.4rem;
-        line-height: 2.9rem;        
+        line-height: 2.9rem; 
+        @include breakpoint($xl-bp) {
+            font-size: clamp(1.8rem, 1.8rem + 1vmax, 2.4rem);
+            line-height: 1.2em;
+        }       
     }
 
     &__bottom {
+        @include breakpoint($sm-bp) {
+            padding-left: $border-min;
+            padding-right: $border-min;
+        }
         padding-top: 2.7rem;
         padding-left: $border;
         padding-right: $border;

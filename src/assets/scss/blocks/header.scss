@@ -21,7 +21,7 @@
         padding-right: $border-min;
 
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     &__item {
         color: $white;
@@ -85,9 +85,6 @@
         stroke: $white;
         width: 2.5rem;
         height: 2.5rem;
-        @include breakpoint($xl-bp) {
-            display: none;
-        }
     }
     &__searchIcon {
         width: 2rem;
@@ -102,9 +99,6 @@
         cursor: pointer;
         width: 5.2rem;
         height: 1.5rem;
-        @include breakpoint($xl-bp) {
-            display: none;
-        }
     }
     .left {
         display: none;
