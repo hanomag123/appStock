@@ -45,7 +45,7 @@ function preLoad() {
     }
 }
 
-function loadMainImg() {
+async function loadMainImg() {
     function loadImg() {
         const homeImg = document.querySelector('.home__bg')
         homeImg.classList.remove('blur')
@@ -54,7 +54,7 @@ function loadMainImg() {
 
     const mainImg = document.createElement('img')
     mainImg.src = './assets/images/main/mainBg.png'
-
+    
     mainImg.addEventListener('load', loadImg)
 }
 

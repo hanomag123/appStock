@@ -323,7 +323,11 @@
             justify-content: center;
         }
         &__image {
+            height: 33.5rem;
             // object-fit: contain;
+            @include breakpoint($xl-bp) {
+                height: unset;
+            }
         }
         &__item:nth-child(1) {
             color: $white;

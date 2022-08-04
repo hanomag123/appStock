@@ -78,19 +78,27 @@
         @include breakpoint($xl-bp) {
             font-size: clamp(1.8rem, 1.8rem + 1vmax, 2.4rem);
             line-height: 1.2em;
-        }       
+        }   
+        @include breakpoint($sm-bp) {
+            font-size: 1.8rem;
+        }        
     }
 
     &__bottom {
-        @include breakpoint($sm-bp) {
-            padding-left: $border-min;
-            padding-right: $border-min;
-        }
         padding-top: 2.7rem;
         padding-left: $border;
         padding-right: $border;
 
         background-color: $black;
+        @include breakpoint($xl-bp) {
+            display: flex;
+            justify-content: space-between;
+            }
+
+        @include breakpoint($sm-bp) {
+            padding-left: $border-min;
+            padding-right: $border-min;
+        }
     }
 
     &__wrapperBot {
@@ -99,6 +107,12 @@
         padding-bottom: 2.7rem;
 
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        @include breakpoint($xl-bp) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        }
     }
 
     &__logo {
@@ -111,6 +125,9 @@
         /* серый лайт */
         
         color: $ligthGrey;
+        @include breakpoint($xl-bp) {
+            // grid-column: 2 span;
+            }
     }
 
     &__categorys {
@@ -118,6 +135,11 @@
         gap: 1rem;
         align-items: center;
         justify-content: center;
+        @include breakpoint($xl-bp) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: .5rem;
+            }
     }
 
     &__categoryItem {
@@ -175,12 +197,21 @@
         align-items: center;
         grid-template-columns: repeat(3, 1fr);
         padding-bottom: 2rem;
+        @include breakpoint($xl-bp) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: 4.2rem;
+            }
     }
     &__politics {
         color: $gray;
         font-size: 1.2rem;
         display: flex;
         gap: 3rem;
+        @include breakpoint($xl-bp) {
+            display: none;
+            }
     }
 
     &__politicsLink {
@@ -192,6 +223,10 @@
         display: flex;
         justify-content: center;
         gap: 1rem;
+        @include breakpoint($xl-bp) {
+            flex-direction: column;
+            gap: .5rem;
+            }
     }
 
     &__navItem {
@@ -218,6 +253,9 @@
             height: 1.35rem;
             fill: $white;
         }
+        @include breakpoint($xl-bp) {
+            align-self: flex-end;
+        }
     }
     &__mesIconBot {
         @extend %easyHover;
@@ -236,4 +274,17 @@
         margin-right: 0.2rem;
     }
 
+    &__wrapperPolitics {
+        
+        display: none;
+        background-color: $black;
+        height: 4.5rem;
+        padding-left: $border-min;
+        padding-right: $border-min;
+        @include breakpoint($xl-bp) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
 }
