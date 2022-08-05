@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function mainObserver() {
     const options = {
-        rootMargin: '0px 1000px 0px 1000px'
     }
     function vdHandler(els) {
         els.forEach((data) => {
@@ -46,7 +45,7 @@ function preLoad() {
 }
 
 function preloadMainImg(callback) {
-        let img = document.createElement('img');
+        const img = document.createElement('img');
         img.onload = img.onerror = callback;
         img.src = './assets/images/main/mainBg.png';
     }
@@ -74,8 +73,12 @@ const swiper = new Swiper(".topSales__catalog", {
     breakpoints: {
         // when window width is >= 1024px
         1024: {
-            slidesPerView: 5,
+            slidesPerView: 4,
             spaceBetween: 20
+        },
+        1545: {
+            slidesPerView: 5,
+            spaceBetween: 40,
         },
     }
 });

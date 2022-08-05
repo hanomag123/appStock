@@ -39,6 +39,10 @@
             justify-content: space-between;
             gap: 4rem;
         }
+        @include breakpoint($mb-bp) {
+            padding-left: $border-average;
+            padding-right: $border-average;
+        }
         @include breakpoint($sm-bp) {
             padding-left: $border-min;
             padding-right: $border-min;
@@ -49,10 +53,16 @@
             align-self: flex-end;
             width: 100%;
             height: 100%;
-            margin-left: auto;
+            margin-left: 10rem;
+            padding-top: 10rem;
             object-position: 50% 100%;
             @include breakpoint($xl-bp) {
                 max-height: 50%;
+                margin-left: auto;
+                padding-top: unset;
+            }
+            @include breakpoint($sm-bp) {
+                object-position: left;
             }
         }
 
@@ -65,27 +75,37 @@
             padding-top: 12.2rem;
 
             font-size: 10rem;
-            text-transform: uppercase;
             font-weight: 700;
 
             display: flex;
             flex-direction: column;
             gap: 4.5rem;
+            @include breakpoint($pm-bp) {
+                align-self: center;
+                padding-top: 0;
+            }
             @include breakpoint($cos-bp) {
-                font-size: clamp(5rem, calc(5rem + 1vmin), 10rem);
+                font-size: clamp(5rem, calc(7rem + 1vmin), 10rem);
                 gap: clamp(1rem, 1rem + 1vmin, 4.5rem);
             }
             @include breakpoint($xl-bp) {
+                font-size: clamp(5rem, calc(5rem + 1vmin), 10rem);
                 padding-top: 3.4rem;
             }
-            @include breakpoint($sm-bp) {
-                font-size: 4rem;
+            @include breakpoint($mb-bp) {
                 width: 100%;
+            }
+            @include breakpoint($sm-bp) {
+                font-size: 5rem;
+                width: 100%;
+                text-transform: unset;
+                gap: 1rem;
             }
         }
 
         &__text {
             line-height: 1.1em;
+            text-transform: uppercase;
         }
 
         &__text:nth-child(1) {
@@ -93,14 +113,17 @@
         }
 
         &__text:nth-child(2) {
-            color:  $persic;
+            color:  $black;
             font-family: InterReg;
-            -webkit-text-stroke: 0.01rem $persic;
-            -webkit-text-fill-color: transparent;
+            text-shadow:
+            -0.1rem 0 0 $persic, /* Тень влево */
+            0 -0.1rem 0 $persic, /* Тень вверх */
+            0.1rem 0 0 $persic, /* Тень вправо */
+            0 0.1rem 0 $persic; 
             
             padding-left: 16rem;
             width: 43.7rem;
-            @include breakpoint($sm-bp) {
+            @include breakpoint($mb-bp) {
                 padding-left: 0;
             }
         }
@@ -109,7 +132,7 @@
             margin-left: 30rem;
             width: max-content;
             text-align: end;
-            @include breakpoint($sm-bp) {
+            @include breakpoint($mb-bp) {
                 margin-left: 0;
             }
         }
@@ -119,8 +142,13 @@
 
             margin-top: 2.1rem;
             margin-left: auto;
-            @include breakpoint($sm-bp) {
+            @include breakpoint($xl-bp) {
+                width: 16rem;
+            }
+            @include breakpoint($mb-bp) {
+                width: 100%;
                 margin-left: 0;
+                margin-top: 5rem;
             }
         }
     }
@@ -132,6 +160,10 @@
         @include breakpoint($sm-bp) {
             padding-left: $border-min;
             padding-right: $border-min;
+        }
+
+        &__catalog {
+            overflow: visible;
         }
 
         &__img {
@@ -156,7 +188,7 @@
             border-radius: 1rem;
             padding: 4rem;
             width: 33.2rem;
-            height: 49.7rem;
+            min-height: 497px;
 
             background: #F3F3F3;
 
@@ -288,6 +320,10 @@
 
             @extend %easyHover;
 
+            img {
+                width: 33.5rem;
+            }
+
             @include breakpoint($sm-bp) {
                 height: min-content;
                 padding-top: 1.5rem;
@@ -330,6 +366,9 @@
         &__item:nth-child(1) {
             color: $white;
             background-color: #000000;
+            img {
+                width: 64.5rem;
+            }
             @include breakpoint($hb-bp) {
                 img {
                     width: 100%;
@@ -337,6 +376,9 @@
             }
         }
         &__item:nth-child(7) {
+            img {
+                width: 64.5rem;
+            }
             @include breakpoint($hb-bp) {
                 img {
                     align-self: flex-end;
@@ -362,8 +404,6 @@
 
 		&__title {
             @extend %title;
-            
-
 		}
 
 		&__container {
@@ -385,6 +425,9 @@
             text-transform: uppercase;
                         
             color: $persic;
+            @include breakpoint($mb-bp) {
+                font-size: clamp(6rem, 6rem + 2vmax, 10rem);
+            }
 
             @include breakpoint($sm-bp) {
                 font-size: 6rem;
@@ -423,6 +466,11 @@
         }
 
         &__pref {
+            @include breakpoint($mb-bp) {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
             @include breakpoint($sm-bp) {
                 display: flex;
                 flex-direction: column;
@@ -433,7 +481,7 @@
 		&__listTitle {
             display: flex;
             align-items: center;
-            width: 82.2rem;
+            // width: 82.2rem;
             height: 14.6rem;
             
             /* Bold/60 */
@@ -451,6 +499,11 @@
                 font-size: clamp(2.2rem, 3rem + 1vmax, 6rem);
                 line-height: 1.2em;
             }
+            @include breakpoint($mb-bp) {
+                font-size: 3.2rem;
+                line-height: 1.2em;
+                height: min-content;
+            }
             @include breakpoint($sm-bp) {
                 font-size: 2.2rem;
                 line-height: 1.2em;
@@ -459,21 +512,36 @@
             }
 		}
         &__dot {
-            position: relative;
-            display: inline-block;
             width: 11.9rem;
-            height: 11.9rem;
-            background: #FFFFFF;
-            box-shadow: 0px 0.4rem 2.4rem rgba(0, 0, 0, 0.15);
+            position: relative;
             border-radius: 50%;
+            box-shadow: 0px 0.4rem 2.4rem rgba(0, 0, 0, 0.15);
+
             @include breakpoint($xl-bp) {
-                width: clamp(3.2rem, 5rem + 1vmax, 11.9rem);
-                height: clamp(3.2rem, 5rem + 1vmax, 11.9rem);
+                width: clamp(3.2rem, 5rem + 1vmax, 10rem);
             }
-            @include breakpoint($sm-bp) {
+            @include breakpoint($mb-bp) {
                 width: 3.2rem;
-                height: 3.2rem;
             }
+        }
+        .ratio-inner {
+            position: relative;
+            height: 0;
+            border: none;
+        }
+        
+        .ratio-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: #FFFFFF;
+            border-radius: 50%;
+        }
+        
+        .ratio-4-3 {
+            padding-top: 100%; /* 100% ширины делим на 4 и умножаем на 3 */
         }
         &__dot:before {
             position: absolute;
@@ -481,9 +549,10 @@
             width: 40%;
             height: 40%;
             border-radius: 50%;
-            border: 2px solid $persic;
+            border: 0.2rem solid $persic;
             left: calc(50% - 20%);
             top: calc(50% - 20%);
+            z-index: 2;
         }
     }
 
@@ -631,7 +700,7 @@
     .news {
         padding-right: $border;
 
-        @include breakpoint($hb-bp) {
+        @include breakpoint($mb-bp) {
             padding-right: $border;
             padding-left: $border;
         }
@@ -641,6 +710,10 @@
         }
         &__title {
             @extend %title;
+            @include breakpoint($sm-bp) {
+                padding-right: $border-min;
+                padding-left: $border-min;
+            }
         }
         &__container {
             display: flex;
@@ -651,22 +724,25 @@
         }
         &__imgBg:first-child {
             height: 60.9rem;
-            @include breakpoint($hb-bp) {
+            @include breakpoint($mb-bp) {
                 display: none;
             }
         }
         &__imgBg:nth-child(2) {
             height: 51.2rem;
-            @include breakpoint($hb-bp) {
+            @include breakpoint($mb-bp) {
                 display: none;
             }
         }
         &__swiper {
             margin-right: 0;
             width: 80%;
-            height: 630px;
+            height: min-content;
             @include breakpoint($hb-bp) {
                 margin: 0;
+            }
+            @include breakpoint($sm-bp) {
+                height: min-content;
             }
         }
         .swiper__slide {
@@ -676,7 +752,6 @@
             justify-content: center;
         }
         &__slide {
-            padding-left: -20px;
             display: grid;
             column-gap: 7.2rem;
             row-gap: 2rem;
@@ -686,27 +761,28 @@
             "img button";
 
             grid-template-rows: 1fr 1fr 2fr;
-            @include breakpoint($hb-bp) {
+            @include breakpoint($pm-bp) {
                 grid-template-areas:
                 "img" 
                 "date"
                 "title"
                 "button";
     
-                grid-template-rows: 1fr .5fr 3fr 1fr;
+                grid-template-rows: min-content 4rem minmax(10rem, 20rem) 5.2rem;
                 align-items: flex-start;
                 justify-content: flex-start;
+            }
+            @include breakpoint($xl-bp) {
+                grid-template-rows: min-content 4rem minmax(10rem, 1fr) 5.2rem;
+            }
+            @include breakpoint($sm-bp) {
+                grid-template-rows: 1fr min-content min-content 5.2rem;
             }
         }
 
         &__img {
             width: 100%;
             grid-area: img;
-
-            @include breakpoint($hb-bp) {
-                width: 33.6rem;
-                height: 30.8rem;
-            }
         }
         &__date {
             color: $black;
@@ -729,8 +805,15 @@
 
             @include breakpoint($xl-bp) {
                 font-size: clamp(2.2rem, 2.2rem + 1vmax, 4rem);
-                width: min-content;
-                height: max-content;
+                width: unset;
+            }
+            @include breakpoint($sm-bp) {
+                font-family: InterBold;
+                font-weight: 700;
+                font-size: 2.2rem;
+                line-height: 2.5rem;
+                width: calc(100% - 4rem);
+                height: min-content;
             }
         }
         &__button {
@@ -742,6 +825,9 @@
         &__buttonContainer {
             width: 100%;
             display: flex;
+            @include breakpoint($sm-bp) {
+                margin-top: 4rem;
+            }
         }
         &__prevButton {
             margin-left: auto;
@@ -749,6 +835,9 @@
         }
         &__nextButton {
             @extend %nextButton;
+            @include breakpoint($sm-bp) {
+                margin-right: $border-min;
+            }
         }
     
     }
@@ -776,8 +865,10 @@
             @include breakpoint($xl-bp) {
                 flex-direction: column;
                 align-items: flex-start;
+                height: 100rem;
+            }
+            @include breakpoint($sm-bp) {
                 height: 80rem;
-                // margin-bottom: 20rem;
             }
         }
 
