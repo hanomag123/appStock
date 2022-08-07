@@ -42,6 +42,20 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
     }
 }
 
+%scaleHover {
+    @media(any-hover: hover) {
+        & {
+            will-change: transform;
+            cursor: pointer;
+            transition: transform .4s ease-in-out;
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+
 %title {
     font-weight: 700;
     font-size: 6rem;
@@ -86,10 +100,14 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
 }
 
 %prevButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 0;
     height: 4rem;
     width: 3.5rem;
     border: 0.1rem solid $persic;
+    border-right: 0;
     border-radius: 0.5rem 0rem 0rem 0.5rem;
     background-color: transparent;
     .icon {
@@ -110,9 +128,14 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
     }
 }
 %nextButton {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 4rem;
     width: 3.5rem;
     border: 0.1rem solid $persic;
+    border-left: 0;
     border-radius: 0rem 0.5rem 0.5rem 0rem;
     background-color: transparent;
 
@@ -126,6 +149,14 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
 
         transition: $trans;
     }
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 0.1rem;
+        background-color: $persic;
+        left: 0;
+    }
 
     &:hover {
         background-color: $persic;
@@ -136,9 +167,13 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
 }
 
 %input {
+    font-family: InterMed;
     height: 5rem;
     width: 44.5rem;
-    color: $gray;
+    font-weight: 500;
+
+    color: $black;
+
     border: 0.1rem solid $gray;
     border-radius: 0.5rem;
 
@@ -147,6 +182,9 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
     line-height: 142%;
 
     padding: 2rem;
+    &::placeholder {
+        color: $gray;
+    }
 }
 
 %busketButton {

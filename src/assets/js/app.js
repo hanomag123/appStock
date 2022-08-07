@@ -99,9 +99,38 @@ const newsSwiper = new Swiper(".news__swiper", {
     reverseDirection: false,
 });
 
+function focusInput () {
+    for (const form of document.forms) {
+        const inputForms = form.querySelectorAll('input')
+        inputForms.forEach(input => {
+            input.addEventListener('blur', blurListen)
+        })
+    }
+
+    function blurListen (event) {
+        const target = event.target
+        const isHaveValue = Boolean(target.value)
+        isHaveValue ? target.classList.add('input-container__haveValue') : target.classList.remove('input-container__haveValue')
+    }
+}
+
+function activateMenu () {
+    const toggleMenuButtons = document.querySelectorAll('.toggleMenuButton') 
+    const menu = document.querySelector('.menu') || null
+    if (toggleMenuButtons[0] && Boolean(menu)) { 
+        toggleMenuButtons.forEach(button => {
+            button.onclick = () => {
+                menu.classList.toggle('active')
+            }
+        })
+    }
+}
+
+focusInput()
 mainObserver()
 preLoad()
 preloadMainImg(changeBlurImg);
+activateMenu()
 })
 
 

@@ -288,9 +288,12 @@
         <div class="subscribe__container">
             <form class="subscribe__form">
                 <text class="subscribe__topText">Подпишись на рассылку, чтобы быть в курсе акций и самых горячих предложений от магазина</text>
-                <input class="subscribe__email" type="email" placeholder="Почта">
+                <div class="input-container subscribe__email">
+                    <input class="contacts__phone input-container__main" type="text">
+                    <span class="input-container__placeholder">Почта</span>
+                </div>
                 <text class="subscribe__notification">Отправляя форму, вы соглашаетесь c политикой конфиденциальности</text>
-                <input class="subscribe__submit" type="submit" value="Отправить">
+                <button class="subscribe__submit" type="submit">Отправить</button>
             </form>
             <img loading="lazy" class="subscribe__img observe" src='./assets/images/1x1.png' data-src="./assets/images/main/subscribe/subscribeBG.jpg" alt="bg">
         </div>
@@ -348,24 +351,27 @@
                 <ul class="contacts__list">
                     <li class="contacts__listItem">
                         <img loading="lazy" src='./assets/images/1x1.png' data-src="./assets/images/main/contacts/contactsIcon-1.svg" alt="icon" class="contacts__icon">
-                        <text class="contacts__desc">г.Москва, ул.Московская,98-3</text>
-                        <text class="contacts__workHours">ежедневно с 10:00 до 20:00</text>
+                        <a class="contacts__desc" href="#">г.Москва, ул.Московская,98-3</a>
+                        <div class="contacts__workHours">ежедневно с 10:00 до 20:00</div>
                     </li>
                     <li class="contacts__listItem">
                         <img loading="lazy" src='./assets/images/1x1.png' data-src="./assets/images/main/contacts/contactsIcon-2.svg" alt="icon" class="contacts__icon">
-                        <text class="contacts__desc">+7-919-683-79-79</text>
+                        <a class="contacts__desc" href="tel:+7-919-683-79-79">+7-919-683-79-79</a>
                     </li>
                     <li class="contacts__listItem">
                         <img loading="lazy" src='./assets/images/1x1.png' data-src="./assets/images/main/contacts/contactsIcon-3.svg" alt="icon" class="contacts__icon">
-                        <text class="contacts__desc">AppleStock@mail.ru</text>
+                        <a class="contacts__desc" href="AppleStock@mail.ru">AppleStock@mail.ru</a>
                     </li>
                 </ul>
                 
 
-                <text class="contacts__topText">Заказать звонок</text>
-                <input class="contacts__phone" type="phone" placeholder="Телефон">
-                <text class="contacts__notification">Отправляя форму, вы соглашаетесь c политикой конфиденциальности</text>
-                <input class="contacts__submit" type="submit" value="Отправить">
+                <h3 class="contacts__topText">Заказать звонок</h3>
+                <div class="input-container">
+                    <input class="contacts__phone input-container__main" type="phone">
+                    <span class="input-container__placeholder">Телефон</span>
+                </div>
+                <div class="contacts__notification">Отправляя форму, вы соглашаетесь c политикой конфиденциальности</div>
+                <button class="contacts__submit" type="submit">Отправить</button>
             </form>
             <img loading="lazy" class="contacts__img observe" src='./assets/images/1x1.png' data-src="./assets/images/main/contacts/contactsBg.jpg" alt="bg">
         </div>

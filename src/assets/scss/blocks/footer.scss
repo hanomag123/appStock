@@ -1,5 +1,7 @@
 .footer {
     overflow: hidden;
+    font-family: InterMed;
+
     &__top {
         @include breakpoint($sm-bp) {
             padding-left: $border-min;
@@ -58,6 +60,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        
         svg {
             width: 2.548rem;
             height: 2.548rem;
@@ -75,6 +78,7 @@
         font-family: 'InterMed';
         font-size: 2.4rem;
         line-height: 2.9rem; 
+        color: $white;
         @include breakpoint($xl-bp) {
             font-size: clamp(1.8rem, 1.8rem + 1vmax, 2.4rem);
             line-height: 1.2em;
@@ -102,13 +106,13 @@
     }
 
     &__wrapperBot {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding-bottom: 2.7rem;
 
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         @include breakpoint($xl-bp) {
-        display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 2rem;
@@ -117,6 +121,7 @@
 
     &__logo {
         @extend %easyHover;
+        font-family: InterReg;
 
         font-weight: 700;
         font-size: 2rem;
@@ -125,9 +130,6 @@
         /* серый лайт */
         
         color: $ligthGrey;
-        @include breakpoint($xl-bp) {
-            // grid-column: 2 span;
-            }
     }
 
     &__categorys {
@@ -170,6 +172,10 @@
         grid-row-gap: 1rem;
         align-items: center;
         width: 18.5rem;
+    }
+
+    &__desc {
+        color: $white;
     }
 
     &__icon {
