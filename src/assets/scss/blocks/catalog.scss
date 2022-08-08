@@ -1,0 +1,347 @@
+.catalog {
+    
+    font-family: 'Inter';
+    font-style: normal;
+    
+    .titleContainer {
+        background: #201F1F;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include breakpoint($xl-bp) {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+        .title {
+            font-weight: 700;
+            font-size: 16rem;
+            line-height: 19.4rem;
+            text-transform: uppercase;
+            color: #FFFFFF;
+
+            @include breakpoint($xl-bp) {
+                text-align: center;
+            }
+        }
+
+        .subtitle {
+            font-weight: 700;
+            font-size: 6rem;
+            line-height: 7.3rem;
+            color: #FFFFFF;
+        }
+
+        .imgContainer {
+            margin-top: 6.2rem;
+            // width: 100%;
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .blocksContainer {
+        font-family: 'Inter';
+        font-style: normal;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3.7rem;
+        margin-top: 12rem;
+        justify-content: center;
+        width: 100%;
+
+        @include breakpoint($cos-bp) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
+
+        
+        @include breakpoint($lg-bp) {
+            grid-template-columns: 1fr;
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+
+        .bigWhiteContainer {
+            width: 64.5rem;
+            @include breakpoint($cos-bp) {
+                grid-column: 2 span;
+                width: auto;
+            }
+
+            @include breakpoint($lg-bp) {
+                grid-column: auto;
+            }
+        }
+
+        .blackContainer {
+            background: #201F1F;
+            width: 64.5rem;
+            color: #FFFFFF;
+            @include breakpoint($cos-bp) {
+                grid-column: 2 span;
+                width: auto;
+            }
+            @include breakpoint($lg-bp) {
+                grid-column: auto;
+            }
+        }
+
+        .litBlackContainer {
+            background: #201F1F;
+            color: #FFFFFF;
+        }
+
+        a {
+            padding-top: 4rem;
+            background: #F3F3F3;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5.1rem;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 3.6rem;
+            color: #201F1F;
+            width: 33.5rem;
+            img {
+                height: 25.4rem;
+            }
+            @include breakpoint($cos-bp) {
+                width: 100%;
+            }
+        }
+
+        a:last-child {
+            @include breakpoint($cos-bp) {
+                grid-column: 3 span;
+            }
+            @include breakpoint($lg-bp) {
+                grid-column: auto;
+            }
+        }
+    }
+
+    .whyContainer {
+        margin-top: 12rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        @include breakpoint($lb-bp) {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+        
+        .title {
+            font-weight: 700;
+            font-size: 4rem;
+            line-height: 4.8rem;
+            color: #201F1F;
+            width: 72.6rem;
+            text-align: center;
+
+            @include breakpoint($lb-bp) {
+                width: auto;
+            }
+        }
+
+        .circulContainer {
+            margin-top: 3rem;
+
+            
+            
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 6rem;
+                li {
+                    display: flex;
+                    gap: 3rem;
+                    align-items: center;
+
+                    .circul {
+                        width: 6.7rem;
+                        height: 6.7rem;
+                        box-shadow: 0px 0.4rem 2.4rem rgba(0, 0, 0, 0.15);
+                        border-radius: 50%;
+                        position: relative;
+                        // @include breakpoint($lb-bp) {
+                        //     width: 2rem;
+                        //     height: 2rem;
+                        // }
+                    }
+
+                    .circul::before {
+                        content: '';
+                        width: 40%;
+                        height: 40%;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform:translate(-50%, -50%);
+                        border-radius: 50%;
+                        border: 0.2rem solid #C68457;
+                    }
+
+                    .text {
+                        font-weight: 400;
+                        font-style: normal;
+                        font-size: 1.8rem;
+                        line-height: 136%;
+                        color: #201F1F;
+                        width: 60rem;
+
+                        @include breakpoint($lb-bp) {
+                            width: 50rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .imgContainer {
+            margin-top: 7rem;
+            // width: 100%;
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .advantageContainer {
+        margin-top: 12rem;
+        display: flex;
+        gap: 3rem;
+        flex-wrap: wrap;
+        justify-content: center;
+
+
+        @include breakpoint($mb-bp) {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+        
+        
+
+        .firstContainer {
+            width: 86.5rem;
+            background: #201F1F;
+            border-radius: 1rem;
+            padding-top: 6.5rem;
+            
+            display: flex;
+            flex-direction: column;
+            gap: 15.3rem;
+
+            img {
+                width: 100%;
+            }
+
+            p {
+                font-weight: 700;
+                font-size: 6rem;
+                line-height: 7.3rem;
+                color: #FFFFFF;
+                padding-left: 6.5rem;
+            }
+
+            div {
+                display: flex;
+                justify-content: center;
+            }
+
+        }
+
+        .secondContainer {
+            width: 86.5rem;
+            padding-top: 47.1rem;
+            padding-left: 6.5rem;
+            background-image: url(../images/catalog/bgGirl.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 1rem;
+            background-size: cover;
+
+            p {
+                font-weight: 700;
+                font-size: 6rem;
+                line-height: 7.3rem;
+                color: #FFFFFF;
+            }
+        }   
+    }
+
+    .profitContainer {
+        margin-top: 12rem;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12rem;
+
+        @include breakpoint($cos-bp) {
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
+
+        @include breakpoint($lg-bp) {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+
+        .helpContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+
+            .title {
+                font-weight: 700;
+                font-size: 4rem;
+                line-height: 48px;
+                color: #201F1F;
+            }
+
+            .containers {
+                display: flex;
+                gap: 3rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                div {
+                    width: 56.7rem;
+                    background: #F3F3F3;
+                    border-radius: 1rem;
+                    padding-top: 8.5rem;
+                    padding-bottom: 8.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 2rem;
+        
+                    p {
+                        font-weight: 500;
+                        font-size: 2.4rem;
+                        line-height: 2.9rem;
+                        color: #201F1F;
+                    }
+                }
+            }
+    
+            
+        }
+
+        
+    }
+}
