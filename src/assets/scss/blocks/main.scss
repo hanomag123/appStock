@@ -3,6 +3,19 @@
     font-family: Inter;
     overflow: hidden;
 
+        padding-left: $border;
+        padding-right: $border;
+
+        @include breakpoint($cos-bp) {
+            padding-left: $border-average;
+            padding-right: $border-average;
+        }
+
+        @include breakpoint($xl-bp) {
+            padding-left: $border-min;
+            padding-right: $border-min;
+        }
+
     .observe {
         transform: translateX(100%);
         opacity: 0;
@@ -32,6 +45,17 @@
         grid-template-columns: 1fr 2fr;
         margin-left: auto;
         overflow: hidden;
+
+        margin-left: -$border;
+
+        @include breakpoint($cos-bp) {
+            margin-left: -$border-average
+        }
+
+        @include breakpoint($xl-bp) {
+            margin-left: -$border-min;
+        }
+
         @include breakpoint($xl-bp) {
             display: flex;
             flex-direction: column-reverse;
@@ -155,13 +179,13 @@
     }
 
     .topSales {
-        padding-left: $border;
-        padding-right: $border;
+        // padding-left: $border;
+        // padding-right: $border;
 
-        @include breakpoint($sm-bp) {
-            padding-left: $border-min;
-            padding-right: $border-min;
-        }
+        // @include breakpoint($sm-bp) {
+        //     padding-left: $border-min;
+        //     padding-right: $border-min;
+        // }
 
         &__catalog {
             overflow: visible;
@@ -275,13 +299,13 @@
             }
     }
     .categories {
-        padding-left: $border;
-        padding-right: $border;
+        // padding-left: $border;
+        // padding-right: $border;
 
-        @include breakpoint($sm-bp) {
-            padding-left: $border-min;
-            padding-right: $border-min;
-        }
+        // @include breakpoint($sm-bp) {
+        //     padding-left: $border-min;
+        //     padding-right: $border-min;
+        // }
         &__nav {
             display: flex;
             flex-wrap: wrap;
@@ -413,13 +437,13 @@
 
     .aboutCompany {
 
-        padding-left: $border;
-        padding-right: $border;
+        // padding-left: $border;
+        // padding-right: $border;
 
-        @include breakpoint($sm-bp) {
-            padding-left: $border-min;
-            padding-right: $border-min;
-        }
+        // @include breakpoint($sm-bp) {
+        //     padding-left: $border-min;
+        //     padding-right: $border-min;
+        // }
 
 		&__title {
             @extend %title;
@@ -583,13 +607,13 @@
     }
 
     .benefits {
-        padding-right: $border;
-        padding-left: $border;
+        // padding-right: $border;
+        // padding-left: $border;
 
-        @include breakpoint($sm-bp) {
-            padding-left: $border-min;
-            padding-right: $border-min;
-        }
+        // @include breakpoint($sm-bp) {
+        //     padding-left: $border-min;
+        //     padding-right: $border-min;
+        // }
 
         &__title {
             @extend %title;
@@ -652,16 +676,19 @@
     }
 
     .subscribe {
-        padding-right: $border;
-        padding-left: $border;
+        // padding-right: $border;
+        // padding-left: $border;
 
-        @include breakpoint($sm-bp) {
-            padding-left: $border-min;
-            padding-right: $border-min;
-        }
+        // @include breakpoint($sm-bp) {
+        //     padding-left: $border-min;
+        //     padding-right: $border-min;
+        // }
         &__title {
             @extend %title;
             margin-bottom: 0;
+            @include breakpoint($xl-bp) {
+                margin-bottom: 2rem;
+            }
         }
         &__container {
             display: flex;
@@ -728,22 +755,43 @@
 
     .news {
 
-        @include breakpoint($sm-bp) {
-            padding-right: 0;
-            padding-left: 0;
+        // @include breakpoint($sm-bp) {
+        //     padding-right: 0;
+        //     padding-left: 0;
+        // }
+
+        margin-left: -$border;
+
+        @include breakpoint($cos-bp) {
+            margin-left: -$border-average
         }
+
+        @include breakpoint($xl-bp) {
+            margin-left: -$border-min;
+        }
+
         &__title {
             @extend %title;
+
             padding-left: $border;
-            @include breakpoint($sm-bp) {
-                padding-right: $border-min;
+
+            @include breakpoint($cos-bp) {
+                padding-left: $border-average;
+            }
+
+            @include breakpoint($xl-bp) {
                 padding-left: $border-min;
             }
+            // padding-left: $border;
+            // @include breakpoint($sm-bp) {
+            //     padding-right: $border-min;
+            //     padding-left: $border-min;
+            // }
         }
         &__container {
             display: flex;
             gap: 1rem;
-            padding-right: $border;
+            // padding-right: $border;
 
             @include breakpoint($hb-bp) {
                 justify-content: center;
@@ -771,7 +819,7 @@
             }
             @include breakpoint($pm-bp) {
                 img {
-                    height: 32rem;
+                    height: 37rem;
                 }
             }
             @include breakpoint($xl-bp) {
@@ -780,7 +828,7 @@
         }
         &__swiper {
             @include breakpoint($xl-bp) {
-                padding: 0 $border-min;
+                padding-left: $border-min;
             }
         }
         &__slide {
@@ -819,6 +867,9 @@
             width: 74.6rem;
             height: 68.6rem;
             grid-area: img;
+            @include breakpoint($pm-bp) {
+                width: 85rem;
+            }
             @include breakpoint($cos-bp) {
                 width: 60rem;
                 height: 56rem;
@@ -849,13 +900,17 @@
             line-height: 4.8rem;
 
             color: $black;
-            margin-bottom: 2rem;
+            margin-bottom: 5.9rem;
+            @include breakpoint($cos-bp) {
+                font-size: 3rem;
+            }
 
             @include breakpoint($xl-bp) {
                 font-size: clamp(2.2rem, 2.2rem + 1vmax, 4rem);
                 font-family: Inter;
                 font-weight: 700;
                 width: unset;
+                margin-bottom: 2rem;
             }
             @include breakpoint($sm-bp) {
                 font-size: 2.2rem;
@@ -937,13 +992,13 @@
 
 
     .contacts {
-        padding-right: $border;
-        padding-left: $border;
+        // padding-right: $border;
+        // padding-left: $border;
 
-        @include breakpoint($sm-bp) {
-            padding-left: $border-min;
-            padding-right: $border-min;
-        }
+        // @include breakpoint($sm-bp) {
+        //     padding-left: $border-min;
+        //     padding-right: $border-min;
+        // }
         &__title {
             @extend %title;
             

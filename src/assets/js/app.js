@@ -122,12 +122,27 @@ function focusInput () {
 function activateMenu () {
     const toggleMenuButtons = document.querySelectorAll('.toggleMenuButton') 
     const menu = document.querySelector('.menu') || null
-    if (toggleMenuButtons[0] && Boolean(menu)) { 
+
+    function closeMenu (event) {
+        const isItMenu = Boolean(event.target.closest('.menu'))
+
+        if (isItMenu === false) {
+            menu.classList.toggle('active')
+            document.documentElement.classList.toggle('noscroll')
+            document.removeEventListener('mouseup', closeMenu)
+        }
+    }
+
+    if (toggleMenuButtons[0] && Boolean(menu)) {
         toggleMenuButtons.forEach(button => {
-            button.onclick = () => {
-                menu.classList.toggle('active')
-            }
+            button.addEventListener('click', toggleMenu)
         })
+    }
+
+    function toggleMenu () {
+        menu.classList.toggle('active');
+        document.documentElement.classList.toggle('noscroll');
+        menu.classList.contains('active') ? document.addEventListener('mouseup', closeMenu) : document.removeEventListener('mouseup', closeMenu)
     }
 }
 
