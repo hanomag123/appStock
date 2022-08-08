@@ -53,8 +53,10 @@ function preloadMainImg(callback) {
     function changeBlurImg() {
     if (Boolean(this.width)) {
             const homeImg = document.querySelector('.home__bg')
-            homeImg.classList.remove('blur')
-            homeImg.src = this.src
+            if (homeImg) {
+                homeImg.classList.remove('blur')
+                homeImg.src = this.src
+            }
     }
     }
 
@@ -72,9 +74,12 @@ const swiper = new Swiper(".topSales__catalog", {
     },
     breakpoints: {
         // when window width is >= 1024px
-        1024: {
-            slidesPerView: 4,
+        1025: {
+            slidesPerView: 3,
             spaceBetween: 20
+        },
+        1345: {
+            slidesPerView: 4,
         },
         1545: {
             slidesPerView: 5,

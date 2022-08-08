@@ -301,30 +301,36 @@
     <section class="news">
         <h2 class="news__title">Новости</h2>
         <div class="news__container">
-            <img loading="lazy" class="news__imgBg observe-left" src='./assets/images/1x1.png' data-src="./assets/images/main/news/newsImageBg-1.jpg" alt="">
-            <img loading="lazy" class="news__imgBg observe-left" src='./assets/images/1x1.png' data-src="./assets/images/main/news/newsImageBg-2.jpg" alt="">
+            <div class="news__imgBgWrapper">
+                <img loading="lazy" class="news__imgBg observe-left" src='./assets/images/1x1.png' data-src="./assets/images/main/news/newsImageBg-1.jpg" alt="">
+            </div>
+            <div class="news__imgBgWrapper">
+                <img loading="lazy" class="news__imgBg observe-left" src='./assets/images/1x1.png' data-src="./assets/images/main/news/newsImageBg-2.jpg" alt="">
+            </div>
             <div class="swiper news__swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide news__slide">
-                        <img loading="lazy" class="news__img" src='./assets/images/1x1.png' data-src="./assets/images/main/news/newsImage-1.jpg" alt="">
+                        <div class="news__imgWrapper"><img loading="lazy" class="news__img" src='./assets/images/1x1.png' data-src="./assets/images/main/news/newsImage-1.jpg" alt=""></div>
+                        <div class="news__infoContainer">
+                            <div class="news__date">11.07.2022</div>
+                            <h3 class="news__slideTitle">Apple выпустит более прочные Watch Series 8 для экстремальных видов спорта</h3>
+                            <a class="news__button" href="#">Подробнее</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide news__slide">
+                        <div class="news__imgWrapper"><img loading="lazy" class="news__img" src='./assets/images/1x1.png' data-src="./assets/images/main/news/newsImage-1.jpg" alt=""></div>
                         <div class="news__date">11.07.2022</div>
                         <h3 class="news__slideTitle">Apple выпустит более прочные Watch Series 8 для экстремальных видов спорта</h3>
                         <a class="news__button" href="#">Подробнее</a>
                     </div>
                     <div class="swiper-slide news__slide">
-                        <img loading="lazy" class="news__img" src='./assets/images/1x1.png' data-src="./assets/images/main/news/newsImage-1.jpg" alt="">
+                        <div class="news__imgWrapper"><img loading="lazy" class="news__img" src='./assets/images/1x1.png' data-src="./assets/images/main/news/newsImage-1.jpg" alt=""></div>
                         <div class="news__date">11.07.2022</div>
                         <h3 class="news__slideTitle">Apple выпустит более прочные Watch Series 8 для экстремальных видов спорта</h3>
                         <a class="news__button" href="#">Подробнее</a>
                     </div>
                     <div class="swiper-slide news__slide">
-                        <img loading="lazy" class="news__img" src='./assets/images/1x1.png' data-src="./assets/images/main/news/newsImage-1.jpg" alt="">
-                        <div class="news__date">11.07.2022</div>
-                        <h3 class="news__slideTitle">Apple выпустит более прочные Watch Series 8 для экстремальных видов спорта</h3>
-                        <a class="news__button" href="#">Подробнее</a>
-                    </div>
-                    <div class="swiper-slide news__slide">
-                        <img loading="lazy" class="news__img" src='./assets/images/1x1.png' data-src="./assets/images/main/news/newsImage-1.jpg" alt="">
+                        <div class="news__imgWrapper"><img loading="lazy" class="news__img" src='./assets/images/1x1.png' data-src="./assets/images/main/news/newsImage-1.jpg" alt=""></div>
                         <div class="news__date">11.07.2022</div>
                         <h3 class="news__slideTitle">Apple выпустит более прочные Watch Series 8 для экстремальных видов спорта</h3>
                         <a class="news__button" href="#">Подробнее</a>
@@ -373,7 +379,7 @@
                 <div class="contacts__notification">Отправляя форму, вы соглашаетесь c политикой конфиденциальности</div>
                 <button class="contacts__submit" type="submit">Отправить</button>
             </form>
-            <img loading="lazy" class="contacts__img observe" src='./assets/images/1x1.png' data-src="./assets/images/main/contacts/contactsBg.jpg" alt="bg">
+            <div class="contacts__imgContainer"><img loading="lazy" class="contacts__img observe" src='./assets/images/1x1.png' data-src="./assets/images/main/contacts/contactsBg.jpg" alt="bg"></div>
         </div>
     </section>
 </div>

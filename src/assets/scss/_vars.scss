@@ -70,7 +70,7 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
         line-height: 3.6rem;
 
         margin-top: 8rem;
-        margin-bottom: 5rem;;
+        margin-bottom: 2rem;;
     }
 }
 
@@ -120,12 +120,21 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
     cursor: pointer;
 
     transition: $trans;
-    &:hover {
-        background-color: $persic;
-        .icon {
-            stroke: $white;
+
+    @media(any-hover: hover) {
+        &:hover {
+            background-color: $persic;
+            .icon {
+                stroke: $white;
+            }
         }
     }
+    // &:hover {
+    //     background-color: $persic;
+    //     .icon {
+    //         stroke: $white;
+    //     }
+    // }
 }
 %nextButton {
     position: relative;
@@ -158,12 +167,21 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
         left: 0;
     }
 
-    &:hover {
-        background-color: $persic;
-        .icon {
-            stroke: $white;
+    @media(any-hover: hover) {
+        &:hover {
+            background-color: $persic;
+            .icon {
+                stroke: $white;
+            }
         }
     }
+
+    // &:hover {
+    //     background-color: $persic;
+    //     .icon {
+    //         stroke: $white;
+    //     }
+    // }
 }
 
 %input {
@@ -199,7 +217,7 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
 
     transition: $trans;
 
-    @media screen and (max-width: $sm-bp) {
+    @media screen and (max-width: $xl-bp) {
         border: 0;
         background-color: $ligthGrey;
         padding: 0.5rem;
@@ -213,8 +231,9 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
         transition: all .5s ease-in-out;
     }
 
-    &:hover {
-        background-color: $persic;
+    @media(any-hover: hover) {
+        &:hover {
+            background-color: $persic;
         @media screen and (max-width: $sm-bp) {
             background-color: $ligthGrey;
         }
@@ -224,7 +243,21 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
                 stroke: $persic;
             }
         }
+        }
     }
+
+    // &:hover {
+    //     background-color: $persic;
+    //     @media screen and (max-width: $sm-bp) {
+    //         background-color: $ligthGrey;
+    //     }
+    //     svg {
+    //         stroke: $white;
+    //         @media screen and (max-width: $sm-bp) {
+    //             stroke: $persic;
+    //         }
+    //     }
+    // }
 }
 
 
