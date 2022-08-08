@@ -55,9 +55,8 @@ body {
   // font-size: 1.6rem;
   // line-height: 1.2;
   color: $white;
-
+  
   background-color: $primary;
-
   // @include breakpoint($sm-bp) {
   //   font-size: 1.4rem;
   // }
@@ -95,6 +94,7 @@ svg {
 @import './blocks/main.scss';
 @import './blocks/header.scss';
 @import './blocks/footer.scss';
+@import './blocks/catalog.scss';
 
 // @import "blocks/menu";
 
