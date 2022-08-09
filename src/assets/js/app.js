@@ -130,6 +130,7 @@ function activateMenu () {
         if (isItMenu === false) {
             menu.classList.toggle('active')
             document.documentElement.classList.toggle('noscroll')
+            menu.classList.toggle('noscroll')
             document.removeEventListener('mouseup', closeMenu)
         }
     }
@@ -145,7 +146,6 @@ function activateMenu () {
         document.documentElement.style.setProperty('--scrollWidth', widthScroll + 'px')
         menu.classList.toggle('active');
         menu.classList.toggle('noscroll')
-        console.log(document.documentElement.clientWidth)
         document.documentElement.classList.toggle('noscroll');
         menu.classList.contains('active') ? document.addEventListener('mouseup', closeMenu) : document.removeEventListener('mouseup', closeMenu)
     }
