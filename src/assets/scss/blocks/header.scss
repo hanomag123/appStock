@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
-    transition: transform 1s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     transform: translateX(100%);
     @include breakpoint($xl-bp) {
         align-items: flex-start;
@@ -261,7 +261,7 @@
         }
     }
     &__whatsUpIcon {
-        width: 2.3rem;
+        width: 2.5rem;
         height: 2.5rem;
         @include breakpoint($xl-bp) {
             display: none;
