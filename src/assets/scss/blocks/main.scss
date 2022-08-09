@@ -95,7 +95,7 @@
         }
 
         .blur {
-            filter: blur(0.5rem);
+            filter: blur(0.9rem);
         }
 
         &__container {
@@ -1030,52 +1030,6 @@
             }
         }
     
-    }
-
-    .input-container {
-        position: relative;
-        font-family: InterMed;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 20px;
-
-        &__main:focus ~ .input-container__placeholder,
-        &__haveValue ~ .input-container__placeholder {
-            top: 0.55rem;
-            left: 2rem;
-            font-size: 1.2rem;
-        }
-
-        &__main {
-            padding: 2.45rem 2rem 0.55rem 2rem;
-
-            height: 5rem;
-            width: 100%;
-
-            font-size: 1.4rem;
-            
-            /* серый2 */
-            color: $black;
-            border: 0.1rem solid $gray;
-            border-radius: 0.5rem;
-        }
-
-        &__placeholder {
-            position: absolute;
-            pointer-events: none;
-            left: 2rem;
-            top: 1.5rem;
-            transition: 0.2s ease all;
-            
-            font-style: normal;
-            font-weight: 500;
-            font-size: 1.4rem;
-            line-height: 2rem;
-            
-            /* серый2 */
-            
-            color: $gray;
-        }
     }
 
 

@@ -124,17 +124,6 @@ function activateMenu () {
     const toggleMenuButtons = document.querySelectorAll('.toggleMenuButton') 
     const menu = document.querySelector('.menu') || null
 
-    function closeMenu (event) {
-        const isItMenu = Boolean(event.target.closest('.menu'))
-
-        if (isItMenu === false) {
-            menu.classList.toggle('active')
-            document.documentElement.classList.toggle('noscroll')
-            menu.classList.toggle('noscroll')
-            document.removeEventListener('mouseup', closeMenu)
-        }
-    }
-
     if (toggleMenuButtons[0] && Boolean(menu)) {
         toggleMenuButtons.forEach(button => {
             button.addEventListener('click', toggleMenu)
@@ -149,6 +138,47 @@ function activateMenu () {
         document.documentElement.classList.toggle('noscroll');
         menu.classList.contains('active') ? document.addEventListener('mouseup', closeMenu) : document.removeEventListener('mouseup', closeMenu)
     }
+
+    function closeMenu (event) {
+        const isItMenu = Boolean(event.target.closest('.menu'))
+
+        if (isItMenu === false) {
+            menu.classList.toggle('active')
+            document.documentElement.classList.toggle('noscroll')
+            menu.classList.toggle('noscroll')
+            document.removeEventListener('mouseup', closeMenu)
+        }
+    }
+}
+
+function activeteToggleSearch () {
+    const searchElement = document.querySelector('.search')
+    const searchButton = document.querySelector('.header-search')
+    const closeButton = document.querySelector('.search__close-icon')
+
+    searchButton.addEventListener('click', toggleSearch)
+    closeButton.addEventListener('click', toggleSearch)
+
+    function toggleSearch() {
+        console.log(event)
+        searchElement.classList.toggle('search__hide')
+        if (searchElement.classList.contains('search__hide')) {
+            document.addEventListener('mouseup', closeSearch)
+        } else {
+            document.removeEventListener('mouseup', closeSearch)
+        }
+    }
+
+    function closeSearch (event) {
+        const isItSearch = Boolean(event.target.closest('.search'))
+        const isItSearchIcon = Boolean(event.target.closest('.header-search'))
+        console.log(isItSearch, isItSearchIcon)
+        if (isItSearch === false && isItSearchIcon === false) {
+            searchElement.classList.remove('search__hide')
+        }
+    }
+
+    console.log(searchElement, searchButton)
 }
 
 focusInput()
@@ -156,6 +186,7 @@ mainObserver()
 preLoad()
 preloadMainImg(changeBlurImg);
 activateMenu()
+activeteToggleSearch()
 })
 
 

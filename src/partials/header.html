@@ -50,6 +50,21 @@
     <div class="menu__contactsItem">AppleStock@mail.ru</div>
   </ul>
 </div>
+
+<form class="search">
+  <div class="search__title">Поиск</div>
+    <div class="menu__closeIcon search__close-icon">
+      <i class="gg-close"></i>
+    </div>
+    <div class="search__input input-container">
+      <input class="contacts__phone input-container__main" type="phone">
+      <span class="input-container__placeholder">Введите название товара</span>
+      <svg class="search__icon">
+        <use href="#SearchIcon"></use>
+      </svg>
+  </div>
+</form>
+
 <header class="header">
   <a class="header__logo" href="#">Apple Stock</a>
   <nav class="header__list">
@@ -78,7 +93,7 @@
         <use href="#PhoneIcon"></use>
       </svg>
     </a>
-    <a href="#" class="header__contactItem">
+    <a href="#" class="header__contactItem header-search">
       <svg class="header__searchIcon">
         <use href="#SearchIcon"></use>
       </svg>

@@ -1,3 +1,49 @@
+.input-container {
+    position: relative;
+    font-family: InterMed;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+
+    &__main:focus ~ .input-container__placeholder,
+    &__haveValue ~ .input-container__placeholder {
+        top: 0.55rem;
+        left: 2rem;
+        font-size: 1.2rem;
+    }
+
+    &__main {
+        padding: 2.45rem 2rem 0.55rem 2rem;
+
+        height: 5rem;
+        width: 100%;
+
+        font-size: 1.4rem;
+        
+        /* серый2 */
+        color: $black;
+        border: 0.1rem solid $gray;
+        border-radius: 0.5rem;
+    }
+
+    &__placeholder {
+        position: absolute;
+        pointer-events: none;
+        left: 2rem;
+        top: 1.5rem;
+        transition: 0.2s ease all;
+        
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        
+        /* серый2 */
+        
+        color: $gray;
+    }
+}
+
 
 .menu {
     position: fixed;
@@ -186,10 +232,91 @@
     }
 }
 
+
+
 .active {
     visibility: visible;
     transform: translateX(0);
 }
+
+.search {
+    opacity: 0;
+    transform: translateY(-100%);
+
+    transition: all 0.5s ease-in-out;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 53rem;
+    height: 13.3rem;
+
+    padding: 2rem 2rem 3rem 3.4rem;
+    
+    /* белый */
+    
+    background: $white;
+    border-radius: 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    row-gap: 1.2rem;
+
+    z-index: 2;
+
+    @include breakpoint($sm-bp) {
+        width: 100%;
+    }
+
+    div.search__title {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        
+        color: $black;
+    }
+  
+    div.search__close-icon {
+        margin-left: auto;
+
+        .gg-close::before,
+        .gg-close::after {
+            width: 2rem;
+            top: 0.5rem;
+        }
+    }
+  
+    div.search__input {
+        grid-column: 2 span;
+        position: relative;
+
+        input {
+            padding-right: 4.5rem;
+        }
+
+        .search__icon {
+            position: absolute;
+            top: calc(50% - 1.14rem);
+            right: 2rem;
+
+            width: 2.053rem;
+            height: 2.292rem;
+            fill: transparent;
+            stroke: $gray;
+        }
+    }
+  
+    }
+
+    .search__hide {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+
 
 .header {
     font-family: InterReg;
@@ -284,6 +411,7 @@
     &__searchIcon {
         width: 2rem;
         height: 2.2rem;
+        stroke: $white;
     }
     &__busketIcon {
         stroke: $white;
