@@ -57,6 +57,7 @@
         }
 
         @include breakpoint($xl-bp) {
+            height: 140rem;
             display: flex;
             flex-direction: column-reverse;
             align-items: center;
@@ -66,10 +67,13 @@
         @include breakpoint($mb-bp) {
             padding-left: $border-average;
             padding-right: $border-average;
+            height: 120rem;
         }
+        
         @include breakpoint($sm-bp) {
             padding-left: $border-min;
             padding-right: $border-min;
+            height: auto;
         }
 
         &__bg {
@@ -131,6 +135,19 @@
         &__text {
             line-height: 1.1em;
             text-transform: uppercase;
+            @include breakpoint($xl-bp) {
+                text-transform: capitalize;
+                font-size: 15rem;
+            }
+            @include breakpoint($mb-bp) {
+                font-size: 12rem;
+            }
+            @include breakpoint($lb-bp) {
+                font-size: 9rem;
+            }
+            @include breakpoint($sm-bp) {
+                font-size: 6.9rem;
+            }
         }
 
         &__text:nth-child(1) {
@@ -148,7 +165,7 @@
             
             padding-left: 16rem;
             width: 43.7rem;
-            @include breakpoint($mb-bp) {
+            @include breakpoint($xl-bp) {
                 padding-left: 0;
             }
         }
@@ -157,7 +174,7 @@
             margin-left: 30rem;
             width: max-content;
             text-align: end;
-            @include breakpoint($mb-bp) {
+            @include breakpoint($xl-bp) {
                 margin-left: 0;
             }
         }
@@ -167,10 +184,10 @@
 
             margin-top: 2.1rem;
             margin-left: auto;
+            // @include breakpoint($xl-bp) {
+            //     width: 16rem;
+            // }
             @include breakpoint($xl-bp) {
-                width: 16rem;
-            }
-            @include breakpoint($mb-bp) {
                 width: 100%;
                 margin-left: 0;
                 margin-top: 5rem;
@@ -179,24 +196,23 @@
     }
 
     .topSales {
-        // padding-left: $border;
-        // padding-right: $border;
-
-        // @include breakpoint($sm-bp) {
-        //     padding-left: $border-min;
-        //     padding-right: $border-min;
-        // }
-
         &__catalog {
-            overflow: visible;
+            height: 52.3rem;
+            overflow-y: visible;
+            overflow-x: clip;
+            @include breakpoint($sm-bp) {
+                height: 28rem;
+            }
         }
 
         &__img {
             height: 22rem;
             width: 100%;
             object-fit: contain;
+
+            transition: height 0.5s ease-in-out;
             @include breakpoint($sm-bp) {
-                height: 8.8rem;
+                height: 11.8rem;
             }
         }
         &__title {
@@ -206,6 +222,10 @@
         }
 
         &__item {
+            // position: relative;
+            // z-index: 4;
+            cursor: pointer;
+
             margin-bottom: 3rem;
             color: $black;
             border-radius: 1rem;
@@ -220,17 +240,58 @@
             justify-content: space-between;
             gap: 2rem;
 
-            @extend %scaleHover;
+            // @extend %scaleHover;
+            transition: all 0.5s ease-in-out;
+
+            @media(any-hover: hover) {
+            &:hover {
+                height: 56.3rem;
+                padding: 0;
+                padding-bottom: 3rem;
+                img {
+                    height: 40rem;
+                }
+                .topSales__wrapper {
+                    padding: 0 3rem;
+                }
+                .topSales__priceContainer {
+                    margin-top: 0;
+                }
+                span {
+                    padding: 0 3rem;
+                }
+            }
+            }
             
             @include breakpoint($sm-bp) {
                 padding: 0.95rem;
                 height: 24.8rem;
+                @media(any-hover: hover) {
+                    &:hover {
+                        height: 24.8rem;
+                        padding: 0;
+                        padding-bottom: 0.95rem;
+                        img {
+                            height: 13rem;
+                        }
+                        .topSales__wrapper {
+                            padding: 0 0.95rem;
+                        }
+                        .topSales__priceContainer {
+                            margin-top: 0;
+                        }
+                        span {
+                            padding: 0 0.95rem;
+                        }
+                    }
+                    }
             }
         }
         &__name {
             font-family: InterReg;
             font-weight: 400;
             font-size: 1.8rem;
+            transition: all 0.5s ease-in-out;
             @include breakpoint($sm-bp) {
                 font-size: 1.4rem;
             }
@@ -240,6 +301,7 @@
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
+            transition: all 0.5s ease-in-out;
         }
 
             &__priceContainer {
@@ -247,6 +309,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 0.5rem;
+                transition: margin-top 0.5s ease-in-out;
                 @include breakpoint($sm-bp) {
                     margin-top: 0;
                     gap: 0rem;
@@ -286,9 +349,11 @@
                 }
             }
             &__buttonContainer {
-                margin-top: 3rem;
+                // position: absolute;
+                // bottom: 0;
                 width: 100%;
                 display: flex;
+                // z-index: 1;
             }
             &__prevButton {
                 margin-left: auto;
@@ -473,14 +538,17 @@
                 font-size: clamp(6rem, 6rem + 2vmax, 10rem);
             }
             @include breakpoint($xl-bp) {
-                width: calc(100vw - $border - $border);
+                width: 60rem;
+            }
+            @include breakpoint($mb-bp) {
+                width: clamp(42rem, 52rem + 1vw, 60rem);
                 line-height: 7.3rem;
             }
 
             @include breakpoint($sm-bp) {
                 font-size: 6rem;
                 line-height: 7.3rem;
-                width: calc(100vw - $border-min - $border-min);
+                width: 42rem;
                 height: min-content;
             }
 		}
@@ -644,7 +712,12 @@
             justify-content: center;
             flex-direction: column;
             gap: 2rem;
-
+            @include breakpoint($xl-bp) {
+                height: 50rem;
+            }
+            @include breakpoint($sm-bp) {
+                height: 22rem;
+            }
 		}
 
 		&__desc {
@@ -687,7 +760,11 @@
             @extend %title;
             margin-bottom: 0;
             @include breakpoint($xl-bp) {
-                margin-bottom: 2rem;
+                margin-bottom: 3rem;
+                width: 70rem;
+            }
+            @include breakpoint($pm-bp) {
+                width: auto;
             }
         }
         &__container {
@@ -697,6 +774,10 @@
             height: 62.6rem;
             width: 100%;
             @include breakpoint($xl-bp) {
+                height: 40rem;
+            }
+            @include breakpoint($mb-bp) {
+                height: 62rem;
                 align-items: flex-start;
                 flex-direction: column;
             }
@@ -742,13 +823,20 @@
             }
 		}
 
+
         &__img {
             align-self: center;
             height: 62.6rem;
             width: 50%;
             object-fit: contain;
+            @include breakpoint($mb-bp) {
+                align-self: flex-start;
+                margin-left:4rem;
+            }
             @include breakpoint($sm-bp) {
                 width: 100%;
+                align-self: center;
+                margin-left: 0;
             }
         }
     }
@@ -1019,7 +1107,7 @@
                 padding-bottom: 8rem;
             }
             @include breakpoint($sm-bp) {
-                // height: 80rem;
+                padding-bottom: 4rem;
             }
         }
 
@@ -1093,6 +1181,9 @@
 
         &__phone {
             width: 44.5rem;
+            @include breakpoint($sm-bp) {
+                width: 100%;
+            }
         }
 
 		&__submit {
@@ -1109,6 +1200,9 @@
             margin-right: 20rem;
             @include breakpoint($cos-bp) {
                 margin-right: 0;
+            }
+            @include breakpoint($xl-bp) {
+                width: 100%;
             }
         }
 

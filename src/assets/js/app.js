@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //= components/
 
+
 function mainObserver() {
     const options = {
     }
@@ -63,7 +64,7 @@ function preloadMainImg(callback) {
 
 const swiper = new Swiper(".topSales__catalog", {
     slidesPerView: 2,
-    spaceBetween: 22,
+    spaceBetween: 19,
     pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -83,7 +84,7 @@ const swiper = new Swiper(".topSales__catalog", {
         },
         1545: {
             slidesPerView: 5,
-            spaceBetween: 40,
+            spaceBetween: 22,
         },
     }
 });
@@ -140,7 +141,11 @@ function activateMenu () {
     }
 
     function toggleMenu () {
+        const widthScroll = window.innerWidth - document.documentElement.clientWidth
+        document.documentElement.style.setProperty('--scrollWidth', widthScroll + 'px')
         menu.classList.toggle('active');
+        menu.classList.toggle('noscroll')
+        console.log(document.documentElement.clientWidth)
         document.documentElement.classList.toggle('noscroll');
         menu.classList.contains('active') ? document.addEventListener('mouseup', closeMenu) : document.removeEventListener('mouseup', closeMenu)
     }

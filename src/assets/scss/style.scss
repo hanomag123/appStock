@@ -104,11 +104,15 @@ svg {
 .hide {
   display: none;
 }
-
+:root {
+  --scrollWidth: 0px;
+}
 .noscroll {
   overflow: hidden;
+  margin-right: var(--scrollWidth);
 }
 
 .show {
   display: block;
 }
+
