@@ -91,52 +91,61 @@
 
     &__itemMain:first-child {
         display: none;
-        @include breakpoint($xl-bp) {
+        @include breakpoint($lg-bp) {
             display: block;
         }
     }
 
-    &__itemCatalog {
+    .accordion {
         position: relative;
         margin-bottom: 1rem;
-        &:hover::before,
-        &:hover::after {
-            background: $persic;
-            transition: $trans;
-        }
-        &::before {
-            content: "";
-            display: block;
-            box-sizing: border-box;
-            position: absolute;
-            width: 1.2rem;
-            height: 0.1rem;
-            background: $black;
-            transform: rotate(45deg);
-            top: 1.5rem;
-            right: -1.4rem;
-            transition: $trans;
-        }
-        &::after {
-            content: "";
-            display: block;
-            box-sizing: border-box;
-            position: absolute;
-            width: 1.2rem;
-            height: 0.1rem;
-            background: $black;
-            transform: rotate(45deg);
-            top: 1.5rem;
-            right: -2.24rem;
-            transition: $trans;
-            transform: rotate(-45deg);
-        }
+        transition: 0.4s;
+
+
+            &:hover::before,
+            &:hover::after {
+                background: $persic;
+                transition: $trans;
+            }
+            &::before {
+                content: "";
+                display: block;
+                box-sizing: border-box;
+                position: absolute;
+                width: 1.2rem;
+                height: 0.1rem;
+                background: $black;
+                transform: rotate(45deg);
+                top: 1.5rem;
+                right: -1.4rem;
+                transition: $trans;
+            }
+            &::after {
+                content: "";
+                display: block;
+                box-sizing: border-box;
+                position: absolute;
+                width: 1.2rem;
+                height: 0.1rem;
+                background: $black;
+                transform: rotate(45deg);
+                top: 1.5rem;
+                right: -2.24rem;
+                transition: $trans;
+                transform: rotate(-45deg);
+            }
+        
     }
 
-    &__catalogItem {
+
+
+    .panel {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
     }
 
     &__item {
