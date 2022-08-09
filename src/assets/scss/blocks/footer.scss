@@ -103,6 +103,8 @@
         @include breakpoint($xl-bp) {
             display: flex;
             justify-content: space-between;
+            padding-left: $border-average;
+            padding-right: $border-average;
             }
 
         @include breakpoint($sm-bp) {
@@ -182,6 +184,7 @@
         grid-row-gap: 1rem;
         align-items: center;
         width: 18.5rem;
+        white-space: nowrap;
     }
 
     &__desc {
@@ -276,6 +279,8 @@
     &__mesIconBot {
         @extend %easyHover;
 
+        position: relative;
+
         background-color: $persic;
         border-radius: 50%;
         width: 3rem;
@@ -284,9 +289,19 @@
         align-items: center;
         justify-content: center;
     }
+    &__mesIconBot:nth-child(1) svg{
+        position: absolute;
+        fill: transparent;
+        stroke-width: 0.2rem;
+        width: 1.8rem;
+        height: 1.8rem;
+
+        left: calc(50% - 0.9rem);
+        top: calc(50% - 0.9rem);
+    }
     &__mesIconBot:nth-child(2) svg{
-        width: 1.82rem;
-        height: 1.82rem;
+        width: 1.6rem;
+        height: 1.6rem;
         margin-right: 0.2rem;
     }
 
