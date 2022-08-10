@@ -5,6 +5,8 @@
     font-weight: 500;
     line-height: 20px;
 
+    color: $black;
+
     &__main:focus ~ .input-container__placeholder,
     &__haveValue ~ .input-container__placeholder {
         top: 0.55rem;
@@ -50,7 +52,6 @@
     z-index: 1;
     width: 36.6rem;
     height: 100vh;
-    // height: -webkit-fill-available;
     right: 0;
     top: 0;
     
@@ -71,7 +72,13 @@
         align-items: flex-start;
     }
 
+    @include breakpoint($lg-bp) {
+        padding-right: 2rem;
+    }
 
+    @include breakpoint($lb-bp) {
+        width: 100vw;
+    }
 
     &__closeIcon {
         cursor: pointer;
@@ -106,6 +113,9 @@
         .gg-close::after {
             transform: rotate(-45deg)
         }
+        @include breakpoint($lg-bp) {
+            align-self: flex-end;
+        }
     }
 
     &__list {
@@ -126,11 +136,19 @@
 
         /* черный */
 
+        cursor: pointer;
+
         color: $black;
 
-        transition: $trans;
-        cursor: pointer;
         &:hover {
+            color: $persic;
+        }
+
+        a {
+            color: $black;
+            transition: $trans;
+        }
+        &:hover > a {
             color: $persic;
         }
     }
@@ -207,6 +225,7 @@
     }
 
     &__contacts {
+        margin-top: 6.5rem;
     }
 
     &__contactsItem {
@@ -220,10 +239,44 @@
         
         /* черный */
         
-        color: #201F1F;
+
+        display: flex;
+        gap: 1rem;
+        a {
+            color: $black;
+        }
     }
 
     &__icon {
+        svg {
+            width: 1.7rem;
+            height: 1.7rem;
+            fill: $persic;
+        }
+    }
+
+    .meil {
+        svg {
+            width: 1.8rem;
+            height: 1.5rem;
+        }
+    }
+
+    .menu__iconBot {
+        svg {
+            stroke: $persic;
+            fill: transparent;
+            // fill: $persic;
+            width: 2.3rem;
+            height: 2.3rem;
+        }
+    }
+
+    .menu__iconBot:last-child {
+        svg {
+        width: 2.8rem;
+        height: 2.2rem;
+        }
     }
 
     &__text {
