@@ -208,6 +208,41 @@ for (i = 0; i < acc.length; i++) {
 
 
 
+let acc2 = document.getElementsByClassName("accordion2");
+
+for (let i = 0; i < acc2.length; i++) {
+  acc2[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+
+let filterIcoContainerMobile = document.querySelector('.filterIcoContainerMobile')
+console.log(filterIcoContainerMobile)
+let filterContainer = document.querySelector('.filterContainer')
+console.log(filterContainer)
+
+if (filterIcoContainerMobile != null) {
+    filterIcoContainerMobile.addEventListener('click', e => {
+        filterContainer.classList.toggle('filterContainerMobile')
+    })
+}
+
+
+let crossIco = document.querySelector('.crossIco')
+if (crossIco != null) {
+    crossIco.addEventListener('click', e => {
+        filterContainer.classList.toggle('filterContainerMobile')
+    })
+}
+
+
 
 
 
