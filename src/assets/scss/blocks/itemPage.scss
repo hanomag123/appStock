@@ -1,0 +1,453 @@
+.itemPage {
+    padding-top: 5rem;
+    font-family: 'Inter';
+    font-style: normal;
+
+    color: $black;
+
+    padding-left: $border;
+    padding-right: $border;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    overflow: hidden;
+
+    @include breakpoint($cos-bp) {
+        padding-left: $border-average;
+        padding-right: $border-average;
+    }
+
+    @include breakpoint($xl-bp) {
+        padding-left: $border-min;
+        padding-right: $border-min;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.prewiev {
+        justify-self: start;
+
+        display: flex;
+        gap: 2rem;
+
+        margin-right: 10rem;
+        div.prewiev__mainBlock {
+            div.prewiev__imgContainer {
+            height: 54.8rem;
+            
+            /* серый лайт */
+
+            padding: 10.5rem;
+            
+            background: $ligthGrey;
+            border-radius: 1rem;
+
+            @include breakpoint($xl-bp) {
+                width: 54.8rem;
+                margin-bottom: 3rem;
+            }
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        }
+        .prewiev__sliderWrapper {
+            height: 100%;
+        }
+        div.swiper.prewiev__slider {
+            height: 54.8rem;
+        div.swiper-wrapper {
+            div.swiper-slide {
+                width: 12.2rem;
+                height: 12.2rem;
+                
+                /* серый лайт */
+                
+                background: $ligthGrey;
+                border-radius: 1rem;
+
+                padding: 2.24rem 2.9rem 2.1rem 3rem;
+                cursor: pointer;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .swiper-slide-active {
+                border: 0.1rem solid $persic;
+            }
+        }
+        }
+    }
+
+    div.itemPage__mainBlock {
+    
+        div.main-block {
+            margin-bottom: 7.7rem;
+
+            div.main-block__titleContainer {
+                margin-bottom: 4rem;
+    
+                div.star-container {
+    
+                    display: flex;
+                    gap: 1rem;
+    
+                    margin-bottom: 0.7rem;
+                    div.star-container__star {
+                        stroke: $persic;
+                        fill: $persic;
+                        width: 2.7rem;
+                        height: 2.7rem;
+                        svg {
+                            width: 80%;
+                            height: 80%;
+                        }
+                    }
+                    div.star-container__star:last-child {
+                        fill: transparent;
+                    }
+                }
+    
+                h1.main-block__title {
+                    font-weight: 700;
+                    font-size: 6rem;
+                    line-height: 7.3rem;
+                }
+            }
+    
+            .desc {
+                font-weight: 500;
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+            }
+    
+            div.main-block__priceContainer {
+                margin-bottom: 3.7rem;
+    
+                div.main-block__price {
+                    font-weight: 500;
+                    font-size: 4rem;
+                    line-height: 4.8rem;
+                    
+                    /* персик */
+                    
+                    color: $persic;
+                }
+    
+                div.main-block__desc {
+                    margin-top: 1rem;
+                }
+            }
+    
+            div.main-block__colorContainer {
+                margin-bottom: 10.7rem;
+    
+                div.main-block__desc {
+                    margin-bottom: 1rem;
+                }
+    
+                div.main-block__colors {
+                    div.main-block__color {
+                        width: 4.7rem;
+                        height: 4.7rem;
+                        
+                        background: #F1DCC5;
+                        border-radius: 0.5rem;
+                    }
+                }
+            }
+    
+            .site-button {
+                @extend %button;
+            }
+    
+            div.main-block__buttonContainer {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+    
+                row-gap: 2rem;
+                column-gap: 2rem;
+    
+                max-width: 62rem;
+    
+                
+                div.main-block__text {
+                    grid-column: 2 span;
+    
+                    font-family: InterReg;
+                    font-weight: 400;
+                    font-size: 2.2rem;
+                    line-height: 2.7rem;
+    
+                    color: $gray;
+                }
+    
+                button.main-block__toBusket {
+                    @include breakpoint($lb-bp) {
+                        width: auto;
+                    }
+                }
+    
+                button.main-block__toCredit {
+                    @include breakpoint($lb-bp) {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    section.characteristics {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        max-width: 76.3rem;
+
+        @include breakpoint($xl-bp) {
+            grid-column-start: auto;
+            grid-column-end: auto;
+
+            height: 35.9rem;
+            overflow: hidden;
+        }
+        
+        h2.characteristics__title {
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 3.6rem;
+            margin-bottom: 0.5rem;
+        }
+    
+    div.characteristics__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 0.6rem;
+
+        h3.characteristics__titleContainer {
+            grid-column: 2 span;
+            font-weight: 700;
+            font-size: 2.2rem;
+            line-height: 2.7rem;
+        }
+    
+        div.characteristics__name {
+            font-family: InterReg;
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+        }
+    
+        div.characteristics__value {
+            font-family: InterReg;
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+        }
+    }
+    }
+
+    .active666 {
+        height: 100%!important;
+        overflow: visible!important;
+    }
+
+    .hideText {
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 142%;
+        /* identical to box height, or 20px */
+        
+        text-decoration-line: underline;
+        
+        /* персик */
+        
+        color: #C68457;
+    }
+
+    .topSales {
+        &__catalog {
+            height: 52.3rem;
+            overflow: visible;
+            // overflow-x: clip;
+            @include breakpoint($sm-bp) {
+                height: 28rem;
+            }
+        }
+
+        &__img {
+            height: 22rem;
+            width: 100%;
+            object-fit: contain;
+
+            transition: height 0.5s ease-in-out;
+            @include breakpoint($sm-bp) {
+                height: 11.8rem;
+            }
+        }
+        &__title {
+            @extend %title;
+            
+
+        }
+
+        &__item {
+            // position: relative;
+            // z-index: 4;
+            cursor: pointer;
+
+            margin-bottom: 3rem;
+            color: $black;
+            border-radius: 1rem;
+            padding: 4rem;
+            width: 33.2rem;
+            height: 49.7rem;
+
+            background: #F3F3F3;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 2rem;
+
+            // @extend %scaleHover;
+            transition: all 0.5s ease-in-out;
+
+            @media(any-hover: hover) {
+            &:hover {
+                height: 56.3rem;
+                padding: 0;
+                padding-bottom: 3rem;
+                img {
+                    height: 40rem;
+                }
+                .topSales__wrapper {
+                    padding: 0 3rem;
+                }
+                .topSales__priceContainer {
+                    margin-top: 0;
+                }
+                span {
+                    padding: 0 3rem;
+                }
+            }
+            }
+            
+            @include breakpoint($sm-bp) {
+                padding: 0.95rem;
+                height: 24.8rem;
+                @media(any-hover: hover) {
+                    &:hover {
+                        height: 24.8rem;
+                        padding: 0;
+                        padding-bottom: 0.95rem;
+                        img {
+                            height: 13rem;
+                        }
+                        .topSales__wrapper {
+                            padding: 0 0.95rem;
+                        }
+                        .topSales__priceContainer {
+                            margin-top: 0;
+                        }
+                        span {
+                            padding: 0 0.95rem;
+                        }
+                    }
+                    }
+            }
+        }
+        &__name {
+            font-family: InterReg;
+            font-weight: 400;
+            font-size: 1.8rem;
+            transition: all 0.5s ease-in-out;
+            @include breakpoint($sm-bp) {
+                font-size: 1.4rem;
+            }
+        }
+
+        &__wrapper {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            transition: all 0.5s ease-in-out;
+        }
+
+            &__priceContainer {
+                margin-top: 6.5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                transition: margin-top 0.5s ease-in-out;
+                @include breakpoint($sm-bp) {
+                    margin-top: 0;
+                    gap: 0rem;
+                }
+            }
+    
+            &__pastPrice {
+                color: #8D8D8D;
+                font-family: InterReg;
+                text-decoration: line-through;
+                @include breakpoint($sm-bp) {
+                    font-size: 1.4rem;
+                }
+            }
+    
+            &__mainPrice {
+                font-weight: 700;
+                font-size: 3rem;
+                line-height: 3.6rem;
+                @include breakpoint($sm-bp) {
+                    font-size: 1.4rem;
+                    line-height: normal;
+                }
+            }
+    
+            &__credit {
+                font-family: InterReg;
+                @include breakpoint($sm-bp) {
+                    margin-top: 1rem;
+                }
+            }
+            &__busketButton {
+                @extend %busketButton;
+
+                @include breakpoint($sm-bp) {
+                    align-self: flex-start;
+                }
+            }
+            &__buttonContainer {
+                // position: absolute;
+                // bottom: 0;
+                width: 100%;
+                display: flex;
+                // z-index: 1;
+            }
+            &__prevButton {
+                margin-left: auto;
+                @extend %prevButton;
+            }
+            &__nextButton {
+                @extend %nextButton;
+            }
+    }
+
+    .itemPage__topSales {
+        margin-bottom: 10rem;
+        grid-column: 2 span;
+    }
+}

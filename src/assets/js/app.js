@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
 
 
@@ -105,6 +106,34 @@ const newsSwiper = new Swiper(".news__swiper", {
     reverseDirection: false,
 });
 
+const previewSlider = new Swiper('.prewiev__slider', {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    loop: true,
+    direction: 'vertical',
+    
+})
+
+previewSlider.on('slideChange', function () {
+    console.log('*** mySwiper.realIndex', previewSlider.realIndex);
+})
+
+function prewievImage () {
+    const mainBlock = document.querySelector('.prewiev__imgMain') || null
+    const swiper = document.querySelector('.prewiev__slider') || null
+    if (mainBlock && swiper) {
+        addImg(0)
+        previewSlider.on('slideChange', () => {
+            const currentActiveSlide = previewSlider.realIndex
+            addImg(currentActiveSlide)
+        })
+    }
+
+    function addImg(index) {
+        const activeImg = previewSlider.slides[index].querySelector('img')
+        mainBlock.src = activeImg.src
+    }
+}
 function focusInput () {
     for (const form of document.forms) {
         const inputForms = form.querySelectorAll('input')
@@ -181,12 +210,24 @@ function activeteToggleSearch () {
     console.log(searchElement, searchButton)
 }
 
+function changeHide() {
+    const hideText = document.querySelector('.hideText') || null
+    const characterText = document.querySelector('.characteristics') || null
+    if (hideText && characterText) {
+        hideText.addEventListener('click', () => {
+            characterText.classList.toggle('active666')
+        })
+        }
+    }
+
 focusInput()
 mainObserver()
 preLoad()
 preloadMainImg(changeBlurImg);
 activateMenu()
 activeteToggleSearch()
+prewievImage()
+changeHide()
 })
 
 

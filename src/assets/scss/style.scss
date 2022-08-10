@@ -48,6 +48,8 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -95,6 +97,7 @@ svg {
 @import './blocks/header.scss';
 @import './blocks/footer.scss';
 @import './blocks/catalog.scss';
+@import './blocks/itemPage.scss';
 
 // @import "blocks/menu";
 
@@ -114,5 +117,10 @@ svg {
 
 .show {
   display: block;
+}
+
+.active666 {
+  height: 100%;
+  overflow: visible;
 }
 

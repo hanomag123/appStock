@@ -43,7 +43,16 @@
     }
 
     &__mesItem {
-        @extend %easyHover;
+        @media(any-hover: hover) {
+            & .footer__mesName{
+                will-change: color;
+                cursor: pointer;
+                transition: color .4s ease-in-out;
+            }
+            &:hover .footer__mesName{
+                color: $persic;
+            }
+        }
 
         position: relative;
         display: flex;
@@ -174,7 +183,17 @@
     }
 
     &__listItem {
-        @extend %easyHover;
+        cursor: pointer;
+        @media(any-hover: hover) {
+            & .footer__desc{
+                will-change: color;
+                cursor: pointer;
+                transition: color .4s ease-in-out;
+            }
+            &:hover .footer__desc{
+                color: $persic;
+            }
+        }
         font-family: 'InterMed';
         font-weight: 500;
 
@@ -214,7 +233,7 @@
         padding-top: 2.2rem;
         display: grid;
         align-items: center;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         padding-bottom: 2rem;
         @include breakpoint($xl-bp) {
             display: flex;
@@ -239,6 +258,7 @@
     }
 
     &__nav {
+        grid-column: 2 span;
         display: flex;
         justify-content: center;
         gap: 1rem;
@@ -277,7 +297,16 @@
         }
     }
     &__mesIconBot {
-        @extend %easyHover;
+        @media(any-hover: hover) {
+            & {
+                will-change: transform;
+                cursor: pointer;
+                transition: transform .4s ease-in-out;
+            }
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
 
         position: relative;
 

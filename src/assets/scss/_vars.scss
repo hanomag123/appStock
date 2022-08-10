@@ -33,15 +33,19 @@ $border-min: 2rem;
 $trans: background-color .4s ease-in-out, color .4s ease-in-out;
 
 %easyHover {
-    & {
-        will-change: transform;
-        cursor: pointer;
-        transition: transform .4s ease-in-out;
-    }
-    &:hover {
-        transform: scale(1.08);
+    @media(any-hover: hover) {
+        & {
+            will-change: color;
+            cursor: pointer;
+            transition: color .4s ease-in-out;
+        }
+        &:hover {
+            color: $persic;
+        }
     }
 }
+
+
 
 %scaleHover {
     @media(any-hover: hover) {
@@ -217,6 +221,8 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
     padding: 1rem;
 
     transition: $trans;
+
+    background-color: transparent;
 
     @media screen and (max-width: $xl-bp) {
         border: 0;
