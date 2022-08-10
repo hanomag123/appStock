@@ -10,8 +10,10 @@ $cos_bp: 1460px;
 $xl-bp: 1024px;
 
 $lg-bp: 920px;
+$jm-bp: 950px;
 $sm-bp: 500px;
 $mb-bp: 850px;
+$js-bp: 750px;
 $sr-bp: 700px;
 
 $mm-bp: 1440px;
@@ -230,6 +232,7 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
         height: 2.2rem;
         stroke: $persic;
         transition: all .5s ease-in-out;
+        fill: transparent;
     }
 
     @media(any-hover: hover) {
