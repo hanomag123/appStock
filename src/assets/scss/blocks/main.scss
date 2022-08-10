@@ -147,6 +147,7 @@
             }
             @include breakpoint($sm-bp) {
                 font-size: 6.9rem;
+                width: 100%;
             }
         }
 
@@ -198,22 +199,24 @@
     .topSales {
         &__catalog {
             height: 52.3rem;
-            overflow-y: visible;
-            overflow-x: clip;
+            overflow: visible;
+            // overflow-x: clip;
             @include breakpoint($sm-bp) {
                 height: 28rem;
             }
         }
 
+        &__imgContainer {
+            height: 50%;
+            transition: all 0.5s ease-in-out;
+        }
+
         &__img {
-            height: 22rem;
+            height: 100%;
             width: 100%;
             object-fit: contain;
 
-            transition: height 0.5s ease-in-out;
-            @include breakpoint($sm-bp) {
-                height: 11.8rem;
-            }
+            transition: all 0.5s ease-in-out;
         }
         &__title {
             @extend %title;
@@ -231,7 +234,7 @@
             border-radius: 1rem;
             padding: 4rem;
             width: 33.2rem;
-            height: 49.7rem;
+            // height: 49.7rem;
 
             background: #F3F3F3;
 
@@ -245,10 +248,11 @@
 
             @media(any-hover: hover) {
             &:hover {
-                height: 56.3rem;
+                height: 115%;
                 padding: 0;
                 padding-bottom: 3rem;
-                img {
+                gap: 0;
+                .topSales__imgContainer {
                     height: 40rem;
                 }
                 .topSales__wrapper {
@@ -265,10 +269,10 @@
             
             @include breakpoint($sm-bp) {
                 padding: 0.95rem;
-                height: 24.8rem;
+                height: 100%;
                 @media(any-hover: hover) {
                     &:hover {
-                        height: 24.8rem;
+                        height: 100%;
                         padding: 0;
                         padding-bottom: 0.95rem;
                         img {
@@ -305,11 +309,11 @@
         }
 
             &__priceContainer {
-                margin-top: 6.5rem;
+                // margin-top: 6.5rem;
                 display: flex;
                 flex-direction: column;
                 gap: 0.5rem;
-                transition: margin-top 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out;
                 @include breakpoint($sm-bp) {
                     margin-top: 0;
                     gap: 0rem;
@@ -353,6 +357,7 @@
                 // bottom: 0;
                 width: 100%;
                 display: flex;
+                margin-top: 3rem;
                 // z-index: 1;
             }
             &__prevButton {

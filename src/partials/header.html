@@ -5,7 +5,7 @@
   <ul class="menu__list">
       <li class="menu__itemMain">
           <div class="accordion">Каталог</div>
-          <nav class="panel">
+          <ul class="panel">
               <li>
                 <a href="#" class="menu__item">iPhone</a>
               </li>
@@ -30,24 +30,34 @@
               <li>
                 <a href="#" class="menu__item">Наушники</a>
               </li>
-          </nav>
+          </ul>
       </li>
-      <a href="#" class="menu__itemMain">О компании</a>
-      <a href="#" class="menu__itemMain">Новости</a>
-      <a href="#" class="menu__itemMain">Партнерам</a>
-      <a href="#" class="menu__itemMain">Оплата и доставка</a>
-      <a href="#" class="menu__itemMain">Контакты</a>
+      <li class="menu__itemMain">
+        <a href="#" >О компании</a>
+      </li>
+      <li class="menu__itemMain">
+        <a href="#">Новости</a>
+      </li>
+      <li class="menu__itemMain">
+        <a href="#">Партнерам</a>
+      </li>
+      <li class="menu__itemMain">
+        <a href="#">Оплата и доставка</a>
+      </li>
+      <li class="menu__itemMain">
+        <a href="#">Контакты</a>
+      </li>
   </ul>
   <ul class="menu__contacts">
-    <div class="menu__contactsItem">
+    <li class="menu__contactsItem">
       <div class="menu__icon"></div>
       <a href="" class="menu__text"></a>
-    </div>
-    <div class="menu__contactsItem">
+    </li>
+    <li class="menu__contactsItem">
       <div class="menu__icon"></div>
       <a href="" class="menu__text">+7-919-683-79-79</a>
-    </div>
-    <div class="menu__contactsItem">AppleStock@mail.ru</div>
+    </li>
+    <li class="menu__contactsItem">AppleStock@mail.ru</li>
   </ul>
 </div>
 
@@ -57,26 +67,44 @@
       <i class="gg-close"></i>
     </div>
     <div class="search__input input-container">
-      <input class="contacts__phone input-container__main" type="phone">
+      <input class="contacts__phone input-container__main" type="tel">
       <span class="input-container__placeholder">Введите название товара</span>
-      <svg class="search__icon">
-        <use href="#SearchIcon"></use>
-      </svg>
+      <button type="submit">
+        <svg class="search__icon">
+          <use href="#SearchIcon"></use>
+        </svg>
+      </button>
   </div>
 </form>
 
 <header class="header">
   <a class="header__logo" href="#">Apple Stock</a>
-  <nav class="header__list">
-    <a href="#" class="header__item">iPhone</a>
-    <a href="#" class="header__item">Android</a>
-    <a href="#" class="header__item">Apple Watch</a>
-    <a href="#" class="header__item">iMac</a>
-    <a href="#" class="header__item">iPad</a>
-    <a href="#" class="header__item">Аксессуары</a>
-    <a href="#" class="header__item">Macbook</a>
-    <a href="#" class="header__item">Наушники</a>
-  </nav>
+  <ul class="header__list">
+    <li>
+      <a href="#" class="header__item">iPhone</a>
+    </li>
+    <li>
+      <a href="#" class="header__item">Android</a>
+    </li>
+    <li>
+      <a href="#" class="header__item">Apple Watch</a>
+    </li>
+    <li>
+      <a href="#" class="header__item">iMac</a>
+    </li>
+    <li>
+      <a href="#" class="header__item">iPad</a>
+    </li>
+    <li>
+      <a href="#" class="header__item">Аксессуары</a>
+    </li>
+    <li>
+      <a href="#" class="header__item">Macbook</a>
+    </li>
+    <li>
+      <a href="#" class="header__item">Наушники</a>
+    </li>
+  </ul>
   <nav class="header__contacts">
     <a href="#" class="header__contactItem">
       <svg class="header__whatsUpIcon">

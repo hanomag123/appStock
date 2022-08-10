@@ -50,7 +50,7 @@
     z-index: 1;
     width: 36.6rem;
     height: 100vh;
-    height: -webkit-fill-available;
+    // height: -webkit-fill-available;
     right: 0;
     top: 0;
     
@@ -135,17 +135,15 @@
         }
     }
 
-    &__itemMain:first-child {
-        display: none;
-        @include breakpoint($lg-bp) {
-            display: block;
-        }
-    }
-
     .accordion {
         position: relative;
         margin-bottom: 1rem;
         transition: 0.4s;
+
+        display: none;
+        @include breakpoint($lg-bp) {
+            display: block;
+        }
 
 
             &:hover::before,
@@ -296,12 +294,15 @@
         input {
             padding-right: 4.5rem;
         }
-
-        .search__icon {
+        button {
             position: absolute;
             top: calc(50% - 1.14rem);
             right: 2rem;
 
+            border: 0;
+            background-color: transparent;
+        }
+        .search__icon {
             width: 2.053rem;
             height: 2.292rem;
             fill: transparent;
