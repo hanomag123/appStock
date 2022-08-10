@@ -108,14 +108,16 @@ const newsSwiper = new Swiper(".news__swiper", {
 
 const previewSlider = new Swiper('.prewiev__slider', {
     slidesPerView: 4,
-    spaceBetween: 20,
+    spaceBetween: 12,
     loop: true,
-    direction: 'vertical',
-    
-})
-
-previewSlider.on('slideChange', function () {
-    console.log('*** mySwiper.realIndex', previewSlider.realIndex);
+    slideToClickedSlide	: true,
+    breakpoints: {
+        // when window width is >= 1024px
+        1025: {
+            spaceBetween: 20,
+            direction: 'vertical',
+        },
+    }
 })
 
 function prewievImage () {
@@ -206,16 +208,19 @@ function activeteToggleSearch () {
             searchElement.classList.remove('search__hide')
         }
     }
-
-    console.log(searchElement, searchButton)
 }
 
 function changeHide() {
     const hideText = document.querySelector('.hideText') || null
+    hideText.innerHTML = 'Показать полностью'
     const characterText = document.querySelector('.characteristics') || null
     if (hideText && characterText) {
         hideText.addEventListener('click', () => {
             characterText.classList.toggle('active666')
+            hideText.innerHTML === 'Показать полностью' ? hideText.innerHTML = 'Скрыть' : hideText.innerHTML = 'Показать полностью'
+            if (!characterText.classList.contains('active666')) {
+                characterText.scrollIntoView(true)
+            }
         })
         }
     }
@@ -265,9 +270,7 @@ for (let i = 0; i < acc2.length; i++) {
 
 
 let filterIcoContainerMobile = document.querySelector('.filterIcoContainerMobile')
-console.log(filterIcoContainerMobile)
 let filterContainer = document.querySelector('.filterContainer')
-console.log(filterContainer)
 
 if (filterIcoContainerMobile != null) {
     filterIcoContainerMobile.addEventListener('click', e => {
