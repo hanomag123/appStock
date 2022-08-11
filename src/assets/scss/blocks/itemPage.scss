@@ -69,9 +69,6 @@
             }
         }
         }
-        .prewiev__sliderWrapper {
-            // height: 100%;
-        }
         div.swiper.prewiev__slider {
             height: 54.8rem;
             @include breakpoint($xl-bp) {
@@ -304,30 +301,61 @@
     }
 }
 
-.topSales {
+.topSalesItem {
+
+    padding-left: $border;
+    padding-right: $border;
+
+    @include breakpoint($cos-bp) {
+        padding-left: $border-average;
+        padding-right: $border-average;
+    }
+
+    @include breakpoint($xl-bp) {
+        padding-left: $border-min;
+        padding-right: $border-min;
+
+    }
     &__catalog {
         height: 52.3rem;
-        overflow: visible;
+        // overflow: visible;
         // overflow-x: clip;
         @include breakpoint($sm-bp) {
             height: 28rem;
         }
     }
 
+    div {
+        transition: all 0.5s ease-in-out;
+        will-change: height;
+    }
+
+    &__imgContainer {
+        height: 50%;
+        // transition: all 0.5s ease-in-out;
+    }
+
     &__img {
-        height: 22rem;
+        height: 100%;
         width: 100%;
         object-fit: contain;
 
-        transition: height 0.5s ease-in-out;
-        @include breakpoint($sm-bp) {
-            height: 11.8rem;
+        // transition: all 0.5s ease-in-out;
+        @include breakpoint($xl-bp) {
+            height: 70%;
         }
     }
     &__title {
         @extend %title;
         
 
+    }
+
+    .swiper {
+        overflow: visible;
+        @include breakpoint($xl-bp) {
+            overflow: hidden;
+        }
     }
 
     &__item {
@@ -340,7 +368,7 @@
         border-radius: 1rem;
         padding: 4rem;
         width: 33.2rem;
-        height: 49.7rem;
+        // height: 49.7rem;
 
         background: #F3F3F3;
 
@@ -350,20 +378,21 @@
         gap: 2rem;
 
         // @extend %scaleHover;
-        transition: all 0.5s ease-in-out;
+        // transition: all 0.5s ease-in-out;
 
         @media(any-hover: hover) {
         &:hover {
-            height: 56.3rem;
+            height: 115%;
             padding: 0;
             padding-bottom: 3rem;
-            img {
+            gap: 0;
+            .topSalesItem__imgContainer {
                 height: 40rem;
             }
-            .topSales__wrapper {
+            .topSalesItem__wrapper {
                 padding: 0 3rem;
             }
-            .topSales__priceContainer {
+            .topSalesItem__priceContainer {
                 margin-top: 0;
             }
             span {
@@ -374,19 +403,19 @@
         
         @include breakpoint($sm-bp) {
             padding: 0.95rem;
-            height: 24.8rem;
+            height: 100%;
             @media(any-hover: hover) {
                 &:hover {
-                    height: 24.8rem;
+                    height: 100%;
                     padding: 0;
                     padding-bottom: 0.95rem;
                     img {
                         height: 13rem;
                     }
-                    .topSales__wrapper {
+                    .topSalesItem__wrapper {
                         padding: 0 0.95rem;
                     }
-                    .topSales__priceContainer {
+                    .topSalesItem__priceContainer {
                         margin-top: 0;
                     }
                     span {
@@ -410,15 +439,15 @@
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
-        transition: all 0.5s ease-in-out;
+        // transition: all 0.5s ease-in-out;
     }
 
         &__priceContainer {
-            margin-top: 6.5rem;
+            // margin-top: 6.5rem;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            transition: margin-top 0.5s ease-in-out;
+            // transition: all 0.5s ease-in-out;
             @include breakpoint($sm-bp) {
                 margin-top: 0;
                 gap: 0rem;
@@ -462,6 +491,7 @@
             // bottom: 0;
             width: 100%;
             display: flex;
+            margin-top: 3rem;
             // z-index: 1;
         }
         &__prevButton {
@@ -477,4 +507,8 @@
     font-family: 'Inter';
     font-style: normal;
     margin-bottom: 10rem;
+}
+
+.wrapper__itemPage {
+    overflow: hidden;
 }
