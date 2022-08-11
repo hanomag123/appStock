@@ -1,0 +1,165 @@
+.contacts {
+    padding-top: 5rem;
+    padding-right: $border;
+    padding-left: $border;
+    padding-bottom: 12rem;
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    column-gap: 15rem;
+
+    @include breakpoint($cos-bp) {
+        padding-left: $border-average;
+        padding-right: $border-average;
+    }
+
+    @include breakpoint($xl-bp) {
+        padding-left: $border-min;
+        padding-right: $border-min;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 6rem;
+    }
+
+
+    @include breakpoint($sm-bp) {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 3rem;
+        padding-bottom: 0;
+    }
+
+
+    iframe {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 1rem;
+    }
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 13rem;
+        height: min-content;
+        width: 100%;
+        gap: 8rem;
+        @include breakpoint($mb-bp) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4rem;
+            padding-bottom: 8rem;
+        }
+        @include breakpoint($sm-bp) {
+            padding-bottom: 4rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__listItem {
+        font-family: 'InterMed';
+        font-weight: 500;
+
+        color: $black;
+
+        display: grid;
+        grid-template-columns: 2.5rem 1fr;
+        grid-column-gap: 2.5rem;
+        grid-row-gap: 0.6rem;
+        align-items: center;
+        @include breakpoint($sm-bp) {
+            grid-column-gap: 3rem;
+        }
+    }
+
+    &__icon {
+        grid-row: 2 span;
+    }
+
+    &__desc {
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+        color: $black;
+    }
+
+    &__workHours {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        width: 44.5rem;
+        @include breakpoint($xl-bp) {
+            width: 100%;
+        }
+        @include breakpoint($sm-bp) {
+            padding-left: $border-min;
+            padding-right: $border-min;
+        }
+    }
+
+    &__topText {
+        margin-top: 8.6rem;
+        font-family: 'Inter';
+        font-weight: 600;
+        font-size: 3rem;
+        line-height: 3.6rem;
+        
+        color: $black;
+        @include breakpoint($xl-bp) {
+            margin-top: 6rem;
+        }
+    }
+    
+    &__notification {
+        font-family: 'Inter';
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        
+        color: $black;
+    }
+
+    &__phone {
+        width: 44.5rem;
+        @include breakpoint($sm-bp) {
+            width: 100%;
+        }
+    }
+
+    &__submit {
+        @extend %button;
+        
+        height: 5rem;
+        width: 44.5rem;
+        @include breakpoint($sm-bp) {
+            width: 100%;
+        }
+    }
+
+    &__imgContainer {
+        margin-right: 20rem;
+        @include breakpoint($cos-bp) {
+            margin-right: 0;
+        }
+        @include breakpoint($xl-bp) {
+            width: 100%;
+        }
+    }
+
+    &__img {
+        object-fit: contain;
+        width: 100%;
+        height: 49.7rem;
+    }
+}

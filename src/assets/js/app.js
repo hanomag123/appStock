@@ -141,13 +141,18 @@ function focusInput () {
         const inputForms = form.querySelectorAll('input')
         inputForms.forEach(input => {
             input.addEventListener('blur', blurListen)
+            changeBlurElem(input)
         })
     }
 
     function blurListen (event) {
         const target = event.target
-        const isHaveValue = Boolean(target.value)
-        isHaveValue ? target.classList.add('input-container__haveValue') : target.classList.remove('input-container__haveValue')
+        changeBlurElem(target)
+    }
+
+    function changeBlurElem(el) {
+        const isHaveValue = Boolean(el.value)
+        isHaveValue ? el.classList.add('input-container__haveValue') : el.classList.remove('input-container__haveValue')
     }
 }
 
@@ -212,9 +217,9 @@ function activeteToggleSearch () {
 
 function changeHide() {
     const hideText = document.querySelector('.hideText') || null
-    hideText.innerHTML = 'Показать полностью'
     const characterText = document.querySelector('.characteristics') || null
     if (hideText && characterText) {
+        hideText.innerHTML = 'Показать полностью'
         hideText.addEventListener('click', () => {
             characterText.classList.toggle('active666')
             hideText.innerHTML === 'Показать полностью' ? hideText.innerHTML = 'Скрыть' : hideText.innerHTML = 'Показать полностью'
