@@ -1,4 +1,3 @@
-
 .busket {
     position: relative;
 
@@ -11,7 +10,7 @@
     color: $black;
 
 
-    
+
     padding-left: $border;
     padding-right: $border;
 
@@ -44,172 +43,186 @@
         row-gap: 2rem;
         padding-top: 3rem;
     }
-    
-section.busket__products {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  
-    div.busket__productContainer {
-        display: grid;
-        grid-template-columns: 2rem min-content repeat(3, 1fr) 2rem;
-        column-gap: 3rem;
-        align-items: center;
 
-        @include breakpoint($lb-bp) {
-            grid-template-columns: min-content repeat(3, 1fr);
-            grid-template-rows: 3rem repeat(2, 1fr);
-            row-gap: 0.5rem;
-            column-gap: 1rem;
-        }
-
-        .busket__checkBox {
-            @include breakpoint($lb-bp) {
-                align-self: start!important;
-            }
-        }
-  
-      div.busket__imgWrapper {
-        width: 8.3rem;
-        height: 8.3rem;
-
-        @include breakpoint($lb-bp) {
-            grid-row: 2 / 4;
-            grid-column: 1 / 2;
-        }
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-      }
-  
-      div.busket__titleContainer {
-        justify-self: end;
-        
-        @include breakpoint($lb-bp) {
-            grid-row: 2 / 3;
-            grid-column: 2 / 4;
-            justify-self: start;
-        }
-        div.busket__modelName {
-            margin-top: 1rem;
-            @include breakpoint($lb-bp) {
-                margin-top: 0;
-            }
-        }
-      }
-  
-      div.busket__inputNumberContainer {
+    section.busket__products {
         display: flex;
-        gap: .8rem;
-        align-items: center;
-        justify-self: center;
+        flex-direction: column;
+        gap: 1.5rem;
 
-        @include breakpoint($lb-bp) {
-            grid-row: 3 / 4;
-            grid-column: 2 / 3;
-        }
-        button.busket__inputPlus,
-        button.busket__inputMinus{
-            width: 3.9rem;
-            height: 3.9rem;
-            
-            border: 0.1rem solid $persic;
-            border-radius: 0.5rem;
-        }
-  
-        div.busket__number {
-            padding: 0 0.7rem;
-        }
-      }
-  
-      div.busket__priceContainer {
-        @include breakpoint($lb-bp) {
-            grid-row: 3 / 4;
-            grid-column: 3 / 5;
-        }
-        div.busket__price {
-            font-weight: 500;
-            font-size: 2.4rem;
-            line-height: 2.9rem;
+        div.busket__productContainer {
+            display: grid;
+            grid-template-columns: 2rem min-content repeat(3, 1fr) 2rem;
+            column-gap: 3rem;
+            align-items: center;
+
             @include breakpoint($lb-bp) {
-                font-size: 1.4rem;
-                font-weight: 700;
-                line-height: 2rem;
+                grid-template-columns: min-content repeat(3, 1fr);
+                grid-template-rows: 3rem repeat(2, 1fr);
+                row-gap: 0.5rem;
+                column-gap: 1rem;
+            }
+
+            .busket__checkBox {
+                @include breakpoint($lb-bp) {
+                    align-self: start !important;
+                }
+            }
+
+            div.busket__imgWrapper {
+                width: 8.3rem;
+                height: 8.3rem;
+
+                @include breakpoint($lb-bp) {
+                    grid-row: 2 / 4;
+                    grid-column: 1 / 2;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            div.busket__titleContainer {
+                justify-self: end;
+
+                @include breakpoint($lb-bp) {
+                    grid-row: 2 / 3;
+                    grid-column: 2 / 4;
+                    justify-self: start;
+                }
+
+                div.busket__modelName {
+                    margin-top: 1rem;
+
+                    @include breakpoint($lb-bp) {
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            div.busket__inputNumberContainer {
+                display: flex;
+                gap: .8rem;
+                align-items: center;
+                justify-self: center;
+
+                @include breakpoint($lb-bp) {
+                    grid-row: 3 / 4;
+                    grid-column: 2 / 3;
+                }
+
+                button.busket__inputPlus,
+                button.busket__inputMinus {
+                    width: 3.9rem;
+                    height: 3.9rem;
+
+                    border: 0.1rem solid $persic;
+                    border-radius: 0.5rem;
+                }
+
+                div.busket__number {
+                    padding: 0 0.7rem;
+                }
+            }
+
+            div.busket__priceContainer {
+                @include breakpoint($lb-bp) {
+                    grid-row: 3 / 4;
+                    grid-column: 3 / 5;
+                }
+
+                div.busket__price {
+                    font-weight: 500;
+                    font-size: 2.4rem;
+                    line-height: 2.9rem;
+
+                    @include breakpoint($lb-bp) {
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        line-height: 2rem;
+                    }
+                }
+
+                div.busket__credit {
+                    margin-top: 0.5rem;
+
+                    font-weight: 500;
+                    line-height: 2.2rem;
+
+                    color: $gray;
+
+                    @include breakpoint($lb-bp) {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                    }
+                }
+            }
+
+            .busket__closeIcon {
+                @include breakpoint($lb-bp) {
+                    grid-row: 1 / 2;
+                    grid-column: 4 / 5;
+                    justify-self: end;
+                }
+
+                cursor: pointer;
+
+                &:hover>.gg-close::after,
+                &:hover>.gg-close::before {
+                    background: $persic;
+                }
+
+                .gg-close {
+                    box-sizing: border-box;
+                    position: relative;
+                    display: block;
+                    transform: scale(1);
+                    width: 2rem;
+                    height: 2rem;
+                    border: 0.2rem solid transparent;
+                    border-radius: 4rem;
+                }
+
+                .gg-close::after,
+                .gg-close::before {
+                    content: "";
+                    display: block;
+                    box-sizing: border-box;
+                    position: absolute;
+                    width: 2rem;
+                    height: 0.1rem;
+                    background: $black;
+                    transform: rotate(45deg);
+                    top: 50%;
+                    right: -0.4rem;
+                    transition: $trans;
+                }
+
+                .gg-close::after {
+                    transform: rotate(-45deg)
+                }
+
+                @include breakpoint($lg-bp) {
+                    align-self: flex-end;
+                }
             }
         }
-  
-        div.busket__credit {
-            margin-top: 0.5rem;
 
-            font-weight: 500;
-            line-height: 2.2rem;
-            
-            color: $gray;
+        .close-icon {
+            align-self: center !important;
+
             @include breakpoint($lb-bp) {
-                font-size: 1.4rem;
-                line-height: 2rem;
+                align-self: start !important;
             }
         }
-      }
-  
-      .busket__closeIcon {
-        @include breakpoint($lb-bp) {
-            grid-row: 1 / 2;
-            grid-column: 4 / 5;
-            justify-self: end;
-        }
-        cursor: pointer;
-        &:hover > .gg-close::after,
-        &:hover > .gg-close::before{
-            background: $persic;
-        }
-        .gg-close {
-            box-sizing: border-box;
-            position: relative;
-            display: block;
-            transform: scale(1);
-            width: 2rem;
-            height: 2rem;
-            border: 0.2rem solid transparent;
-            border-radius: 4rem;
-        }
-        .gg-close::after,
-        .gg-close::before {
-            content: "";
-            display: block;
-            box-sizing: border-box;
-            position: absolute;
-            width: 2rem;
-            height: 0.1rem;
-            background: $black;
-            transform: rotate(45deg);
-            top: 50%;
-            right: -0.4rem;
-            transition: $trans;
-        }
-        .gg-close::after {
-            transform: rotate(-45deg)
-        }
-        @include breakpoint($lg-bp) {
-            align-self: flex-end;
-        }
-    }
-    }
 
-    .close-icon {
-        align-self: center!important;
-        @include breakpoint($lb-bp) {
-            align-self: start!important;
+        .busket__line {
+            margin: 1rem 0;
+            border-top: 1px solid $gray;
         }
     }
-
-    .busket__line {
-        margin: 1rem 0;
-        border-top: 1px solid $gray;
-    }
-  }
 }
 
 .buyer {
@@ -236,7 +249,7 @@ section.busket__products {
     }
 
     .buyer__input:last-of-type {
-            grid-column: 2 span;
+        grid-column: 2 span;
     }
 }
 
@@ -247,7 +260,7 @@ section.busket__products {
     flex-direction: column;
     gap: 1.5rem;
 
-    
+
     @include breakpoint($xl-bp) {
         grid-column: unset;
     }
@@ -257,45 +270,50 @@ section.busket__products {
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         column-gap: 6rem;
         row-gap: 2rem;
+
         .delivery-type__block {
             display: grid;
             grid-template-columns: 2rem 1fr;
             column-gap: 1.5rem;
+
             .busket__checkBox {
                 margin-top: 0.6rem;
             }
-            .delivery-type__wrapper {
-            }
+
+            .delivery-type__wrapper {}
+
             .delivery-type__nameItem {
                 padding-bottom: 0.5rem;
             }
-            .delivery-type__desc {
-        
-            }
-        
+
+            .delivery-type__desc {}
+
         }
     }
+
     .cash-type__container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
         column-gap: 0;
         row-gap: 2rem;
+
         .delivery-type__block {
             display: grid;
             grid-template-columns: 2rem 1fr;
             column-gap: 1.5rem;
+
             .busket__checkBox {
                 margin-top: 0.6rem;
             }
-            .delivery-type__wrapper {
-            }
+
+            .delivery-type__wrapper {}
+
             .delivery-type__nameItem {
                 padding-bottom: 0.5rem;
             }
-            .delivery-type__desc {
-        
-            }
-        
+
+            .delivery-type__desc {}
+
         }
     }
 }
@@ -324,90 +342,95 @@ div.total.busket-block {
         grid-column: unset;
         grid-row: unset;
     }
+
     .busket__totalAmount {
         text-align: end;
     }
 
-div.busket__wrapperDesc {
-    grid-column: 2 span;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 0.5rem;
-    column-gap: 2rem;
-
-    @include breakpoint($cos-bp) {
-        grid-template-columns: 1fr 10rem;
-    }
-
-    @include breakpoint($lb-bp) {
-        grid-template-columns: 1fr 13rem;
-    }
-
-    .busket-descrTopBlack {
-        margin-left: 14rem;
+    div.busket__wrapperDesc {
+        grid-column: 2 span;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 0.5rem;
+        column-gap: 2rem;
 
         @include breakpoint($cos-bp) {
-            margin-left: 0;
-            grid-template-columns: 1fr 5rem;
+            grid-template-columns: 1fr 10rem;
         }
+
         @include breakpoint($lb-bp) {
-            font-weight: 700;
+            grid-template-columns: 1fr 13rem;
+        }
+
+        .busket-descrTopBlack {
+            margin-left: 14rem;
+
+            @include breakpoint($cos-bp) {
+                margin-left: 0;
+                grid-template-columns: 1fr 5rem;
+            }
+
+            @include breakpoint($lb-bp) {
+                font-weight: 700;
+            }
         }
     }
-}
 
-div.busket__addressWrapper {
-    padding: 1rem 0;
-    grid-column: 2 span;
-}
-
-.input-container.busket__interPromo {
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-    grid-column: 2 span;
-
-    
-    @include breakpoint($lb-bp) {
-        margin-bottom: 1rem;
+    div.busket__addressWrapper {
+        padding: 1rem 0;
+        grid-column: 2 span;
     }
-    .busket__interPromoButton {
-        position: absolute;
-        background-color: transparent;
-        top: 1.5rem;
-        right: 2rem;
-        border: 0;
+
+    .input-container.busket__interPromo {
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        grid-column: 2 span;
+
+
+        @include breakpoint($lb-bp) {
+            margin-bottom: 1rem;
+        }
+
+        .busket__interPromoButton {
+            position: absolute;
+            background-color: transparent;
+            top: 1.5rem;
+            right: 2rem;
+            border: 0;
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 2rem;
+
+            color: $persic;
+
+        }
+
+        input {
+            background-color: $ligthGrey;
+        }
+    }
+
+    button.busket__buttonInput {
+        width: 100%;
+        @extend %button;
+
+        @include breakpoint($lb-bp) {
+            grid-column: 2 span;
+        }
+    }
+
+    div.busket__buttonDesc {
+        font-family: InterMed;
         font-weight: 500;
         font-size: 1.4rem;
         line-height: 2rem;
 
-        color: $persic;
+        padding-right: 1rem;
 
+        @include breakpoint($lb-bp) {
+            grid-column: 2 span;
+        }
     }
-    input {
-        background-color: $ligthGrey;
-    }
-}
-
-button.busket__buttonInput {
-    width: 100%;
-    @extend %button;
-    @include breakpoint($lb-bp) {
-        grid-column: 2 span;
-    }
-}
-
-div.busket__buttonDesc {
-    font-family: InterMed;
-    font-weight: 500;
-    font-size: 1.4rem;
-    line-height: 2rem;
-
-    padding-right: 1rem;
-
-    @include breakpoint($lb-bp) {
-        grid-column: 2 span;
-    }
-}
 }
 
 
@@ -423,6 +446,7 @@ div.busket__buttonDesc {
     padding: 2rem 5rem;
     background: $ligthGrey;
     border-radius: 1rem;
+
     @include breakpoint($lb-bp) {
         padding: 1.5rem;
     }
@@ -432,7 +456,7 @@ div.busket__buttonDesc {
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 2rem;
-    
+
     color: $gray;
 }
 
@@ -441,7 +465,7 @@ div.busket__buttonDesc {
     font-weight: 500;
     font-size: 1.8rem;
     line-height: 2.2rem;
-    
+
     color: $gray;
 }
 
@@ -477,8 +501,8 @@ div.busket__buttonDesc {
         display: inline-flex;
         align-items: center;
         user-select: none;
-      }
-    
+    }
+
     input+label::before {
         content: '';
         display: inline-block;

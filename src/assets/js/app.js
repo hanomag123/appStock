@@ -90,6 +90,35 @@ const swiper = new Swiper(".topSales__catalog", {
     }
 });
 
+const swiper2 = new Swiper(".topSalesItem__catalog", {
+    slidesPerView: 2,
+    spaceBetween: 19,
+    pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    effect: 'flip',
+    autoHeight: true,
+    },
+    navigation: {
+        nextEl: ".topSalesItem__nextButton",
+        prevEl: ".topSalesItem__prevButton",
+    },
+    breakpoints: {
+        // when window width is >= 1024px
+        1025: {
+            slidesPerView: 3,
+            spaceBetween: 20
+        },
+        1345: {
+            slidesPerView: 4,
+        },
+        1545: {
+            slidesPerView: 5,
+            spaceBetween: 22,
+        },
+    }
+});
+
 const newsSwiper = new Swiper(".news__swiper", {
     slidesPerView: 1,
     spaceBetween: 40,
