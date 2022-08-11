@@ -1,4 +1,5 @@
 .itemPage {
+    position: relative;
     padding-top: 5rem;
     font-family: 'Inter';
     font-style: normal;
@@ -10,8 +11,6 @@
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-
-    overflow: hidden;
 
     @include breakpoint($cos-bp) {
         padding-left: $border-average;
@@ -26,7 +25,11 @@
         flex-direction: column;
     }
 
+
     div.prewiev {
+        position: sticky;
+        top: 4rem;
+        right: 0;
         justify-self: start;
 
         display: flex;
@@ -34,7 +37,10 @@
 
         margin-right: 10rem;
 
+
+        height: min-content;
         @include breakpoint($xl-bp) {
+            position: static;
             margin: 0;
             flex-direction: column;
             margin-bottom: 3rem;
@@ -64,7 +70,7 @@
         }
         }
         .prewiev__sliderWrapper {
-            height: 100%;
+            // height: 100%;
         }
         div.swiper.prewiev__slider {
             height: 54.8rem;
@@ -296,178 +302,179 @@
             display: block;
         }
     }
+}
 
-    .topSales {
-        &__catalog {
-            height: 52.3rem;
-            overflow: visible;
-            // overflow-x: clip;
-            @include breakpoint($sm-bp) {
-                height: 28rem;
+.topSales {
+    &__catalog {
+        height: 52.3rem;
+        overflow: visible;
+        // overflow-x: clip;
+        @include breakpoint($sm-bp) {
+            height: 28rem;
+        }
+    }
+
+    &__img {
+        height: 22rem;
+        width: 100%;
+        object-fit: contain;
+
+        transition: height 0.5s ease-in-out;
+        @include breakpoint($sm-bp) {
+            height: 11.8rem;
+        }
+    }
+    &__title {
+        @extend %title;
+        
+
+    }
+
+    &__item {
+        // position: relative;
+        // z-index: 4;
+        cursor: pointer;
+
+        margin-bottom: 3rem;
+        color: $black;
+        border-radius: 1rem;
+        padding: 4rem;
+        width: 33.2rem;
+        height: 49.7rem;
+
+        background: #F3F3F3;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+
+        // @extend %scaleHover;
+        transition: all 0.5s ease-in-out;
+
+        @media(any-hover: hover) {
+        &:hover {
+            height: 56.3rem;
+            padding: 0;
+            padding-bottom: 3rem;
+            img {
+                height: 40rem;
+            }
+            .topSales__wrapper {
+                padding: 0 3rem;
+            }
+            .topSales__priceContainer {
+                margin-top: 0;
+            }
+            span {
+                padding: 0 3rem;
             }
         }
-
-        &__img {
-            height: 22rem;
-            width: 100%;
-            object-fit: contain;
-
-            transition: height 0.5s ease-in-out;
-            @include breakpoint($sm-bp) {
-                height: 11.8rem;
-            }
         }
-        &__title {
-            @extend %title;
-            
-
+        
+        @include breakpoint($sm-bp) {
+            padding: 0.95rem;
+            height: 24.8rem;
+            @media(any-hover: hover) {
+                &:hover {
+                    height: 24.8rem;
+                    padding: 0;
+                    padding-bottom: 0.95rem;
+                    img {
+                        height: 13rem;
+                    }
+                    .topSales__wrapper {
+                        padding: 0 0.95rem;
+                    }
+                    .topSales__priceContainer {
+                        margin-top: 0;
+                    }
+                    span {
+                        padding: 0 0.95rem;
+                    }
+                }
+                }
         }
+    }
+    &__name {
+        font-family: InterReg;
+        font-weight: 400;
+        font-size: 1.8rem;
+        transition: all 0.5s ease-in-out;
+        @include breakpoint($sm-bp) {
+            font-size: 1.4rem;
+        }
+    }
 
-        &__item {
-            // position: relative;
-            // z-index: 4;
-            cursor: pointer;
+    &__wrapper {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        transition: all 0.5s ease-in-out;
+    }
 
-            margin-bottom: 3rem;
-            color: $black;
-            border-radius: 1rem;
-            padding: 4rem;
-            width: 33.2rem;
-            height: 49.7rem;
-
-            background: #F3F3F3;
-
+        &__priceContainer {
+            margin-top: 6.5rem;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            gap: 2rem;
-
-            // @extend %scaleHover;
-            transition: all 0.5s ease-in-out;
-
-            @media(any-hover: hover) {
-            &:hover {
-                height: 56.3rem;
-                padding: 0;
-                padding-bottom: 3rem;
-                img {
-                    height: 40rem;
-                }
-                .topSales__wrapper {
-                    padding: 0 3rem;
-                }
-                .topSales__priceContainer {
-                    margin-top: 0;
-                }
-                span {
-                    padding: 0 3rem;
-                }
-            }
-            }
-            
+            gap: 0.5rem;
+            transition: margin-top 0.5s ease-in-out;
             @include breakpoint($sm-bp) {
-                padding: 0.95rem;
-                height: 24.8rem;
-                @media(any-hover: hover) {
-                    &:hover {
-                        height: 24.8rem;
-                        padding: 0;
-                        padding-bottom: 0.95rem;
-                        img {
-                            height: 13rem;
-                        }
-                        .topSales__wrapper {
-                            padding: 0 0.95rem;
-                        }
-                        .topSales__priceContainer {
-                            margin-top: 0;
-                        }
-                        span {
-                            padding: 0 0.95rem;
-                        }
-                    }
-                    }
+                margin-top: 0;
+                gap: 0rem;
             }
         }
-        &__name {
+
+        &__pastPrice {
+            color: #8D8D8D;
             font-family: InterReg;
-            font-weight: 400;
-            font-size: 1.8rem;
-            transition: all 0.5s ease-in-out;
+            text-decoration: line-through;
             @include breakpoint($sm-bp) {
                 font-size: 1.4rem;
             }
         }
 
-        &__wrapper {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            transition: all 0.5s ease-in-out;
+        &__mainPrice {
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 3.6rem;
+            @include breakpoint($sm-bp) {
+                font-size: 1.4rem;
+                line-height: normal;
+            }
         }
 
-            &__priceContainer {
-                margin-top: 6.5rem;
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-                transition: margin-top 0.5s ease-in-out;
-                @include breakpoint($sm-bp) {
-                    margin-top: 0;
-                    gap: 0rem;
-                }
+        &__credit {
+            font-family: InterReg;
+            @include breakpoint($sm-bp) {
+                margin-top: 1rem;
             }
-    
-            &__pastPrice {
-                color: #8D8D8D;
-                font-family: InterReg;
-                text-decoration: line-through;
-                @include breakpoint($sm-bp) {
-                    font-size: 1.4rem;
-                }
-            }
-    
-            &__mainPrice {
-                font-weight: 700;
-                font-size: 3rem;
-                line-height: 3.6rem;
-                @include breakpoint($sm-bp) {
-                    font-size: 1.4rem;
-                    line-height: normal;
-                }
-            }
-    
-            &__credit {
-                font-family: InterReg;
-                @include breakpoint($sm-bp) {
-                    margin-top: 1rem;
-                }
-            }
-            &__busketButton {
-                @extend %busketButton;
+        }
+        &__busketButton {
+            @extend %busketButton;
 
-                @include breakpoint($sm-bp) {
-                    align-self: flex-start;
-                }
+            @include breakpoint($sm-bp) {
+                align-self: flex-start;
             }
-            &__buttonContainer {
-                // position: absolute;
-                // bottom: 0;
-                width: 100%;
-                display: flex;
-                // z-index: 1;
-            }
-            &__prevButton {
-                margin-left: auto;
-                @extend %prevButton;
-            }
-            &__nextButton {
-                @extend %nextButton;
-            }
-    }
+        }
+        &__buttonContainer {
+            // position: absolute;
+            // bottom: 0;
+            width: 100%;
+            display: flex;
+            // z-index: 1;
+        }
+        &__prevButton {
+            margin-left: auto;
+            @extend %prevButton;
+        }
+        &__nextButton {
+            @extend %nextButton;
+        }
+}
 
-    .itemPage__topSales {
-        margin-bottom: 10rem;
-        grid-column: 2 span;
-    }
+.itemPage__topSales {
+    font-family: 'Inter';
+    font-style: normal;
+    margin-bottom: 10rem;
 }
