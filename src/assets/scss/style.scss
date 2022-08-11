@@ -15,7 +15,7 @@ html {
 
 
   @include breakpoint($cos-bp) {
-    font-size: calc(100vw / 1330 * 10);
+    font-size: calc(100vw / 1460 * 10);
   }
 
   
@@ -23,6 +23,11 @@ html {
   @include breakpoint($xl-bp) {
     font-size: calc(100vw / 1024 * 10);
   }
+
+  @include breakpoint($lg-bp) {
+    font-size: calc(100vw / 920 * 10);
+  }
+  
 
   @include breakpoint($jb-bp) {
     font-size: calc(100vw / 850 * 10);
@@ -99,6 +104,9 @@ svg {
 @import './blocks/catalog.scss';
 @import './blocks/itemPage.scss';
 @import './blocks/catalogSecond.scss';
+@import './blocks/news.scss';
+@import './blocks/newsItem.scss';
+@import './blocks/aboutCompany.scss';
 
 // @import "blocks/menu";
 
