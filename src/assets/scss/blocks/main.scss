@@ -1,3 +1,21 @@
+.observe {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.8s ease;
+}
+
+.observe-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.8s ease;
+}
+
+.observe-active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 0.8s ease;
+}
+
 
 .main {
     font-family: Inter;
@@ -15,24 +33,6 @@
             padding-left: $border-min;
             padding-right: $border-min;
         }
-
-    .observe {
-        transform: translateX(100%);
-        opacity: 0;
-        transition: transform 0.8s ease;
-    }
-
-    .observe-left {
-        transform: translateX(-100%);
-        opacity: 0;
-        transition: transform 0.8s ease;
-    }
-
-    .observe-active {
-        transform: translateX(0);
-        opacity: 1;
-        transition: transform 0.8s ease;
-    }
 
     .home {
         height: calc(100vh - 9.7rem);
