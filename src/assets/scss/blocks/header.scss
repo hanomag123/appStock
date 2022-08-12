@@ -49,7 +49,7 @@
 
 .menu {
     position: fixed;
-    z-index: 1;
+    z-index: 4;
     width: 36.6rem;
     height: 100vh;
     right: 0;
@@ -69,7 +69,8 @@
     transition: transform 0.5s ease-in-out;
     transform: translateX(100%);
     
-    overflow: scroll!important;
+    overflow-y: scroll!important;
+    &::-webkit-scrollbar { width: 0; }
     @include breakpoint($xl-bp) {
         align-items: flex-start;
     }
@@ -83,14 +84,14 @@
         width: 100vw;
     }
 
+    .closeIconMenu {
+        padding-bottom: 8rem;
+        @include breakpoint($lg-bp) {
+            padding-bottom: 3rem;
+        }
+    }
     &__closeIcon {
         cursor: pointer;
-        // padding-bottom: 8rem;
-
-        @include breakpoint($lg-bp) {
-            // padding-bottom: 3rem;
-        }
-
         &:hover > .gg-close::after,
         &:hover > .gg-close::before{
             background: $persic;
@@ -172,7 +173,6 @@
 
     .accordion {
         position: relative;
-        margin-bottom: 1rem;
         transition: 0.4s;
 
         display: none;
@@ -351,7 +351,7 @@
 
     row-gap: 1.2rem;
 
-    z-index: 2;
+    z-index: 4;
 
     @include breakpoint($sm-bp) {
         width: 100%;
@@ -410,6 +410,12 @@
 
 
 .header {
+    position: fixed;
+	top: 0; left: 0;
+	width: 100%;
+	transition: all .3s ease;
+    z-index: 3;
+
     font-family: InterReg;
     font-size: clamp(1.4rem, calc(1vmin + 0.1rem) ,2rem);
     background-color: $black;
@@ -475,6 +481,8 @@
         }
     }
     &__contactItem {
+        position: relative;
+
         fill: $black;
         @extend %easyHover;
     }
@@ -508,6 +516,26 @@
         width: 2.5rem;
         height: 2.2rem;
     }
+    .busketItems__count {
+        position: absolute;
+        bottom: 1.1rem;
+        left: 1.2rem;
+
+        background-color: $persic;
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+
+        color: $white;
+        font-family: InterMed;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 142%;
+
+        text-align: center;
+        overflow: hidden;
+    }
     &__burgerMenuIcon {
         cursor: pointer;
         width: 5.2rem;
@@ -519,5 +547,14 @@
             display: block;
         }
     }
+}
+
+.header.out {
+    transform: translateY(-100%);
+}
+
+.probka {
+    height: 9.7rem;
+    background-color: $black;
 }
 

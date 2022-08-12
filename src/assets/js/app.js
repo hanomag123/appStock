@@ -226,7 +226,6 @@ function activeteToggleSearch () {
     closeButton.addEventListener('click', toggleSearch)
 
     function toggleSearch() {
-        console.log(event)
         searchElement.classList.toggle('search__hide')
         if (searchElement.classList.contains('search__hide')) {
             document.addEventListener('mouseup', closeSearch)
@@ -238,7 +237,6 @@ function activeteToggleSearch () {
     function closeSearch (event) {
         const isItSearch = Boolean(event.target.closest('.search'))
         const isItSearchIcon = Boolean(event.target.closest('.header-search'))
-        console.log(isItSearch, isItSearchIcon)
         if (isItSearch === false && isItSearchIcon === false) {
             searchElement.classList.remove('search__hide')
         }
@@ -260,6 +258,48 @@ function changeHide() {
         }
     }
 
+const busketCounter = () => {
+    const busketNumberContainer = document.querySelectorAll('.busket__inputNumberContainer')
+
+    if (busketNumberContainer.length > 0) {
+        busketNumberContainer.forEach(el => {
+            el.addEventListener('click', changeNumber)
+        })
+    }
+
+    function changeNumber (event) {
+        const numberElement = this.querySelector('.busket__number')
+        let numberNow = numberElement.innerHTML
+        if (Boolean(event.target.closest('.busket__inputPlus'))) {
+            numberNow++
+            numberElement.innerHTML = numberNow
+        } else if (Boolean(event.target.closest('.busket__inputMinus'))) {
+            numberNow <= 0 ? numberNow = 0 : numberNow--
+            numberElement.innerHTML = numberNow
+        }
+    }
+}
+
+const headerHide = () => {
+    const searchElement = document.querySelector('.search')
+    let scrollPrev = 0;
+    window.addEventListener('scroll', () => {
+        const offset = window.pageYOffset
+        const header = document.querySelector('header')
+        if (offset > 100 && offset > scrollPrev) {
+            header.classList.add('out')
+            if (searchElement) {
+                searchElement.classList.remove('search__hide')
+            }
+        } else {
+            header.classList.remove('out')
+        }
+        scrollPrev = offset
+    })
+}
+
+headerHide()
+
 focusInput()
 mainObserver()
 preLoad()
@@ -268,6 +308,7 @@ activateMenu()
 activeteToggleSearch()
 prewievImage()
 changeHide()
+busketCounter()
 })
 
 
