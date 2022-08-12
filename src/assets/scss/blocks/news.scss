@@ -105,6 +105,11 @@
                 background: none;
             }
 
+            @include breakpoint($mb-bp) {
+                padding-top: 1rem;
+                padding-left: 3rem;
+            }
+
             .imgContainer {
                 display: none;
 

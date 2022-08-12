@@ -41,6 +41,7 @@
             flex-direction: column;
             gap: 2rem;
             .title {
+                
                 font-weight: 700;
                 font-size: 4rem;
                 line-height: 4.8rem;
@@ -67,6 +68,7 @@
             }
 
             .date {
+                font-family: InterReg;
                 font-weight: 500;
                 font-size: 1.4rem;
                 line-height: 142%;
@@ -86,6 +88,7 @@
             }
 
             .contentText {
+                font-family: InterReg;
                 font-weight: 400;
                 font-size: 1.8rem;
                 line-height: 136%;
@@ -163,6 +166,7 @@
                 }
         
                 .text {
+                    font-family: InterReg;
                     font-weight: 400;
                     font-size: 1.8rem;
                     line-height: 136%;
