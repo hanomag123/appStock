@@ -122,7 +122,7 @@
         <use href="#WhatsUpIcon"></use>
       </svg>
     </a>
-    <a href="#" class="header__contactItem">
+    <a data-bs-toggle="modal" data-bs-target="#exampleModal" href="#" class="header__contactItem">
       <svg class="header__telegramIcon">
         <use href="#TelegramIcon"></use>
       </svg>
@@ -147,3 +147,45 @@
     </svg>
   </nav>
 </header>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button> -->
+      <div class="modal-body">
+        <form action="#">
+          <p class="title">Заявка на покупку в кредит</p>
+          <div class="contentContainer">
+
+            <div class="inpContainer">
+              <div class="input-container">
+                <input class="contacts__phone input-container__main" type="text">
+                <span class="input-container__placeholder">Имя</span>
+              </div>
+              <div class="input-container">
+                <input class="contacts__phone input-container__main" type="text">
+                <span class="input-container__placeholder">Фамилия</span>
+              </div>
+              <div class="input-container">
+                <input class="contacts__phone input-container__main" type="text">
+                <span class="input-container__placeholder">Отчество</span>
+              </div>
+              <div class="input-container">
+                <input class="contacts__phone input-container__main" type="text">
+                <span class="input-container__placeholder">Город</span>
+              </div>
+              <div class="input-container">
+                <input class="contacts__phone input-container__main" type="tel">
+                <span class="input-container__placeholder">Телефон</span>
+              </div>
+            </div>
+            
+          <p>Отправляя форму, вы соглашаетесь на обработку персональных данных</p>
+
+          <button class="sendBtn" type="submit">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
