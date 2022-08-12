@@ -1,0 +1,190 @@
+div.paymentAndDelivery {
+
+  font-family: InterReg;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.2rem;
+
+  color: $black;
+
+  padding-left: $border;
+  padding-right: $border;
+  padding-bottom: 17rem;
+
+  @include breakpoint($cos-bp) {
+      padding-left: $border-average;
+      padding-right: $border-average;
+  }
+
+  @include breakpoint($xl-bp) {
+      padding-left: $border-min;
+      padding-right: $border-min;
+      padding-bottom: 8rem;
+  }
+
+  section.deliveryMethod {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-gap: 2rem 7.6rem;
+
+    margin-top: 5rem;
+    padding-bottom: 12rem;
+
+    @include breakpoint($xl-bp) {
+      grid-template-columns: 1fr;
+      padding-bottom: 8rem;
+      margin-top: 3rem;
+  }
+    h2.deliveryMethod__title.title-busket {
+      grid-column: 2 span;
+
+      @include breakpoint($xl-bp) {
+        grid-column: 1 span;
+    }
+    }
+
+    div.deliveryMethod__container {
+      display: flex;
+      gap: 1rem;
+
+      @include breakpoint($sm-bp) {
+        gap: 0;
+      }
+      div.deliveryMethod__number.title-busket {
+        padding-right: 0.5rem;
+      }
+
+      div.deliveryMethod__text {
+
+      }
+    }
+  }
+
+  .benefits {
+    // padding-right: $border;
+    // padding-left: $border;
+
+    // @include breakpoint($sm-bp) {
+    //     padding-left: $border-min;
+    //     padding-right: $border-min;
+    // }
+
+    .title-busket {
+      margin-bottom: 2rem;
+    }
+    
+
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 3rem;
+        @include breakpoint($xl-bp) {
+            grid-gap: 2rem;
+            grid-template-columns: 1fr;
+        }
+    }
+
+&__item {
+        height: 29rem;
+        grid-column: 4 span;
+        background: $ligthGrey;
+        border-radius: 1rem;
+        padding: 5rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+        @include breakpoint($xl-bp) {
+            height: 50rem;
+        }
+        @include breakpoint($sm-bp) {
+            height: 22rem;
+        }
+}
+
+&__desc {
+        font-family: 'Inter';
+        font-weight: 500;
+        font-size: 2.4rem;
+        line-height: 1.22em;
+        text-align: center;
+        
+        color: $black;
+        @include breakpoint($sm-bp) {
+            font-size: 1.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(33.5rem, 1fr));
+        }
+}
+    &__icon {
+        fill: $persic;
+        width: 5rem;
+        height: 5rem;
+        @include breakpoint($xl-bp) {
+            width: 15rem;
+            height: 15rem;
+        }
+        @include breakpoint($sm-bp) {
+            width: 10rem;
+            height: 10rem;
+        }
+    }
+}
+
+section.garanti {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  grid-gap: 2rem 10rem;
+
+  margin-top: 11rem;
+
+  @include breakpoint($xl-bp) {
+    grid-template-columns: 1fr;
+    margin-top: 7rem;
+}
+  h2.garanti__title.title-busket {
+    grid-column: 2 span;
+    @include breakpoint($xl-bp) {
+      grid-column: 1 span;
+      padding-bottom: 0;
+  }
+  }
+
+  div.garanti__listContainer {
+    h3.garanti__listTitle.busket-descrMiddleBlack {
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      list-style: disc;
+      list-style-position: inside;
+      @include breakpoint($xl-bp) {
+        list-style-position: outside;
+        padding-left: 2.5rem;
+      }
+      }
+      p {
+        @include breakpoint($xl-bp) {
+          padding-top: 1.5rem;
+      }
+    }
+  }
+
+  .garanti__imgWrapper {
+    width: 100%;
+    height: 100%;
+    @include breakpoint($xl-bp) {
+      padding-top: 1rem;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+}

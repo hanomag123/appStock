@@ -162,7 +162,8 @@ function prewievImage () {
 
     function addImg(index) {
         const activeImg = previewSlider.slides[index].querySelector('img')
-        mainBlock.src = activeImg.src
+        mainBlock.href = activeImg.src
+        mainBlock.querySelector('img').src = activeImg.src
     }
 }
 function focusInput () {

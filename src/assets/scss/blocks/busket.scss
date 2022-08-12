@@ -237,8 +237,15 @@
         grid-row: unset;
     }
 
+    @include breakpoint($sm-bp) {
+        grid-template-columns: 1fr;
+    }
+
     .buyer__title {
         grid-column: 2 span;
+        @include breakpoint($sm-bp) {
+            grid-column: 1 span;
+        }
     }
 
     .buyer__input {
@@ -250,6 +257,9 @@
 
     .buyer__input:last-of-type {
         grid-column: 2 span;
+        @include breakpoint($sm-bp) {
+            grid-column: 1 span;
+        }
     }
 }
 
@@ -435,6 +445,7 @@ div.total.busket-block {
 
 
 .title-busket {
+    font-family: Inter;
     font-weight: 700;
     font-size: 3rem;
     line-height: 3.6rem;
