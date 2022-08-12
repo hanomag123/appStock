@@ -137,7 +137,7 @@
             text-transform: uppercase;
             @include breakpoint($xl-bp) {
                 text-transform: capitalize;
-                font-size: 15rem;
+                font-size: 13rem;
             }
             @include breakpoint($mb-bp) {
                 font-size: 12rem;
@@ -146,7 +146,7 @@
                 font-size: 9rem;
             }
             @include breakpoint($sm-bp) {
-                font-size: 6.9rem;
+                font-size: 6.6rem;
                 width: 100%;
             }
         }
