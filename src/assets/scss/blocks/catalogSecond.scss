@@ -24,6 +24,11 @@
         font-size: 6rem;
         line-height: 7.3rem;
         color: #201F1F;
+
+        @include breakpoint($sm-bp) {
+            font-size: 3.2rem;
+            line-height: 3.8rem;
+        }
     }
 
     a {
@@ -89,6 +94,7 @@
         
 
         .accordion2 {
+            font-family: InterReg;
             font-weight: 500;
             font-size: 2.4rem;
             line-height: 2.9rem;
@@ -131,6 +137,7 @@
 
             div {
                 label {
+                    font-family: InterReg;
                     font-weight: 400;
                     font-size: 1.8rem;
                     line-height: 136%;
@@ -357,6 +364,7 @@
 
 
             .title {
+                font-family: InterReg;
                 font-weight: 400;
                 font-size: 1.8rem;
                 line-height: 136%;
@@ -386,6 +394,7 @@
                     gap: 0.5rem;
 
                     .oldPrice {
+                        font-family: InterReg;
                         font-weight: 400;
                         font-size: 1.6rem;
                         line-height: 1.9rem;
@@ -409,6 +418,7 @@
                     }
 
                     .creditPrice {
+                        font-family: InterReg;
                         font-weight: 400;
                         font-size: 1.8rem;
                         line-height: 136%;
