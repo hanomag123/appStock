@@ -116,7 +116,9 @@ svg {
 // @import "blocks/menu";
 
 
-
+body {
+  &::-webkit-scrollbar { width: 0; }
+}
 
 .hide {
   display: none;

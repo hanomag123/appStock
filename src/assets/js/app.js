@@ -48,8 +48,8 @@ function preLoad() {
 
 function preloadMainImg(callback) {
         const img = document.createElement('img');
-        img.onload = img.onerror = callback;
         img.src = './assets/images/main/mainBg.png';
+        img.onload = img.onerror = callback;
     }
 
     function changeBlurImg() {
@@ -189,6 +189,7 @@ function focusInput () {
 function activateMenu () {
     const toggleMenuButtons = document.querySelectorAll('.toggleMenuButton') 
     const menu = document.querySelector('.menu') || null
+    // const header = document.querySelector('header')
 
     if (toggleMenuButtons[0] && Boolean(menu)) {
         toggleMenuButtons.forEach(button => {
@@ -199,8 +200,10 @@ function activateMenu () {
     function toggleMenu () {
         const widthScroll = window.innerWidth - document.documentElement.clientWidth
         document.documentElement.style.setProperty('--scrollWidth', widthScroll + 'px')
+
         menu.classList.toggle('active');
         menu.classList.toggle('noscroll')
+        // header.classList.toggle('noscroll');
         document.documentElement.classList.toggle('noscroll');
         menu.classList.contains('active') ? document.addEventListener('mouseup', closeMenu) : document.removeEventListener('mouseup', closeMenu)
     }
@@ -212,6 +215,7 @@ function activateMenu () {
             menu.classList.toggle('active')
             document.documentElement.classList.toggle('noscroll')
             menu.classList.toggle('noscroll')
+            header.classList.toggle('noscroll')
             document.removeEventListener('mouseup', closeMenu)
         }
     }

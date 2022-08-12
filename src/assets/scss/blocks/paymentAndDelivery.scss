@@ -12,6 +12,8 @@ div.paymentAndDelivery {
   padding-right: $border;
   padding-bottom: 17rem;
 
+  overflow: hidden;
+
   @include breakpoint($cos-bp) {
       padding-left: $border-average;
       padding-right: $border-average;
