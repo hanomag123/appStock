@@ -68,7 +68,9 @@ body {
   //   font-size: 1.4rem;
   // }
 }
-
+// .page {
+//   overflow: auto;
+// }
 // button {
   
 // }
@@ -109,6 +111,7 @@ svg {
 @import './blocks/news.scss';
 @import './blocks/newsItem.scss';
 @import './blocks/aboutCompany.scss';
+@import './blocks/paymentAndDelivery.scss';
 
 // @import "blocks/menu";
 

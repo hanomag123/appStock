@@ -68,12 +68,15 @@
     align-items: flex-end;
     transition: transform 0.5s ease-in-out;
     transform: translateX(100%);
+    
+    overflow: scroll!important;
     @include breakpoint($xl-bp) {
         align-items: flex-start;
     }
 
     @include breakpoint($lg-bp) {
         padding-right: 2rem;
+        padding-bottom: 2rem;
     }
 
     @include breakpoint($lb-bp) {
@@ -82,6 +85,12 @@
 
     &__closeIcon {
         cursor: pointer;
+        // padding-bottom: 8rem;
+
+        @include breakpoint($lg-bp) {
+            // padding-bottom: 3rem;
+        }
+
         &:hover > .gg-close::after,
         &:hover > .gg-close::before{
             background: $persic;
@@ -125,6 +134,7 @@
         gap: 4rem;
         @include breakpoint($xl-bp) {
             align-items: flex-start;
+            gap: 2rem;
         }
     }
 
@@ -150,6 +160,13 @@
         }
         &:hover > a {
             color: $persic;
+        }
+
+        @include breakpoint($lg-bp) {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
         }
     }
 
@@ -226,6 +243,14 @@
 
     &__contacts {
         margin-top: 6.5rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        @include breakpoint($lg-bp) {
+            gap: 1.5rem;
+        }
     }
 
     &__contactsItem {
@@ -242,10 +267,21 @@
 
         display: flex;
         gap: 1rem;
+        &:last-child {
+            display: none;
+            margin-top: 1rem;
+            @include breakpoint($lg-bp) {
+                display: flex;
+                align-items: center;
+            }
+        }
+
         a {
             color: $black;
         }
     }
+
+
 
     &__icon {
         svg {
@@ -266,7 +302,6 @@
         svg {
             stroke: $persic;
             fill: transparent;
-            // fill: $persic;
             width: 2.3rem;
             height: 2.3rem;
         }
@@ -274,8 +309,8 @@
 
     .menu__iconBot:last-child {
         svg {
-        width: 2.8rem;
-        height: 2.2rem;
+        width: 2rem;
+        height: 2rem;
         }
     }
 
@@ -293,6 +328,8 @@
 .search {
     opacity: 0;
     transform: translateY(-100%);
+
+    overflow: hidden;
 
     transition: all 0.5s ease-in-out;
 

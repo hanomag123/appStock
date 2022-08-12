@@ -46,7 +46,7 @@
             margin-bottom: 3rem;
         }
         div.prewiev__mainBlock {
-            div.prewiev__imgContainer {
+            .prewiev__imgContainer {
             height: 54.8rem;
             
             /* серый лайт */
@@ -302,6 +302,7 @@
 }
 
 .topSalesItem {
+    overflow: hidden;
 
     padding-left: $border;
     padding-right: $border;
