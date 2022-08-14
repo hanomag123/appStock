@@ -71,7 +71,7 @@
     
     overflow-y: scroll!important;
     &::-webkit-scrollbar { width: 0; }
-    @include breakpoint($xl-bp) {
+    @include breakpoint($lg-bp) {
         align-items: flex-start;
     }
 
@@ -313,9 +313,6 @@
         height: 2rem;
         }
     }
-
-    &__text {
-    }
 }
 
 
@@ -443,7 +440,7 @@
 
         @extend %easyHover;
 
-        @include breakpoint($xl-bp) {
+        @include breakpoint($lg-bp) {
             display: none;
         }
     }
@@ -466,7 +463,7 @@
         @include breakpoint($cos_bp) {
             gap: clamp(1.2rem, calc(1vmin + 1rem) , 3rem);
         }
-        @include breakpoint($xl-bp) {
+        @include breakpoint($lg-bp) {
             display: none;
         }
     }
@@ -504,7 +501,7 @@
     &__phoneIcon {
         stroke: $white;
         width: 2.5rem;
-        height: 2.5rem;
+        height: 9.7rem;
     }
     &__searchIcon {
         width: 2rem;

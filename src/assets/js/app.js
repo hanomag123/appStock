@@ -150,7 +150,7 @@ const previewSlider = new Swiper('.prewiev__slider', {
 })
 
 function prewievImage () {
-    const mainBlock = document.querySelector('.prewiev__imgMain') || null
+    const mainBlock = document.querySelector('.prewiev__imgContainer') || null
     const swiper = document.querySelector('.prewiev__slider') || null
     if (mainBlock && swiper) {
         addImg(0)
@@ -215,7 +215,7 @@ function activateMenu () {
             menu.classList.toggle('active')
             document.documentElement.classList.toggle('noscroll')
             menu.classList.toggle('noscroll')
-            header.classList.toggle('noscroll')
+            // header.classList.toggle('noscroll')
             document.removeEventListener('mouseup', closeMenu)
         }
     }
