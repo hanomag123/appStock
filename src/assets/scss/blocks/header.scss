@@ -85,9 +85,11 @@
     }
 
     .closeIconMenu {
+        width: 5rem;
+        height: 5rem;
         padding-bottom: 8rem;
         @include breakpoint($lg-bp) {
-            padding-bottom: 3rem;
+            padding-bottom: 8rem;
         }
     }
     &__closeIcon {
@@ -351,7 +353,7 @@
 
     row-gap: 1.2rem;
 
-    z-index: 4;
+    z-index: 6;
 
     @include breakpoint($sm-bp) {
         width: 100%;
@@ -405,6 +407,7 @@
     .search__hide {
         opacity: 1;
         transform: translateY(0);
+        margin-right: var(--scrollWidth);
     }
     
 
@@ -579,25 +582,29 @@
 }
 .header__burgerMenuIcon {
     cursor: pointer;
-    width: 5.2rem;
-    height: 5.2rem;
-    position: absolute;
-    top: 2.2rem;
+    width: 5rem;
+    height: 9.7rem;
+    position: fixed;
+    top: 0;
     right: calc(8rem - 17px);
     z-index: 5;
+    transition: all .3s ease;
+    @include breakpoint($cos-bp) {
+        right: 1rem;
+    }
     &::before {
         content: '';
         position: absolute;
-        top: 35%;
+        top: calc(50% - .75rem);
         background-color: $white;
-        width: 5.2rem;
+        width: 5rem;
         height: 0.1rem;
         transition: all 0.3s ease;
     }
     &::after {
         content: '';
         position: absolute;
-        bottom: 35%;
+        top: calc(50% + .75rem);
         right: 0;
         background-color: $white;
         width: 3.2rem;
@@ -606,12 +613,15 @@
     }
     &:hover {
         &::after {
-            width: 5.2rem;
+            width: 5rem;
         }
     }
 }
 .activeIcon {
-    right: 11rem;
+    right: 10rem;
+    @include breakpoint($cos-bp) {
+        right: $border-average;
+    }
     &::before {
         transform: rotate(-45deg);
         top: 50%;
@@ -633,6 +643,9 @@
     }
 }
 
+.out {
+    transform: translateY(-100%);
+}
 .header.out {
     transform: translateY(-100%);
 }

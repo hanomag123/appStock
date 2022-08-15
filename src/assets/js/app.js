@@ -192,14 +192,22 @@ function activateMenu () {
 
 
     if (toggleMenuButtons && Boolean(menu)) {
-            toggleMenuButtons.addEventListener('click', toggleMenu)
+            toggleMenuButtons.addEventListener('click', toggleMenu, true)
     }
 
     function getWidthScrollBar ()   {
         return window.innerWidth - document.documentElement.clientWidth
     }
 
+    const getScrollBar = () => {
+        document.documentElement.style.setProperty('--scrollWidth', getWidthScrollBar() + 'px')
+    }
+    getScrollBar()
+
+    window.addEventListener('resize', getScrollBar)
+
     function toggleMenu () {
+        event.stopPropagation()
         const toggleMenuButtons = document.querySelector('.toggleMenuButton')
         toggleMenuButtons.classList.toggle('activeIcon')
         const widthScroll = getWidthScrollBar()
@@ -230,6 +238,7 @@ function activeteToggleSearch () {
     const searchElement = document.querySelector('.search')
     const searchButton = document.querySelector('.header-search')
     const closeButton = document.querySelector('.search__close-icon')
+    const toggleMenuButtons = document.querySelector('.toggleMenuButton')
 
     searchButton.addEventListener('click', toggleSearch)
     closeButton.addEventListener('click', toggleSearch)
@@ -237,13 +246,16 @@ function activeteToggleSearch () {
     function toggleSearch() {
         searchElement.classList.toggle('search__hide')
         if (searchElement.classList.contains('search__hide')) {
+            toggleMenuButtons.hidden = true
             document.addEventListener('mouseup', closeSearch)
         } else {
+            toggleMenuButtons.hidden = false
             document.removeEventListener('mouseup', closeSearch)
         }
     }
 
     function closeSearch (event) {
+        event.stopPropagation()
         const isItSearch = Boolean(event.target.closest('.search'))
         const isItSearchIcon = Boolean(event.target.closest('.header-search'))
         if (isItSearch === false && isItSearchIcon === false) {
@@ -329,6 +341,7 @@ const headerHide = () => {
     let isUp = false;
     let counter = 0;
     const searchElement = document.querySelector('.search')
+    const toggleMenuButtons = document.querySelector('.toggleMenuButton')
     let scrollPrev = 0;
     let border = 110;
     window.addEventListener('scroll', () => {
@@ -336,13 +349,18 @@ const headerHide = () => {
         const header = document.querySelector('header')
         if (offset > border && offset > scrollPrev) {
             header.classList.add('out')
+            toggleMenuButtons.classList.add('out')
+            counter = 0
             if (searchElement) {
                 searchElement.classList.remove('search__hide')
-                counter = 0
+            }
+            if (toggleMenuButtons.hidden === true) {
+                toggleMenuButtons.hidden = false
             }
         } else {
             if (counter > 15 || offset < border) {
                 header.classList.remove('out')
+                toggleMenuButtons.classList.remove('out')
             }
         }
         if (+offset > +scrollPrev) {
