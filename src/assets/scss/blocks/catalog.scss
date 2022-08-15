@@ -3,16 +3,16 @@
     font-family: 'Inter';
     font-style: normal;
     
+    margin-bottom: 12rem;
+    
+    
     .titleContainer {
         background: #201F1F;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        @include breakpoint($xl-bp) {
-            padding-left: 4rem;
-            padding-right: 4rem;
-        }
+        
         .title {
             font-weight: 700;
             font-size: 16rem;
@@ -74,12 +74,18 @@
     .blocksContainer {
         font-family: 'Inter';
         font-style: normal;
-        display: flex;
-        flex-wrap: wrap;
+        // display: flex;
+        // flex-wrap: wrap;
         gap: 3.7rem;
         margin-top: 12rem;
-        justify-content: center;
+        // justify-content: center;
         width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
+        padding-left: 8rem;
+        padding-right: 8rem;
+
 
         @include breakpoint($cos-bp) {
             display: grid;
@@ -95,8 +101,16 @@
             padding-right: 4rem;
         }
 
+        @include breakpoint($sm-bp) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
         .bigWhiteContainer {
-            width: 64.5rem;
+            // width: 64.5rem;
+
+            grid-column: 2 span;
+                width: auto;
             @include breakpoint($cos-bp) {
                 grid-column: 2 span;
                 width: auto;
@@ -109,8 +123,10 @@
 
         .blackContainer {
             background: #201F1F;
-            width: 64.5rem;
+            // width: 64.5rem;
             color: #FFFFFF;
+            grid-column: 2 span;
+                width: auto;
             @include breakpoint($cos-bp) {
                 grid-column: 2 span;
                 width: auto;
@@ -138,7 +154,7 @@
             font-size: 3rem;
             line-height: 3.6rem;
             color: #201F1F;
-            width: 33.5rem;
+            // width: 33.5rem;
             @extend %scaleHover;
             img {
                 height: 25.4rem;
@@ -161,14 +177,33 @@
     .whyContainer {
         margin-top: 12rem;
         display: flex;
-        justify-content: center;
+        // justify-content: center;
         align-items: center;
         flex-direction: column;
 
-        @include breakpoint($lb-bp) {
+        padding-left: 8rem;
+        padding-right: 8rem;
+
+        @include breakpoint($cos-bp) {
+        
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
+    
+        @include breakpoint($xl-bp) {
             padding-left: 4rem;
             padding-right: 4rem;
         }
+
+        @include breakpoint($sm-bp) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        // @include breakpoint($lb-bp) {
+        //     padding-left: 4rem;
+        //     padding-right: 4rem;
+        // }
         
         .title {
             font-weight: 700;
@@ -266,18 +301,43 @@
         display: flex;
         gap: 3rem;
         flex-wrap: wrap;
-        justify-content: center;
 
+        padding-left: 8rem;
+        padding-right: 8rem;
 
-        @include breakpoint($mb-bp) {
+        @include breakpoint($cos-bp) {
+        
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
+    
+        @include breakpoint($xl-bp) {
             padding-left: 4rem;
             padding-right: 4rem;
         }
+
+        @include breakpoint($sm-bp) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+
+
+
+        @include breakpoint($lg-bp) {
+            flex-direction: column;
+        }
+        
+
+        // @include breakpoint($mb-bp) {
+        //     padding-left: 4rem;
+        //     padding-right: 4rem;
+        // }
         
         
 
         .firstContainer {
-            width: 86.5rem;
+            width: 49%;
             background: #201F1F;
             border-radius: 1rem;
             padding-top: 6.5rem;
@@ -285,6 +345,15 @@
             display: flex;
             flex-direction: column;
             gap: 15.3rem;
+
+            @include breakpoint($cos-bp) {
+        
+                width: 48%;
+            }
+
+            @include breakpoint($lg-bp) {
+                width: 100%;
+            }
 
             img {
                 width: 100%;
@@ -306,7 +375,7 @@
         }
 
         .secondContainer {
-            width: 86.5rem;
+            width: 49%;
             padding-top: 47.1rem;
             padding-left: 6.5rem;
             background-image: url(../images/catalog/bgGirl.jpg);
@@ -314,6 +383,15 @@
             background-position: center;
             border-radius: 1rem;
             background-size: cover;
+
+            @include breakpoint($cos-bp) {
+        
+                width: 48%;
+            }
+
+            @include breakpoint($lg-bp) {
+                width: 100%;
+            }
 
             p {
                 font-weight: 700;
@@ -332,6 +410,25 @@
         //     padding-left: $border-min;
         //     padding-right: $border-min;
         // }
+
+        padding-left: 8rem;
+        padding-right: 8rem;
+
+        @include breakpoint($cos-bp) {
+        
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
+    
+        @include breakpoint($xl-bp) {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
 
         &__title {
             @extend %title;

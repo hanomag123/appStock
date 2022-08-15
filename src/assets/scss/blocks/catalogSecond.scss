@@ -4,19 +4,26 @@
     display: flex;
     flex-direction: column;
     margin-top: 6.5rem;
-    margin-left: 8rem;
     gap: 1rem;
 
-    @include breakpoint($lg-bp) {
-        margin-left: 4rem;
-        margin-right: 4rem;
-    }
+    padding-left: 8rem;
+        padding-right: 8rem;
 
-    @include breakpoint($lb-bp) {
-        margin-top: 4rem;
-        margin-left: 2rem;
-        margin-right: 2rem;
-    }
+        @include breakpoint($cos-bp) {
+        
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
+    
+        @include breakpoint($xl-bp) {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
 
     
 
@@ -58,20 +65,29 @@
     font-family: 'Inter';
     font-style: normal;
     margin-top: 5rem;
-    margin-left: 8rem;
-    margin-right: 8rem;
+    
     display: flex;
+    justify-content: space-between;
 
-    @include breakpoint($js-bp) {
-        margin-left: 5rem;
-        margin-right: 5rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+
+    @include breakpoint($cos-bp) {
+        
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+    
+    @include breakpoint($xl-bp) {
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 
-
-    @include breakpoint($lb-bp) {
-        margin-left: 2rem;
-        margin-right: 2rem;
+    @include breakpoint($sm-bp) {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
+
     
 
     .filterContainer {
@@ -175,7 +191,7 @@
                 input:checked+label::before {
                     border: none;
                     background-color: #C68457;
-                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+                    background-image: url(../images/checked.svg);
                 }
             }
         }
@@ -249,7 +265,13 @@
                   
                   .dropdown-content a:hover {background-color: #ddd;}
                   
-                  .dropdown:hover .dropdown-content {display: flex;}
+                  .dropdown:hover .dropdown-content {
+                    @include breakpoint($lg-bp) {
+                        display: flex;
+                    }
+
+                    
+                    }
 
                 button, span {
                     font-weight: 500;
@@ -317,14 +339,25 @@
 
 
         .catalogContainer {
-            display: flex;
+            // display: flex;
+            // gap: 5rem;
+            // flex-wrap: wrap;
+            // justify-content: flex-end;
             gap: 5rem;
-            flex-wrap: wrap;
-            justify-content: center;
 
-            @include breakpoint($js-bp) {
+            display: grid;
+                grid-template-columns: repeat(4, 1fr);
+            
+
+            @include breakpoint($sm-bp) {
                 gap: 2rem;
             }
+            
+            @include breakpoint($cos_bp) {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
 
             @include breakpoint($lb-bp) {
                 display: grid;
@@ -372,14 +405,20 @@
                 text-align: center;
                 color: #201F1F;
                 margin-bottom: 6.5rem;
-                width: 25rem;
+                // width: 25rem;
                 margin-top: 2rem;
 
                 @include breakpoint($lb-bp) {
-                    width: auto;
+                    
                     font-size: 1.4rem;
                     margin-bottom: 2rem;
                     margin-top: 1rem;
+
+                    text-align: start;
+                }
+
+                @include breakpoint($lg-bp) {
+                    text-align: left;
                 }
             }
 
