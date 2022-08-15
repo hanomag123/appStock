@@ -187,14 +187,12 @@ function focusInput () {
 }
 
 function activateMenu () {
-    const toggleMenuButtons = document.querySelectorAll('.toggleMenuButton') 
     const menu = document.querySelector('.menu') || null
-    // const header = document.querySelector('header')
+    const toggleMenuButtons = document.querySelector('.toggleMenuButton')
 
-    if (toggleMenuButtons[0] && Boolean(menu)) {
-        toggleMenuButtons.forEach(button => {
-            button.addEventListener('click', toggleMenu)
-        })
+
+    if (toggleMenuButtons && Boolean(menu)) {
+            toggleMenuButtons.addEventListener('click', toggleMenu)
     }
 
     function getWidthScrollBar ()   {
@@ -202,6 +200,8 @@ function activateMenu () {
     }
 
     function toggleMenu () {
+        const toggleMenuButtons = document.querySelector('.toggleMenuButton')
+        toggleMenuButtons.classList.toggle('activeIcon')
         const widthScroll = getWidthScrollBar()
         document.documentElement.style.setProperty('--scrollWidth', widthScroll + 'px')
 
@@ -213,12 +213,15 @@ function activateMenu () {
 
     function closeMenu (event) {
         const isItMenu = Boolean(event.target.closest('.menu'))
+        const toggleMenuButtons = document.querySelector('.toggleMenuButton')
+        const isItButton = Boolean(event.target.closest('.toggleMenuButton'))
 
-        if (isItMenu === false) {
+        if (isItMenu === false && isItButton == false) {
             menu.classList.toggle('active')
             document.body.classList.toggle('noscroll')
             menu.classList.toggle('noscrollMenu')
             document.removeEventListener('mouseup', closeMenu)
+            toggleMenuButtons.classList.remove('activeIcon')
         }
     }
 }
@@ -285,27 +288,75 @@ const busketCounter = () => {
         }
     }
 }
+function addMask() {
+    [].forEach.call( document.querySelectorAll('input[type="tel"]'), function(input) {
+    let keyCode;
+    function mask(event) {
+        event.keyCode && (keyCode = event.keyCode);
+        let pos = this.selectionStart;
+        if (pos < 3) event.preventDefault();
+        let matrix = "+7 (___) ___ ____",
+            i = 0,
+            def = matrix.replace(/\D/g, ""),
+            val = this.value.replace(/\D/g, ""),
+            new_value = matrix.replace(/[_\d]/g, function(a) {
+                return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+            });
+        i = new_value.indexOf("_");
+        if (i != -1) {
+            i < 5 && (i = 3);
+            new_value = new_value.slice(0, i)
+        }
+        let reg = matrix.substr(0, this.value.length).replace(/_+/g,
+            function(a) {
+                return "\\d{1," + a.length + "}"
+            }).replace(/[+()]/g, "\\$&");
+        reg = new RegExp("^" + reg + "$");
+        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+        if (event.type == "blur" && this.value.length < 5)  this.value = ""
+    }
+
+    input.addEventListener("input", mask, false);
+    input.addEventListener("focus", mask, false);
+    input.addEventListener("blur", mask, false);
+    input.addEventListener("keydown", mask, false)
+
+  });
+
+}
 
 const headerHide = () => {
+    let isUp = false;
+    let counter = 0;
     const searchElement = document.querySelector('.search')
     let scrollPrev = 0;
+    let border = 110;
     window.addEventListener('scroll', () => {
         const offset = window.pageYOffset
         const header = document.querySelector('header')
-        if (offset > 100 && offset > scrollPrev) {
+        if (offset > border && offset > scrollPrev) {
             header.classList.add('out')
             if (searchElement) {
                 searchElement.classList.remove('search__hide')
+                counter = 0
             }
         } else {
-            header.classList.remove('out')
+            if (counter > 15 || offset < border) {
+                header.classList.remove('out')
+            }
+        }
+        if (+offset > +scrollPrev) {
+            isUp = false
+        } else {
+            isUp = true;
+            counter = counter + 1
         }
         scrollPrev = offset
     })
 }
 
 headerHide()
-
+addMask()
 focusInput()
 mainObserver()
 preLoad()
