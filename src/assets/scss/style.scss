@@ -67,7 +67,15 @@ body {
   // @include breakpoint($sm-bp) {
   //   font-size: 1.4rem;
   // }
+  a {
+    @media(any-hover: hover) {
+      &:hover {
+        color: $persic;
+      }
+      }
+  }
 }
+
 // .page {
 //   overflow: auto;
 // }
@@ -91,9 +99,7 @@ svg {
 a:active {
   color: $persic;
 }
-a:hover {
-  color: $persic;
-}
+
 // .chevron {
   
 // }
@@ -140,6 +146,13 @@ body {
 .noscrollMenu {
   width: calc(36.6rem + var(--scrollWidth));
   padding-right: calc(8.7rem + var(--scrollWidth));
+
+@include breakpoint($lg-bp) {
+    padding-right: calc(2rem + var(--scrollWidth))
+}
+  @include breakpoint($lb-bp) {
+    width:  100vw;
+  }
 }
 
 .show {

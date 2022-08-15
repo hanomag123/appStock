@@ -319,9 +319,10 @@
         padding-right: $border-min;
 
     }
+    
     &__catalog {
         height: 52.3rem;
-        // overflow: visible;
+        overflow: visible;
         // overflow-x: clip;
         @include breakpoint($sm-bp) {
             height: 28rem;
@@ -514,4 +515,182 @@
 
 .wrapper__itemPage {
     overflow: hidden;
+}
+
+.topSales {
+    &__catalog {
+        height: 52.3rem;
+        overflow: visible;
+        // overflow-x: clip;
+        @include breakpoint($sm-bp) {
+            height: 28rem;
+        }
+    }
+
+    &__imgContainer {
+        height: 50%;
+        transition: all 0.5s ease-in-out;
+    }
+
+    &__img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+
+        transition: all 0.5s ease-in-out;
+    }
+    &__title {
+        @extend %title;
+        
+
+    }
+
+    &__item {
+        // position: relative;
+        // z-index: 4;
+        cursor: pointer;
+
+        margin-bottom: 3rem;
+        color: $black;
+        border-radius: 1rem;
+        padding: 4rem;
+        width: 33.2rem;
+        // height: 49.7rem;
+
+        background: #F3F3F3;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+
+        // @extend %scaleHover;
+        transition: all 0.5s ease-in-out;
+
+        @media(any-hover: hover) {
+        &:hover {
+            height: 115%;
+            padding: 0;
+            padding-bottom: 3rem;
+            gap: 0;
+            .topSales__imgContainer {
+                height: 40rem;
+            }
+            .topSales__wrapper {
+                padding: 0 3rem;
+            }
+            .topSales__priceContainer {
+                margin-top: 0;
+            }
+            span {
+                padding: 0 3rem;
+            }
+        }
+        }
+        
+        @include breakpoint($sm-bp) {
+            padding: 0.95rem;
+            height: 100%;
+            @media(any-hover: hover) {
+                &:hover {
+                    height: 100%;
+                    padding: 0;
+                    padding-bottom: 0.95rem;
+                    .topSales__imgContainer {
+                        padding: 0 0.95rem;
+                        padding-top: 0.95rem;
+                        height: 13.5rem;
+                    }
+                    img {
+                        height: 13rem;
+                    }
+                    .topSales__wrapper {
+                        padding: 0 0.95rem;
+                    }
+                    .topSales__priceContainer {
+                        margin-top: 0;
+                    }
+                    span {
+                        padding: 0 0.95rem;
+                    }
+                }
+                }
+        }
+    }
+    &__name {
+        font-family: InterReg;
+        font-weight: 400;
+        font-size: 1.8rem;
+        transition: all 0.5s ease-in-out;
+        @include breakpoint($sm-bp) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        transition: all 0.5s ease-in-out;
+    }
+
+        &__priceContainer {
+            // margin-top: 6.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            transition: all 0.5s ease-in-out;
+            @include breakpoint($sm-bp) {
+                margin-top: 0;
+                gap: 0rem;
+            }
+        }
+
+        &__pastPrice {
+            color: #8D8D8D;
+            font-family: InterReg;
+            text-decoration: line-through;
+            @include breakpoint($sm-bp) {
+                font-size: 1.4rem;
+            }
+        }
+
+        &__mainPrice {
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 3.6rem;
+            @include breakpoint($sm-bp) {
+                font-size: 1.4rem;
+                line-height: normal;
+            }
+        }
+
+        &__credit {
+            font-family: InterReg;
+            @include breakpoint($sm-bp) {
+                margin-top: 1rem;
+            }
+        }
+        &__busketButton {
+            @extend %busketButton;
+
+            @include breakpoint($sm-bp) {
+                align-self: flex-start;
+            }
+        }
+        &__buttonContainer {
+            // position: absolute;
+            // bottom: 0;
+            width: 100%;
+            display: flex;
+            margin-top: 3rem;
+            // z-index: 1;
+        }
+        &__prevButton {
+            margin-left: auto;
+            @extend %prevButton;
+        }
+        &__nextButton {
+            @extend %nextButton;
+        }
 }
