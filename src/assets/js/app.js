@@ -370,7 +370,68 @@ if (crossIco != null) {
 
 
 
+let selectItem2 = document.querySelectorAll('option')
+// console.log(selectItem)
+let selectSend = document.querySelector('.selectSend')
 
+let select = function () {
+    let selectHeader = document.querySelectorAll('.select__header');
+    let selectItem = document.querySelectorAll('.select__item');
+
+    selectHeader.forEach(item => {
+        item.addEventListener('click', selectToggle)
+    });
+
+    selectItem.forEach(item => {
+        item.addEventListener('click', selectChoose)
+    });
+
+    function selectToggle() {
+        this.parentElement.classList.toggle('is-active');
+    }
+
+    function selectChoose() {
+        let text = this.innerText,
+            select = this.closest('.select'),
+            currentText = select.querySelector('.select__current');
+        currentText.innerText = text;
+        select.classList.remove('is-active');
+
+        selectItem2.forEach(e => {
+            let elemText = e.innerHTML
+            
+            if (text === elemText) {
+                e.selected = true
+                selectSend.click()
+            }
+        })
+
+    }
+
+};
+
+
+select();
+
+
+let filterBtn = document.querySelectorAll('.filterBtn');
+let counter = 0;
+
+filterBtn.forEach(e => {
+    e.addEventListener('click', elem => {
+        counter += 1
+        if (counter === 1 ) {
+            
+            e.classList.add('activeFirst');
+        }else if (counter === 2 ) {
+            e.classList.remove('activeFirst')
+            e.classList.add('activeSecond')
+        }else if (counter === 3) {
+            e.classList.remove('activeSecond')
+            counter = 0
+        }
+    })
+})
 
 
 

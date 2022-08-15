@@ -162,7 +162,8 @@
             <div class="sortContainer">
                 <span>Сортировать по:</span>
 
-                <div class="dropdown">
+                <!-- <div class="dropdown">
+                    
                     <button class="popular active">По популярности
                         <svg class="up">
                             <use href="#arrowUp"></use>
@@ -204,12 +205,81 @@
                         </svg>
                       </a>
                     </div>
-                  </div>
+                </div> -->
 
+                <form>
+                    <select>
+                        <option>По популярности &#8593</option>
+                        <option>По популярности &#8595</option>
+                        <option>По цене &#8593</option>
+                        <option>По цене &#8595</option>
+                        <option>По новизне &#8593</option>
+                        <option>По новизне &#8595</option>
+                    </select>
 
+                    <button class="selectSend" type="submit"></button>
+
+                </form>
                 
-                <button>По цене</button>
-                <button>По новизне</button>
+
+                <div class="select">
+                    <div class="select__header">
+                        <div class="select__current">По популярности &#8593</div>
+                        <div class="select__icon">
+                            <img src="./assets/images/catalogSecond/arrowDown.svg" alt="#">
+                        </div>
+                    </div>
+                
+                    <div class="select__body">
+                        <div class="select__item">По популярности &#8593
+                        </div>
+                        <div class="select__item">По популярности &#8595
+                        </div>
+                        <div class="select__item">По цене &#8593</div>
+                        <div class="select__item">По цене &#8595
+                        </div>
+                        <div class="select__item">По новизне &#8593
+                        </div>
+                        <div class="select__item">По новизне &#8595
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <button class="filterBtn">По популярности <span class="arrowUpAct">
+                    <svg>
+                        <use href="#arrowUp"></use>
+                    </svg>
+                </span>
+                <span class="arrowDownAct">
+                    <svg>
+                        <use href="#arrowUnderground"></use>
+                    </svg>
+                </span>
+                </button>
+                <button class="filterBtn">По цене <span class="arrowUpAct">
+                    <svg>
+                        <use href="#arrowUp"></use>
+                    </svg>
+                </span>
+                <span class="arrowDownAct">
+                    <svg>
+                        <use href="#arrowUnderground"></use>
+                    </svg>
+                </span>
+                </button>
+                <button class="filterBtn">По новизне <span class="arrowUpAct">
+                    <svg>
+                        <use href="#arrowUp"></use>
+                    </svg>
+                </span>
+                <span class="arrowDownAct">
+                    <svg>
+                        <use href="#arrowUnderground"></use>
+                    </svg>
+                </span>
+                </button>
             </div>
             <button class="filterIcoContainerMobile">
                 <img src="./assets/images/catalogSecond/filterIco.svg" alt="#">
