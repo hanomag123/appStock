@@ -197,14 +197,17 @@ function activateMenu () {
         })
     }
 
+    function getWidthScrollBar ()   {
+        return window.innerWidth - document.documentElement.clientWidth
+    }
+
     function toggleMenu () {
-        const widthScroll = window.innerWidth - document.documentElement.clientWidth
+        const widthScroll = getWidthScrollBar()
         document.documentElement.style.setProperty('--scrollWidth', widthScroll + 'px')
 
         menu.classList.toggle('active');
-        menu.classList.toggle('noscroll')
-        // header.classList.toggle('noscroll');
-        document.documentElement.classList.toggle('noscroll');
+        document.body.classList.toggle('noscroll');
+        menu.classList.toggle('noscrollMenu')
         menu.classList.contains('active') ? document.addEventListener('mouseup', closeMenu) : document.removeEventListener('mouseup', closeMenu)
     }
 
@@ -213,9 +216,8 @@ function activateMenu () {
 
         if (isItMenu === false) {
             menu.classList.toggle('active')
-            document.documentElement.classList.toggle('noscroll')
-            menu.classList.toggle('noscroll')
-            // header.classList.toggle('noscroll')
+            document.body.classList.toggle('noscroll')
+            menu.classList.toggle('noscrollMenu')
             document.removeEventListener('mouseup', closeMenu)
         }
     }
@@ -275,7 +277,7 @@ const busketCounter = () => {
         const numberElement = this.querySelector('.busket__number')
         let numberNow = numberElement.innerHTML
         if (Boolean(event.target.closest('.busket__inputPlus'))) {
-            numberNow++
+            numberNow >= 99 ? numberNow = 99 : numberNow++
             numberElement.innerHTML = numberNow
         } else if (Boolean(event.target.closest('.busket__inputMinus'))) {
             numberNow <= 0 ? numberNow = 0 : numberNow--

@@ -3,6 +3,10 @@
     font-family: InterMed;
 
     &__top {
+        @include breakpoint($cos-bp) {
+            padding-left: $border-average;
+            padding-right: $border-average;
+        }
         @include breakpoint($sm-bp) {
             padding-left: $border-min;
             padding-right: $border-min;
@@ -109,27 +113,31 @@
         padding-right: $border;
 
         background-color: $black;
+        @include breakpoint($cos-bp) {
+            padding-left: $border-average;
+            padding-right: $border-average;
+        }
         @include breakpoint($xl-bp) {
             display: flex;
             justify-content: space-between;
-            padding-left: $border-average;
-            padding-right: $border-average;
+            padding-left: $border-min;
+            padding-right: $border-min;
             }
 
         @include breakpoint($sm-bp) {
-            padding-left: $border-min;
-            padding-right: $border-min;
+
         }
     }
 
     &__wrapperBot {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
         align-items: center;
+        grid-template-columns: 1fr 2fr 1fr;
         padding-bottom: 2.7rem;
 
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         @include breakpoint($xl-bp) {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 2rem;
@@ -202,7 +210,7 @@
         grid-column-gap: 0.9rem;
         grid-row-gap: 1rem;
         align-items: center;
-        width: 18.5rem;
+        width: 24.5rem;
         white-space: nowrap;
     }
 
