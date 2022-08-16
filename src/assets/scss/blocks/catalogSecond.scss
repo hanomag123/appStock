@@ -492,6 +492,7 @@
 
             @include breakpoint($lg-bp) {
                 padding-right: 0rem;
+                
             }
 
             display: grid;
@@ -507,6 +508,23 @@
                 grid-template-columns: repeat(3, 1fr);
             }
 
+            @include breakpoint($xl-bp) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include breakpoint($jm-bp) {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+
+            @include breakpoint($mb-bp) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            
 
             @include breakpoint($lb-bp) {
                 display: grid;
@@ -531,13 +549,15 @@
                 padding-left: 1rem;
                 padding-right: 1rem;
                 width: 100%;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
             }
 
             .imgContainer {
                 @include breakpoint($lb-bp) {
                     margin-left: auto;
                     margin-right: auto;
-                    width: 50%;
+                    width: 70%;
                 }
 
                 img {
@@ -577,6 +597,10 @@
                 justify-content: space-between;
                 align-items: flex-end;
 
+                @include breakpoint($lb-bp) {
+                    align-items: flex-start;
+                }
+
                 .priceContainer {
                     display: flex;
                     flex-direction: column;
@@ -603,6 +627,7 @@
                         color: #201F1F;
                         @include breakpoint($lb-bp) {
                             font-size: 1.4rem;
+                            line-height: 1rem;
                         }
                     }
 
@@ -615,6 +640,7 @@
 
                         @include breakpoint($lb-bp) {
                             font-size: 1.4rem;
+                            margin-top: 1rem
                         }
                     }
 
@@ -627,8 +653,9 @@
                     height: 4.5rem;
                     cursor: pointer;
                     svg {
-                        width: 2.5rem;
-                        height: 2.1rem;
+                        
+                        width: 100%;
+                        height: 100%;
                     }
                 }
             }
@@ -657,6 +684,7 @@
             }
 
             button {
+                font-family: InterReg;
                 width: 3.6rem;
                 height: 4rem;
                 background: none;

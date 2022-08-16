@@ -1,23 +1,42 @@
 .news2 {
     font-family: 'Inter';
     font-style: normal;
-    margin-left: 8rem;
-    margin-right: 8rem;
+    padding-left: 8rem;
+        padding-right: 8rem;
 
-    @include breakpoint($xl-bp) {
-        margin-left: 4rem;
-        margin-right: 4rem;
-    }
+        @include breakpoint($cos-bp) {
+        
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
+    
+        @include breakpoint($xl-bp) {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
     
     .firstContainer, .newsFooter {
         display: flex;
         flex-wrap: wrap;
-        gap: 9rem;
-        justify-content: center;
+        gap: 10rem;
+        // justify-content: center;
         margin-top: 5rem;
 
         @include breakpoint($cos_bp) {
-            gap: 5rem;
+            gap: 8rem;
+        }
+
+        @include breakpoint($xl_bp) {
+            gap: 6rem;
+        }
+
+        @include breakpoint($lg-bp) {
+            gap: 10rem;
         }
 
         
@@ -103,11 +122,17 @@
             @include breakpoint($lb-bp) {
                 padding: 0;
                 background: none;
+                
             }
 
             @include breakpoint($mb-bp) {
                 padding-top: 1rem;
                 padding-left: 3rem;
+            }
+
+            @include breakpoint($lb-bp) {
+                padding-top: 1rem;
+                padding-left: 0rem;
             }
 
             .imgContainer {
@@ -215,6 +240,7 @@
             }
 
             button {
+                font-family: InterReg;
                 width: 3.6rem;
                 height: 4rem;
                 background: none;
