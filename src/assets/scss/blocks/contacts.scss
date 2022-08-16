@@ -81,6 +81,12 @@
         grid-row: 2 span;
     }
 
+    svg {
+        width: 3rem;
+        height: 3rem;
+        fill: $persic;
+    }
+
     &__desc {
         font-size: 2.4rem;
         line-height: 2.9rem;
