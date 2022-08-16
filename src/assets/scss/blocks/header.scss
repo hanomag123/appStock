@@ -89,7 +89,7 @@
         height: 5rem;
         padding-bottom: 8rem;
         @include breakpoint($lg-bp) {
-            padding-bottom: 8rem;
+            padding-bottom: 7rem;
         }
     }
     &__closeIcon {
@@ -137,7 +137,7 @@
         gap: 4rem;
         @include breakpoint($xl-bp) {
             align-items: flex-start;
-            gap: 2rem;
+            gap: 2.5rem;
         }
     }
 
@@ -176,7 +176,6 @@
     .accordion {
         position: relative;
         transition: 0.4s;
-
         display: none;
         @include breakpoint($lg-bp) {
             display: block;
@@ -200,6 +199,12 @@
                 top: 1.5rem;
                 right: -1.4rem;
                 transition: $trans;
+                @include breakpoint($sm-bp) {
+                    right: -1rem;
+                }
+                @include breakpoint(400px) {
+                    right: -2rem;
+                }
             }
             &::after {
                 content: "";
@@ -214,6 +219,12 @@
                 right: -2.24rem;
                 transition: $trans;
                 transform: rotate(-45deg);
+                @include breakpoint($sm-bp) {
+                    right: -1.8rem;
+                }
+                @include breakpoint(400px) {
+                    right: -2.8rem;
+                }
             }
         
     }
@@ -227,6 +238,9 @@
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.2s ease-out;
+        li:nth-child(1){
+            margin-top: 1rem;
+        }
     }
 
     &__item {
@@ -283,6 +297,9 @@
 
         a {
             color: $black;
+            @include breakpoint($lg-bp) {
+                font-size: 2rem;
+            }
         }
     }
 
@@ -293,6 +310,10 @@
             width: 1.7rem;
             height: 1.7rem;
             fill: $persic;
+            @include breakpoint($sm-bp) {
+                width: 2rem;
+                height: 2rem;
+            }
         }
     }
 
@@ -300,6 +321,10 @@
         svg {
             width: 1.8rem;
             height: 1.5rem;
+            @include breakpoint($sm-bp) {
+                width: 2rem;
+                height: 2rem;
+            }
         }
     }
 
@@ -309,6 +334,13 @@
             fill: transparent;
             width: 2.3rem;
             height: 2.3rem;
+            @include breakpoint($sm-bp) {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+        @include breakpoint($sm-bp) {
+            margin-right: 1rem;
         }
     }
 
@@ -316,6 +348,10 @@
         svg {
         width: 2rem;
         height: 2rem;
+        @include breakpoint($sm-bp) {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
         }
     }
 }
@@ -354,7 +390,7 @@
     row-gap: 1.2rem;
 
     z-index: 6;
-
+    margin-right: var(--scrollWidth);
     @include breakpoint($sm-bp) {
         width: 100%;
     }
@@ -586,11 +622,11 @@
     height: 9.7rem;
     position: fixed;
     top: 0;
-    right: calc(8rem - 17px);
+    right: calc(7rem - var(--scrollWidth));
     z-index: 5;
     transition: all .3s ease;
     @include breakpoint($cos-bp) {
-        right: 1rem;
+        right: 1.5rem;
     }
     &::before {
         content: '';
@@ -618,7 +654,7 @@
     }
 }
 .activeIcon {
-    right: 10rem;
+    right: calc(8.7rem + var(--scrollWidth));
     @include breakpoint($cos-bp) {
         right: $border-average;
     }

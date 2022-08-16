@@ -59,7 +59,10 @@ div.paymentAndDelivery {
       }
 
       div.deliveryMethod__text {
-
+        width: 87%;
+        @include breakpoint($sm-bp) {
+          line-height: 142%;
+        }
       }
     }
   }
