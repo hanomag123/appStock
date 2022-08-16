@@ -256,6 +256,7 @@
         display: flex;
         gap: 3rem;
         @include breakpoint($cos-bp) {
+            gap: 2rem;
             font-size: 1rem;
         }
         @include breakpoint($xl-bp) {

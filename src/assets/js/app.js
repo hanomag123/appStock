@@ -246,10 +246,10 @@ function activeteToggleSearch () {
     function toggleSearch() {
         searchElement.classList.toggle('search__hide')
         if (searchElement.classList.contains('search__hide')) {
-            toggleMenuButtons.hidden = true
+            toggleMenuButtons.style.pointerEvents='none'
             document.addEventListener('mouseup', closeSearch)
         } else {
-            toggleMenuButtons.hidden = false
+            toggleMenuButtons.style.pointerEvents='auto'
             document.removeEventListener('mouseup', closeSearch)
         }
     }
@@ -260,6 +260,7 @@ function activeteToggleSearch () {
         const isItSearchIcon = Boolean(event.target.closest('.header-search'))
         if (isItSearch === false && isItSearchIcon === false) {
             searchElement.classList.remove('search__hide')
+            toggleMenuButtons.style.pointerEvents='auto'
         }
     }
 }
@@ -273,7 +274,7 @@ function changeHide() {
             characterText.classList.toggle('active666')
             hideText.innerHTML === 'Показать полностью' ? hideText.innerHTML = 'Скрыть' : hideText.innerHTML = 'Показать полностью'
             if (!characterText.classList.contains('active666')) {
-                characterText.scrollIntoView(true)
+                characterText.scrollIntoView({block: "center", behavior: "smooth"})
             }
         })
         }
@@ -354,9 +355,7 @@ const headerHide = () => {
             if (searchElement) {
                 searchElement.classList.remove('search__hide')
             }
-            if (toggleMenuButtons.hidden === true) {
-                toggleMenuButtons.hidden = false
-            }
+            toggleMenuButtons.style.pointerEvents='auto'
         } else {
             if (counter > 15 || offset < border) {
                 header.classList.remove('out')
