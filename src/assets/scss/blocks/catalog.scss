@@ -365,6 +365,10 @@
                 line-height: 7.3rem;
                 color: #FFFFFF;
                 padding-left: 6.5rem;
+
+                @include breakpoint($sm-bp) {
+                    padding-left: 1rem;
+                }
             }
 
             div {
