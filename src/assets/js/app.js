@@ -403,7 +403,7 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-acc[0].click()
+// acc[0].click()
 
 
 let acc2 = document.getElementsByClassName("accordion2");
