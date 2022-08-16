@@ -78,6 +78,7 @@
     @include breakpoint($lg-bp) {
         padding-right: 2rem;
         padding-bottom: 2rem;
+        justify-content: flex-start;
     }
 
     @include breakpoint($lb-bp) {
