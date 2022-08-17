@@ -146,8 +146,7 @@
                 font-size: 9rem;
             }
             @include breakpoint($sm-bp) {
-                font-size: 6.6rem;
-                width: 100%;
+                font-size: 6rem;
             }
         }
 
@@ -602,6 +601,12 @@
                 display: flex;
                 flex-direction: column;
                 gap: 2rem;
+            }
+            @include breakpoint($sm-bp) {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                width: 80%;
             }
         }
 

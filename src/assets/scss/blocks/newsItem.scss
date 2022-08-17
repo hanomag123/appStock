@@ -201,4 +201,30 @@
             width: 100%;
         }
     }
+
+    .nextNew {
+        
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 4rem;
+        
+        @include breakpoint($mb-bp) {
+            justify-content: center;
+        }
+        
+        
+        button {
+            font-family: InterReg;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 136%;
+            color: #C68457;
+            display: flex;
+            background: none;
+            border: none;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
 }

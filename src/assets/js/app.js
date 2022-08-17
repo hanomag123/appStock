@@ -246,10 +246,10 @@ function activeteToggleSearch () {
     function toggleSearch() {
         searchElement.classList.toggle('search__hide')
         if (searchElement.classList.contains('search__hide')) {
-            toggleMenuButtons.hidden = true
+            toggleMenuButtons.style.pointerEvents='none'
             document.addEventListener('mouseup', closeSearch)
         } else {
-            toggleMenuButtons.hidden = false
+            toggleMenuButtons.style.pointerEvents='auto'
             document.removeEventListener('mouseup', closeSearch)
         }
     }
@@ -260,6 +260,7 @@ function activeteToggleSearch () {
         const isItSearchIcon = Boolean(event.target.closest('.header-search'))
         if (isItSearch === false && isItSearchIcon === false) {
             searchElement.classList.remove('search__hide')
+            toggleMenuButtons.style.pointerEvents='auto'
         }
     }
 }
@@ -273,7 +274,7 @@ function changeHide() {
             characterText.classList.toggle('active666')
             hideText.innerHTML === 'Показать полностью' ? hideText.innerHTML = 'Скрыть' : hideText.innerHTML = 'Показать полностью'
             if (!characterText.classList.contains('active666')) {
-                characterText.scrollIntoView(true)
+                characterText.scrollIntoView({block: "center", behavior: "smooth"})
             }
         })
         }
@@ -354,9 +355,7 @@ const headerHide = () => {
             if (searchElement) {
                 searchElement.classList.remove('search__hide')
             }
-            if (toggleMenuButtons.hidden === true) {
-                toggleMenuButtons.hidden = false
-            }
+            toggleMenuButtons.style.pointerEvents='auto'
         } else {
             if (counter > 15 || offset < border) {
                 header.classList.remove('out')
@@ -392,6 +391,7 @@ let acc = document.getElementsByClassName("accordion");
 let i;
 
 for (i = 0; i < acc.length; i++) {
+   
   acc[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var panel = this.nextElementSibling;
@@ -403,21 +403,30 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+// acc[0].click()
 
 
 let acc2 = document.getElementsByClassName("accordion2");
 
-for (let i = 0; i < acc2.length; i++) {
-  acc2[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-}
+    for (let i = 0; i < acc2.length; i++) {
+        acc2[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight){
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+
+
+
+
+
+
+
 
 
 let filterIcoContainerMobile = document.querySelector('.filterIcoContainerMobile')
