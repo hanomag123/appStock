@@ -296,7 +296,7 @@ const busketCounter = () => {
             numberNow >= 99 ? numberNow = 99 : numberNow++
             numberElement.innerHTML = numberNow
         } else if (Boolean(event.target.closest('.busket__inputMinus'))) {
-            numberNow <= 0 ? numberNow = 0 : numberNow--
+            numberNow <= 1 ? numberNow = 1 : numberNow--
             numberElement.innerHTML = numberNow
         }
     }

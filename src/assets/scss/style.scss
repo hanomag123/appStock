@@ -128,7 +128,9 @@ a:active {
 body {
   // &::-webkit-scrollbar { width: 0; }
 }
-
+button {
+  background-color: transparent;
+}
 .hide {
   display: none;
 }
