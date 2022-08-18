@@ -25,6 +25,11 @@ div.paymentAndDelivery {
       padding-bottom: 8rem;
   }
 
+  @include breakpoint($sm-bp) {
+    padding-left: $border-lastMin;
+    padding-right: $border-lastMin;
+}
+
   section.deliveryMethod {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

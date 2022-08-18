@@ -207,11 +207,8 @@ function activateMenu () {
     window.addEventListener('resize', getScrollBar)
 
     function toggleMenu () {
-        event.stopPropagation()
         const toggleMenuButtons = document.querySelector('.toggleMenuButton')
         toggleMenuButtons.classList.toggle('activeIcon')
-        const widthScroll = getWidthScrollBar()
-        document.documentElement.style.setProperty('--scrollWidth', widthScroll + 'px')
 
         menu.classList.toggle('active');
         document.body.classList.toggle('noscroll');

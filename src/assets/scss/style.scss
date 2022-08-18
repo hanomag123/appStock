@@ -144,14 +144,20 @@ button {
 
 .noscrollMenu {
   width: calc(36.6rem + var(--scrollWidth));
-  padding-right: calc(8.7rem + var(--scrollWidth));
+  padding-right: calc($border + var(--scrollWidth));
 
-@include breakpoint($lg-bp) {
-    padding-right: calc(2rem + var(--scrollWidth))
+@include breakpoint($cos-bp) {
+    padding-right: calc($border-average + var(--scrollWidth))
 }
   @include breakpoint($lb-bp) {
     width:  100vw;
   }
+  @include breakpoint($xl-bp) {
+    padding-right: calc($border-min + var(--scrollWidth))
+}
+@include breakpoint($sm-bp) {
+  padding-right: calc($border-lastMin + var(--scrollWidth))
+}
 }
 
 .show {
