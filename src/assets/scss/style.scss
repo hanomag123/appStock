@@ -68,14 +68,11 @@ body {
   //   font-size: 1.4rem;
   // }
   a {
-    @media(any-hover: hover) {
-      &:hover {
-        color: $persic;
-      }
-      }
-  }
+    &:hover {
+      color: $persic;
+    }
 }
-
+}
 // .page {
 //   overflow: auto;
 // }
@@ -131,7 +128,9 @@ a:active {
 body {
   // &::-webkit-scrollbar { width: 0; }
 }
-
+button {
+  background-color: transparent;
+}
 .hide {
   display: none;
 }

@@ -10,7 +10,7 @@
     padding-right: $border;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 42% 1fr;
 
     @include breakpoint($cos-bp) {
         padding-left: $border-average;
@@ -53,10 +53,14 @@
             
             /* серый лайт */
 
-            padding: 10.5rem;
+            padding: 18%;
             
             background: $ligthGrey;
             border-radius: 1rem;
+
+            @include breakpoint($cos-bp) {
+                height: 44.8rem;
+            }
 
             @include breakpoint($xl-bp) {
                 height: auto;
@@ -73,6 +77,11 @@
         }
         div.swiper.prewiev__slider {
             height: 54.8rem;
+            // width: 12.2rem;
+            
+            @include breakpoint($cos-bp) {
+                height: 44.8rem;
+            }
             @include breakpoint($xl-bp) {
                 height: auto;
             }
@@ -108,8 +117,16 @@
         div.main-block {
             margin-bottom: 7.7rem;
 
+            @include breakpoint($sm-bp) {
+                margin-bottom: 4rem;
+            }
+
             div.main-block__titleContainer {
                 margin-bottom: 4rem;
+
+                @include breakpoint($sm-bp) {
+                    margin-bottom: 2rem;
+                }
     
                 div.star-container {
     
@@ -117,6 +134,9 @@
                     gap: 1rem;
     
                     margin-bottom: 0.7rem;
+                    @include breakpoint($sm-bp) {
+                        gap: 0;
+                    }
                     div.star-container__star {
                         stroke: $persic;
                         fill: $persic;
@@ -136,6 +156,14 @@
                     font-weight: 700;
                     font-size: 6rem;
                     line-height: 7.3rem;
+                    @include breakpoint($cos-bp) {
+                        font-size: 5rem;
+                        line-height: 6.3rem;
+                    }
+                    @include breakpoint($sm-bp) {
+                        font-size: 3.2rem;
+                        line-height: 3.7rem;
+                    }
                 }
             }
     
@@ -143,10 +171,21 @@
                 font-weight: 500;
                 font-size: 1.8rem;
                 line-height: 2.2rem;
+                @include breakpoint($sm-bp) {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
             }
     
             div.main-block__priceContainer {
                 margin-bottom: 3.7rem;
+                @include breakpoint($cos-bp) {
+                    font-size: 2rem;
+                    line-height: 5.3rem;
+                }
+                @include breakpoint($sm-bp) {
+                    margin-bottom: 2rem;
+                }
     
                 div.main-block__price {
                     font-weight: 500;
@@ -156,6 +195,11 @@
                     /* персик */
                     
                     color: $persic;
+                    @include breakpoint($sm-bp) {
+                        font-family: InterSB;
+                        font-size: 2.2rem;
+                        line-height: 2.7rem;
+                    }
                 }
     
                 div.main-block__desc {
@@ -168,6 +212,10 @@
     
             div.main-block__colorContainer {
                 margin-bottom: 10.7rem;
+
+                @include breakpoint($xl-bp) {
+                    margin-bottom: 2rem;
+                }
     
                 div.main-block__desc {
                     margin-bottom: 1rem;
@@ -237,7 +285,7 @@
             grid-column-start: auto;
             grid-column-end: auto;
 
-            height: 35.9rem;
+            height: 50rem;
             overflow: hidden;
         }
         
@@ -246,6 +294,10 @@
             font-size: 3rem;
             line-height: 3.6rem;
             margin-bottom: 0.5rem;
+            @include breakpoint($sm-bp) {
+                font-size: 4rem;
+                line-height: 4.6rem;
+            }
         }
     
     div.characteristics__container {
@@ -511,6 +563,10 @@
     font-family: 'Inter';
     font-style: normal;
     margin-bottom: 10rem;
+    .itemPage__topSales-title {
+        font-size: 4rem;
+        line-height: 4.8rem;
+    }
 }
 
 .wrapper__itemPage {

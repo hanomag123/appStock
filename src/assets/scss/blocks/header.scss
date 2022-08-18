@@ -51,7 +51,7 @@
     position: fixed;
     z-index: 4;
     width: 36.6rem;
-    height: 100vh;
+    height: 100%;
     right: 0;
     top: 0;
     
@@ -78,6 +78,7 @@
     @include breakpoint($lg-bp) {
         padding-right: 2rem;
         padding-bottom: 2rem;
+        justify-content: flex-start;
     }
 
     @include breakpoint($lb-bp) {
