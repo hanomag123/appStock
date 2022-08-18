@@ -10,11 +10,13 @@
     padding-right: $border;
 
     display: grid;
-    grid-template-columns: 42% 1fr;
+    grid-template-columns: 45.5% 1fr;
 
     @include breakpoint($cos-bp) {
         padding-left: $border-average;
         padding-right: $border-average;
+
+        grid-template-columns: 1fr 1fr;
     }
 
     @include breakpoint($xl-bp) {
@@ -23,6 +25,11 @@
 
         display: flex;
         flex-direction: column;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-left: $border-lastMin;
+        padding-right: $border-lastMin;
     }
 
 
@@ -46,6 +53,16 @@
             margin-bottom: 3rem;
         }
         div.prewiev__mainBlock {
+            height: 54.8rem;
+            width: 54.8rem;
+            @include breakpoint($cos-bp) {
+                width: auto;
+                height: 44rem;
+            }
+            @include breakpoint($xl-bp) {
+                width: auto;
+                height: auto;
+            }
             .prewiev__imgContainer {
             display: block;
             height: 54.8rem;
@@ -59,7 +76,7 @@
             border-radius: 1rem;
 
             @include breakpoint($cos-bp) {
-                height: 44.8rem;
+                // height: 44.8rem;
             }
 
             @include breakpoint($xl-bp) {
@@ -77,12 +94,13 @@
         }
         div.swiper.prewiev__slider {
             height: 54.8rem;
-            // width: 12.2rem;
+            width: 12.2rem;
             
             @include breakpoint($cos-bp) {
-                height: 44.8rem;
+                // height: 44.8rem;
             }
             @include breakpoint($xl-bp) {
+                width: auto;
                 height: auto;
             }
         div.swiper-wrapper {

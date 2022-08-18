@@ -34,6 +34,11 @@
             padding-right: $border-min;
         }
 
+        @include breakpoint($sm-bp) {
+            padding-left: $border-lastMin;
+            padding-right: $border-lastMin;
+        }
+
     .home {
         height: calc(100vh - 9.7rem);
         width: 100vw;
@@ -71,8 +76,8 @@
         }
         
         @include breakpoint($sm-bp) {
-            padding-left: $border-min;
-            padding-right: $border-min;
+            padding-left: $border-lastMin;
+            padding-right: $border-lastMin;
             height: auto;
         }
 

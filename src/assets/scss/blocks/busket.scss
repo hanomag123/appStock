@@ -44,6 +44,11 @@
         padding-top: 3rem;
     }
 
+    @include breakpoint($sm-bp) {
+        padding-left: $border-lastMin;
+        padding-right: $border-lastMin;
+    }
+
     section.busket__products {
         display: flex;
         flex-direction: column;

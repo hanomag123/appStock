@@ -7,9 +7,13 @@
             padding-left: $border-average;
             padding-right: $border-average;
         }
-        @include breakpoint($sm-bp) {
+        @include breakpoint($xl-bp) {
             padding-left: $border-min;
             padding-right: $border-min;
+        }
+        @include breakpoint($sm-bp) {
+            padding-left: $border-lastMin;
+            padding-right: $border-lastMin;
         }
         padding-top: 5.5rem;
 
