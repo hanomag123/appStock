@@ -299,7 +299,9 @@
             .busket__checkBox {
                 margin-top: 0.3rem;
             }
-
+            label {
+                cursor: pointer;
+            }
             .delivery-type__wrapper {
                 span {
                     display: block;
