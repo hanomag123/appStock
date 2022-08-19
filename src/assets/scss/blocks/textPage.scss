@@ -1,0 +1,68 @@
+.textPage {
+    font-family: 'Inter';
+    font-style: normal;
+    padding-left: 8rem;
+    padding-right: 8rem;
+
+    @include breakpoint($cos-bp) {
+    
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+
+    @include breakpoint($xl-bp) {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+
+    .mainTitle {
+        font-weight: 700;
+        font-size: 2.2rem;
+        line-height: 2.7rem;
+        text-transform: uppercase;
+        color: #201F1F;
+        text-align: center;
+        width: 100%;
+    }
+
+    .rightPictureContainer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        gap: 7.8rem;
+        flex-wrap: wrap;
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            width: 45%;
+            .title {
+                font-weight: 700;
+                font-size: 4rem;
+                line-height: 4.8rem;
+                color: #201F1F;
+            }
+            
+            .subtitle {
+                font-family: InterReg;
+                font-weight: 400;
+                font-size: 1.8rem;
+                line-height: 136%;
+                color: #201F1F;
+            }
+        }
+
+        .imgContainer {
+            width: 48%;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
