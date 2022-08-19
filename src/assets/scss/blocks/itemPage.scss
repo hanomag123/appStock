@@ -60,7 +60,7 @@
             width: 54.8rem;
             @include breakpoint($cos-bp) {
                 width: auto;
-                height: 44rem;
+                height: 30rem;
             }
             @include breakpoint($xl-bp) {
                 width: auto;
@@ -79,7 +79,7 @@
             border-radius: 1rem;
 
             @include breakpoint($cos-bp) {
-                // height: 44.8rem;
+                height: 45rem;
             }
 
             @include breakpoint($xl-bp) {
@@ -102,7 +102,7 @@
             width: 12.2rem;
             
             @include breakpoint($cos-bp) {
-                // height: 44.8rem;
+                height: 45rem;
             }
             @include breakpoint($xl-bp) {
                 width: auto;
@@ -139,17 +139,21 @@
     }
 
     div.itemPage__mainBlock {
-    
+        
         div.main-block {
             margin-bottom: 7.7rem;
-
+            @include breakpoint($cos-bp) {
+                margin-bottom: 4rem;
+            }
             @include breakpoint($sm-bp) {
                 margin-bottom: 4rem;
             }
 
             div.main-block__titleContainer {
                 margin-bottom: 4rem;
-
+                @include breakpoint($cos-bp) {
+                    margin-bottom: 3rem;
+                }
                 @include breakpoint($sm-bp) {
                     margin-bottom: 2rem;
                 }
@@ -183,8 +187,8 @@
                     font-size: 6rem;
                     line-height: 7.3rem;
                     @include breakpoint($cos-bp) {
-                        font-size: 5rem;
-                        line-height: 6.3rem;
+                        font-size: 4.1rem;
+                        line-height: 5.3rem;
                     }
                     @include breakpoint($sm-bp) {
                         font-size: 3.2rem;
@@ -221,6 +225,10 @@
                     /* персик */
                     
                     color: $persic;
+                    @include breakpoint($cos-bp) {
+                        font-size: 3rem;
+                        line-height: 3.8rem;
+                    }
                     @include breakpoint($sm-bp) {
                         font-family: InterSB;
                         font-size: 2.2rem;
@@ -229,7 +237,10 @@
                 }
     
                 div.main-block__desc {
-                    margin-top: 1rem;
+                    margin-top: 0.5rem;
+                    @include breakpoint($cos-bp) {
+                        font-size: 1.5rem;
+                    }
                     @include breakpoint($xl-bp) {
                         margin-top: 0;
                     }
@@ -239,12 +250,19 @@
             div.main-block__colorContainer {
                 margin-bottom: 10.7rem;
 
+                @include breakpoint($cos-bp) {
+                    margin-bottom: 7rem;
+                }
                 @include breakpoint($xl-bp) {
                     margin-bottom: 2rem;
                 }
     
                 div.main-block__desc {
                     margin-bottom: 1rem;
+                    @include breakpoint($cos-bp) {
+                        font-size: 1.5rem;
+                        margin-bottom: 0.5rem;
+                    }
                 }
     
                 div.main-block__colors {
@@ -254,6 +272,14 @@
                         
                         background: #F1DCC5;
                         border-radius: 0.5rem;
+                        @include breakpoint($cos-bp) {
+                            width: 3.5rem;
+                            height: 3.5rem;
+                        }
+                        @include breakpoint($xl-bp) {
+                            width: 4.7rem;
+                            height: 4.7rem;
+                        }
                     }
                 }
             }

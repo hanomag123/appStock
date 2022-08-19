@@ -189,6 +189,7 @@ function focusInput () {
 function activateMenu () {
     const menu = document.querySelector('.menu') || null
     const toggleMenuButtons = document.querySelector('.toggleMenuButton')
+    const menuHider = document.querySelector('.menu__hider')
 
 
     if (toggleMenuButtons && Boolean(menu)) {
@@ -209,7 +210,7 @@ function activateMenu () {
     function toggleMenu () {
         const toggleMenuButtons = document.querySelector('.toggleMenuButton')
         toggleMenuButtons.classList.toggle('activeIcon')
-
+        menuHider.classList.toggle('active')
         menu.classList.toggle('active');
         document.body.classList.toggle('noscroll');
         menu.classList.toggle('noscrollMenu')
@@ -222,6 +223,7 @@ function activateMenu () {
         const isItButton = Boolean(event.target.closest('.toggleMenuButton'))
 
         if (isItMenu === false && isItButton == false) {
+            menuHider.classList.toggle('active')
             menu.classList.toggle('active')
             document.body.classList.toggle('noscroll')
             menu.classList.toggle('noscrollMenu')
