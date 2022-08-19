@@ -344,6 +344,7 @@
             
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             gap: 15.3rem;
 
             @include breakpoint($cos-bp) {
@@ -353,10 +354,16 @@
 
             @include breakpoint($lg-bp) {
                 width: 100%;
+                gap: 8.8rem;
+            }
+
+            @include breakpoint($sm-bp) {
+                padding-top: 3rem;
             }
 
             img {
                 width: 100%;
+                
             }
 
             p {
@@ -367,20 +374,32 @@
                 padding-left: 6.5rem;
 
                 @include breakpoint($sm-bp) {
-                    padding-left: 1rem;
+                    padding-left: 3rem;
+                    font-size: 3rem;
+                    line-height: 3.6rem;
                 }
             }
 
             div {
                 display: flex;
                 justify-content: center;
+                padding-left: 20%;
+                padding-right: 20%;
+
+                @include breakpoint($sm-bp) {
+                    padding-left: 15%;
+                    padding-right: 15%;
+                }
             }
 
         }
 
         .secondContainer {
             width: 49%;
-            padding-top: 47.1rem;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 6.5rem;
+            // padding-top: 47.1rem;
             padding-left: 6.5rem;
             background-image: url(../images/catalog/bgGirl.jpg);
             background-repeat: no-repeat;
@@ -389,12 +408,18 @@
             background-size: cover;
 
             @include breakpoint($cos-bp) {
-        
                 width: 48%;
             }
 
             @include breakpoint($lg-bp) {
                 width: 100%;
+                padding-top: 50%;
+            }
+
+            @include breakpoint($sm-bp) {
+                padding-bottom: 3rem;
+                padding-left: 3rem;
+                padding-top: 60%; 
             }
 
             p {
@@ -402,6 +427,11 @@
                 font-size: 6rem;
                 line-height: 7.3rem;
                 color: #FFFFFF;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 3rem;
+                    line-height: 3.6rem;
+                }
             }
         }   
     }

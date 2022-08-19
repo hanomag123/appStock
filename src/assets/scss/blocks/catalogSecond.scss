@@ -97,6 +97,13 @@
         gap: 1.5rem;
         align-items: flex-start;
 
+
+        .crossIco {
+            display: none;
+            @include breakpoint($jm-bp) {
+                display: block;
+            }
+        }
         .title {
             display: flex;
             align-items: center;
@@ -678,6 +685,7 @@
         gap: 2rem;
         margin-top: 3rem;
         margin-bottom: 12rem;
+        padding-right: 2rem;
         .numbersContainer {
             display: flex;
             gap: 1rem;

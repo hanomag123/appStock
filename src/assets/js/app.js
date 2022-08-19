@@ -480,7 +480,7 @@ let select = function () {
             
             if (text === elemText) {
                 e.selected = true
-                selectSend.click()
+                // selectSend.click()
             }
         })
 
