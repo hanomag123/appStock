@@ -67,17 +67,18 @@
             flex-direction: column-reverse;
             align-items: center;
             justify-content: space-between;
+            padding-left: $border-min;
+            padding-right: $border-min;
             gap: 4rem;
         }
         @include breakpoint($mb-bp) {
-            padding-left: $border-average;
-            padding-right: $border-average;
             height: 120rem;
         }
         
         @include breakpoint($sm-bp) {
             padding-left: $border-lastMin;
             padding-right: $border-lastMin;
+            margin-left: -$border-lastMin;
             height: auto;
         }
 
@@ -148,7 +149,7 @@
                 font-size: 12rem;
             }
             @include breakpoint($lb-bp) {
-                font-size: 9rem;
+                font-size: 8rem;
             }
             @include breakpoint($sm-bp) {
                 font-size: 6rem;
@@ -196,6 +197,9 @@
                 width: 100%;
                 margin-left: 0;
                 margin-top: 5rem;
+            }
+            @include breakpoint($sm-bp) {
+                width: 90%;
             }
         }
     }
