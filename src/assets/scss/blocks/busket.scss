@@ -300,7 +300,11 @@
                 margin-top: 0.3rem;
             }
 
-            .delivery-type__wrapper {}
+            .delivery-type__wrapper {
+                span {
+                    display: block;
+                }
+            }
 
             .delivery-type__nameItem {
                 padding-bottom: 0.5rem;

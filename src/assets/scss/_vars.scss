@@ -227,12 +227,6 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
 
     background-color: transparent;
 
-    @media screen and (max-width: $xl-bp) {
-        border: 0;
-        background-color: $ligthGrey;
-        padding: 0.5rem;
-        height: min-content;
-    }
 
     svg {
         width: 2.5rem;
@@ -241,7 +235,23 @@ $trans: background-color .4s ease-in-out, color .4s ease-in-out;
         transition: all .5s ease-in-out;
         fill: transparent;
     }
+    @media screen and (max-width: $xl-bp) {
+        border: 0;
+        background-color: $ligthGrey;
+        padding: 0.5rem;
+        height: min-content;
 
+        svg {
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+    @media screen and (max-width: $sm-bp) {
+        svg {
+            width: 2.5rem;
+            height: 2.2rem;
+        }
+    }
     @media(any-hover: hover) {
         &:hover {
             background-color: $persic;
