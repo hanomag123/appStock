@@ -52,6 +52,9 @@
             flex-direction: column;
             margin-bottom: 3rem;
         }
+        @include breakpoint($sm-bp) {
+            gap: 1.4rem;
+        }
         div.prewiev__mainBlock {
             height: 54.8rem;
             width: 54.8rem;
@@ -84,7 +87,9 @@
                 width: 100%;
                 margin: 0;
             }
-            
+            @include breakpoint($sm-bp) {
+                height: 42rem;
+            }
             img {
                 width: 100%;
                 height: 100%;
@@ -112,6 +117,9 @@
                 border-radius: 1rem;
 
                 padding: 2.24rem 2.9rem 2.1rem 3rem;
+                @include breakpoint($sm-bp) {
+                    padding: 1.38rem 1.783rem 1.316rem 1.844rem;
+                }
                 cursor: pointer;
                 .swiper__imgContainer {
                     width: 100%;
@@ -303,8 +311,12 @@
             grid-column-start: auto;
             grid-column-end: auto;
 
-            height: 50rem;
+            height: 46rem;
             overflow: hidden;
+        }
+
+        @include breakpoint($sm-bp) {
+            height: 50rem;
         }
         
         h2.characteristics__title {

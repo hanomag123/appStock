@@ -76,6 +76,7 @@
         padding-right: $border-average;
     }
     @include breakpoint($xl-bp) {
+        align-items: flex-start;
         padding-right: $border-min;
     }
     @include breakpoint($lg-bp) {
